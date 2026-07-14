@@ -5,7 +5,7 @@ data = np.random.normal(50, 2, 60)
 data[5], data[18], data[30], data[28], data[35], data[42], data[55] = 72.5, 31.2, 45.1, 80.3, 48.7, 52, 50.6
 print(data)
 # Rolling Stats
-w = 5
+w = 6
 roll_mean = np.array([np.mean(data[i:i+w]) for i in range(len(data) - w + 1)])
 roll_std  = np.array([np.std(data[i:i+w]) for i in range(len(data) - w + 1)])
 
