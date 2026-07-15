@@ -9,7 +9,7 @@ w = 6
 roll_mean = np.array([np.mean(data[i:i+w]) for i in range(len(data) - w + 1)])
 roll_std  = np.array([np.std(data[i:i+w]) for i in range(len(data) - w + 1)])
 
-# Z-Score Normalization
+# Z-Score Normalizations
 z_scores = (data - np.mean(data)) / np.std(data)
 
 # Flagging Outliers 
