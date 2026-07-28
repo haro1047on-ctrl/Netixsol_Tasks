@@ -1,0 +1,20 @@
+1. Why split into multiple tables?
+If we put customer info and their orders all in ONE table, we would repeat the customer's name and address for every single order they make. This wastes space and is risky — if we need to fix a customer's address, we would have to fix it in many rows instead of just one. Splitting into separate tables means each fact is stored only once.
+
+2. INNER JOIN vs LEFT JOIN
+INNER JOIN only shows rows that have a match in both tables. If a customer never made a payment, INNER JOIN will not show that customer at all. LEFT JOIN shows every row from the first table no matter what — even if there is no match in the second table, it will still show the first table's row, just with empty values for the missing part.
+
+3. When to use FULL OUTER JOIN?
+Use it when you want to see everything from both tables at the same time — including rows that don't match on either side. For example, if you want to find customers with no payments AND payments with no valid customer, in one single query, FULL OUTER JOIN shows both problems together.
+
+4. Why are Primary/Foreign Keys important?
+A Primary Key makes sure every row can be found uniquely — no two rows are exactly the same, and no row is empty in that column. A Foreign Key connects one table to another correctly. Without these keys, joins could match wrong rows together, or the same row could get counted more than once by accident.
+
+5. Normalization in simple words
+Normalization means organizing a database so each piece of information is stored in only one place. Instead of repeating the same data many times, you keep it in one table and connect other tables to it using keys. This makes the data easier to update and less likely to have mistakes or contradictions.
+
+6. What is an ER Diagram?
+A picture that shows all the tables in a database as boxes, with their columns listed inside. Lines connect the boxes to show how tables are related to each other, usually through primary and foreign keys.
+
+7. What happens with an incorrect JOIN condition?
+The query will still run without any error message, but the results will be wrong. A common mistake is joining on the wrong columns, which can create way too many rows (every row from one table matched with every row from the other table) or match rows together that don't actually belong together. This kind of mistake is dangerous because it does not look like an error — the wrong data just looks normal.
