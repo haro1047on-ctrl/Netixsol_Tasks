@@ -30,34 +30,34 @@ JOIN film_actor ON f.film_id = film_actor.film_id
 JOIN actor a ON film_actor.actor_id = a.actor_id
 ORDER BY f.title;
 --Q6: Query
-SELECT category.name, COUNT(*) AS film_count
-FROM film
-JOIN film_category ON film.film_id = film_category.film_id
-JOIN category ON film_category.category_id = category.category_id
-GROUP BY category.name
+SELECT ct.name, COUNT(*) AS film_count
+FROM film f
+JOIN film_category ON f.film_id = film_category.film_id
+JOIN category ct ON film_category.category_id = ct.category_id
+GROUP BY ct.name
 ORDER BY film_count DESC;
 --Q7: Query
-SELECT category.name, SUM(payment.amount) AS total_revenue
-FROM category
-JOIN film_category ON category.category_id = film_category.category_id
-JOIN film ON film_category.film_id = film.film_id
-JOIN inventory ON film.film_id = inventory.film_id
-JOIN rental ON inventory.inventory_id = rental.inventory_id
-JOIN payment ON rental.rental_id = payment.rental_id
-GROUP BY category.name
+SELECT ct.name, SUM(p.amount) AS total_revenue
+FROM category ct
+JOIN film_category ON ct.category_id = film_category.category_id
+JOIN film f ON film_category.film_id = f.film_id
+JOIN inventory inv ON f.film_id = inv.film_id
+JOIN rental r ON inv.inventory_id = r.inventory_id
+JOIN payment p ON r.rental_id = p.rental_id
+GROUP BY ct.name
 ORDER BY total_revenue DESC;
 --Q8: Query
-SELECT customer.customer_id, customer.first_name, customer.last_name, COUNT(*) AS rental_count
-FROM rental
-JOIN customer ON rental.customer_id = customer.customer_id
-GROUP BY customer.customer_id, customer.first_name, customer.last_name
+SELECT cu.customer_id, cu.first_name, cu.last_name, COUNT(*) AS rental_count
+FROM rental r
+JOIN customer cu ON r.customer_id = cu.customer_id
+GROUP BY cu.customer_id, cu.first_name, cu.last_name
 HAVING COUNT(*) > 20
 ORDER BY rental_count DESC;
 --Q9: Query
-SELECT city.city, SUM(payment.amount) AS total_revenue
-FROM city
-JOIN address ON city.city_id = address.city_id
-JOIN customer ON address.address_id = customer.address_id
-JOIN payment ON customer.customer_id = payment.customer_id
-GROUP BY city.city
+SELECT ci.city, SUM(p.amount) AS total_revenue
+FROM city ci
+JOIN address ad ON ci.city_id = ad.city_id
+JOIN customer cu ON ad.address_id = cu.address_id
+JOIN payment p ON cu.customer_id = p.customer_id
+GROUP BY ci.city
 ORDER BY total_revenue DESC;
