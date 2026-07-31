@@ -1,0 +1,14 @@
+"pg_get_viewdef"
+" WITH monthly_po AS (
+         SELECT purchasing_fact.po_month,
+            count(DISTINCT purchasing_fact.purchaseorderid) AS total_purchase_orders,
+            sum(purchasing_fact.subtotal) AS total_po_spend
+           FROM analytics.purchasing_fact
+          GROUP BY purchasing_fact.po_month
+        )
+ SELECT po_month,
+    total_purchase_orders,
+    total_po_spend,
+    round((((total_po_spend - lag(total_po_spend) OVER (ORDER BY po_month)) * 100.0) / NULLIF(lag(total_po_spend) OVER (ORDER BY po_month), (0)::numeric)), 2) AS mom_spend_growth_pct
+   FROM monthly_po
+  ORDER BY po_month;"
