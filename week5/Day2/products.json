@@ -1,0 +1,27 @@
+{
+  "laptop a": {
+    "price_usd": 799,
+    "category": "laptop",
+    "specs": "8GB RAM, 256GB SSD"
+  },
+  "laptop b": {
+    "price_usd": 1199,
+    "category": "laptop",
+    "specs": "16GB RAM, 512GB SSD"
+  },
+  "laptop c": {
+    "price_usd": 549,
+    "category": "laptop",
+    "specs": "8GB RAM, 128GB SSD"
+  },
+  "phone x": {
+    "price_usd": 699,
+    "category": "phone",
+    "specs": "6.1in, 128GB"
+  },
+  "phone y": {
+    "price_usd": 999,
+    "category": "phone",
+    "specs": "6.7in, 256GB"
+  }
+}
