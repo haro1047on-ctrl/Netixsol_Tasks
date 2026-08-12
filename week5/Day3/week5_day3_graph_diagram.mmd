@@ -1,0 +1,17 @@
+%% Week 5 Day 3 — Research-assistant LangGraph workflow
+%% Render at https://mermaid.live or via any Mermaid-compatible viewer/editor.
+graph TD
+    START([START]) --> plan[plan]
+    plan --> retrieve[retrieve]
+    retrieve --> generate[generate]
+    generate --> critique[critique]
+    critique -- "score < 0.7 and revisions < max" --> generate
+    critique -- "score >= 0.7 or out of revisions" --> publish_gate
+    publish_gate["publish_gate (interrupt_before: pauses for human approval)"]
+    publish_gate -- approved --> publish[publish]
+    publish_gate -- rejected --> rejected_end[rejected_end]
+    publish --> END([END])
+    rejected_end --> END
+
+    classDef interrupt fill:#fff3cd,stroke:#997404,stroke-width:2px;
+    class publish_gate interrupt;
