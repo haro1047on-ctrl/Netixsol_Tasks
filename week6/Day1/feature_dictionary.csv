@@ -1,0 +1,21 @@
+feature,type,window,source,description
+roll3_win,numeric,last 3 games,result,Team win rate over last 3 matches (no-leakage)
+roll5_win,numeric,last 5 games,result,Team win rate over last 5 matches
+roll3_goals,numeric,last 3 games,goals,Team total goals over last 3 matches
+roll5_goals,numeric,last 5 games,goals,Team total goals over last 5 matches
+roll3_disposals,numeric,last 3 games,disposals,Team total disposals over last 3 matches
+roll5_disposals,numeric,last 5 games,disposals,Team total disposals over last 5 matches
+roll3_fantasy_points,numeric,last 3 games,fantasy_points,Team total fantasy points over last 3 matches
+roll5_fantasy_points,numeric,last 5 games,fantasy_points,Team total fantasy points over last 5 matches
+win_streak,integer,current,result,Current consecutive wins (capped at 5)
+loss_streak,integer,current,result,Current consecutive losses (capped at 5)
+h2h_winrate,numeric,all history,result+opponent,Historical win rate against this specific opponent
+h2h_cumgames,integer,all history,result+opponent,Number of previous meetings against this opponent
+is_home,binary,current,home_away,"1 if team is playing at home ground, 0 otherwise"
+venue_winrate,numeric,all history,venue+result,Historical win rate at this specific venue
+crowd,numeric,current,crowd,Crowd attendance at the match
+rest_days,integer,current,match_date,Days since team's last match
+rest_advantage,integer,current,match_date,rest_days minus opponent's rest_days (positive = more rested)
+season_cumwins,integer,season to date,result,Cumulative wins this season before this match
+season_cumgames,integer,season to date,result,Cumulative games played this season before this match
+season_winpct,numeric,season to date,result,Season win % at time of match (proxy for ladder position)
