@@ -1,0 +1,41 @@
+{
+  "match_winner": {
+    "baseline_always_home": {
+      "accuracy": 0.587,
+      "f1": 0.575,
+      "roc_auc": 0.587,
+      "brier": "-"
+    },
+    "baseline_season_record": {
+      "accuracy": 0.592,
+      "f1": 0.645,
+      "roc_auc": 0.592,
+      "brier": "-"
+    },
+    "logistic_regression": {
+      "accuracy": 0.643,
+      "f1": 0.631,
+      "roc_auc": 0.671,
+      "brier": 0.229
+    },
+    "hist_gradient_boosting": {
+      "accuracy": 0.641,
+      "f1": 0.63,
+      "roc_auc": 0.676,
+      "brier": 0.227
+    }
+  },
+  "top_player": {
+    "baseline_career_avg": {
+      "top1_hitrate": 0.051,
+      "top5_hitrate": 0.303
+    },
+    "gbm_regression": {
+      "mae": 17.41,
+      "rmse": 22.14,
+      "top1_hitrate": 0.131,
+      "top5_hitrate": 0.444,
+      "top10_hitrate": 0.717
+    }
+  }
+}

@@ -86,32 +86,27 @@ def get_team_stats(team_name: str, opponent_name: Optional[str] = None, year: Op
 
 def resolve_player(query_str: str) -> Optional[pd.DataFrame]:
     """Resolves player query string using token matching and fallbacks."""
-    raw_q = query_str.lower().strip()
-    q = re.sub(r'\b(total|disposals|goals|behinds|kicks|marks|tackles|handballs|stats|season|average|avg|in \d{4})\b', '', raw_q, flags=re.IGNORECASE).strip()
+    raw_q = re.sub(r'[^\w\s]', '', query_str.lower()).strip()
+    q = re.sub(r'\b(how|many|did|does|do|have|has|what|who|were|was|is|are|the|a|an|in|for|of|get|accumulate|total|disposals|goals|behinds|kicks|marks|tackles|handballs|stats|season|average|avg|\d{4})\b', '', raw_q, flags=re.IGNORECASE).strip()
+    q = re.sub(r'\s+', ' ', q).strip()
     if not q:
         q = raw_q
 
     # Direct substring search
-    df = player_rbr_df[player_rbr_df['player_name'].str.lower().str.contains(q, na=False)]
+    df = player_rbr_df[player_rbr_df['player_name'].str.lower().str.contains(q, na=False, regex=False)]
     if not df.empty:
         return df
 
-    # Token match (all tokens in query present in name)
+    # Token match (all tokens in q present in name)
     tokens = q.split()
-    if len(tokens) > 1:
+    if len(tokens) > 0:
         cond = player_rbr_df['player_name'].str.lower().apply(lambda x: isinstance(x, str) and all(t in x for t in tokens))
         df = player_rbr_df[cond]
         if not df.empty:
             return df
 
-    # Last name match fallback
-    last_word = tokens[-1] if tokens else q
-    df = player_rbr_df[player_rbr_df['player_name'].str.lower().str.contains(last_word, na=False)]
-    if not df.empty:
-        return df
-
     # Fallback to player_comb_df
-    comb_match = player_comb_df[player_comb_df['player_name'].str.lower().str.contains(q, na=False)]
+    comb_match = player_comb_df[player_comb_df['player_name'].str.lower().str.contains(q, na=False, regex=False)]
     if not comb_match.empty:
         pid = comb_match['player_id'].iloc[0]
         return player_rbr_df[player_rbr_df['player_id'] == pid]
