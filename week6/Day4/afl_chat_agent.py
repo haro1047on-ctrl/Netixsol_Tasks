@@ -52,6 +52,96 @@ if 'player_name' not in player_rbr_df.columns:
     player_rbr_df['player_name'] = player_rbr_df['player_id'].map(name_mapping)
 
 
+# ==============================================================================
+# GOAT SCORING ENGINE
+# Weighted composite score across all career stats to find the greatest player.
+# ==============================================================================
+GOAT_WEIGHTS = {
+    "games":      0.20,   # Longevity & consistency
+    "disposals":  0.22,   # Primary ball-winning stat
+    "kicks":      0.15,   # Execution quality
+    "marks":      0.12,   # Aerial/positional skill
+    "goals":      0.18,   # Match impact / scoring
+    "handballs":  0.08,   # Teamwork & distribution
+    "tackles":    0.05,   # Defensive work rate
+}
+
+def get_goat_player(min_games: int = 50) -> str:
+    """
+    Ranks all AFL players by a weighted composite GOAT score computed from
+    normalized career totals across disposals, goals, kicks, marks, tackles,
+    handballs, and games played. Returns a formatted GOAT verdict with
+    the top player breakdown and the runners-up.
+    """
+    import numpy as np
+    df = player_rbr_df.copy()
+
+    # Require minimum games for statistical significance
+    stat_cols = list(GOAT_WEIGHTS.keys())
+    available_cols = [c for c in stat_cols if c in df.columns]
+    if "games" not in df.columns:
+        df["games"] = 1  # each row = 1 game
+
+    # Aggregate career totals per player
+    agg = {"games": "count"}
+    for col in available_cols:
+        if col != "games":
+            agg[col] = "sum"
+    career = df.groupby("player_name").agg(agg).reset_index()
+    career.columns = ["player_name"] + [c for c in agg.keys()]
+    career = career.rename(columns={"games": "games"})
+
+    # Filter players with enough games
+    career = career[career["games"] >= min_games].copy()
+
+    if career.empty:
+        return "Not enough career data to determine the GOAT."
+
+    # Min-max normalize each stat (0–1 scale)
+    for col in available_cols:
+        mn, mx = career[col].min(), career[col].max()
+        career[f"{col}_norm"] = (career[col] - mn) / (mx - mn) if mx > mn else 0.0
+
+    # Compute weighted composite GOAT score
+    career["goat_score"] = 0.0
+    for col, weight in GOAT_WEIGHTS.items():
+        norm_col = f"{col}_norm"
+        if norm_col in career.columns:
+            career["goat_score"] += career[norm_col] * weight
+
+    career = career.sort_values("goat_score", ascending=False).reset_index(drop=True)
+    top = career.iloc[0]
+    runners_up = career.iloc[1:4]
+
+    # Build response
+    lines = [
+        f"🏆 **AFL GOAT — Greatest of All Time (Statistical Composite)**",
+        f"",
+        f"**#{1} {top['player_name']}** — GOAT Score: {round(top['goat_score'] * 100, 1)}/100",
+        f"  • Career Games:    {int(top['games'])}",
+        f"  • Total Disposals: {int(top.get('disposals', 0))}",
+        f"  • Total Goals:     {int(top.get('goals', 0))}",
+        f"  • Total Kicks:     {int(top.get('kicks', 0))}",
+        f"  • Total Marks:     {int(top.get('marks', 0))}",
+        f"  • Total Handballs: {int(top.get('handballs', 0))}",
+        f"  • Total Tackles:   {int(top.get('tackles', 0))}",
+        f"",
+        f"**Score Breakdown (Weighted):**",
+        f"  Disposals (22%) + Goals (18%) + Games (20%) + Kicks (15%) + Marks (12%) + Handballs (8%) + Tackles (5%)",
+        f"",
+        f"**Runners-Up:**",
+    ]
+    for rank, (_, row) in enumerate(runners_up.iterrows(), 2):
+        lines.append(
+            f"  #{rank} {row['player_name']} — Score: {round(row['goat_score'] * 100, 1)}/100"
+            f" (Games: {int(row['games'])}, Disposals: {int(row.get('disposals', 0))}, Goals: {int(row.get('goals', 0))})"
+        )
+    lines.append("")
+    lines.append("> *GOAT Score is a statistical composite based on normalized career totals. It reflects volume and consistency across all major AFL statistics, not individual brilliance in any single category.*")
+
+    return "\n".join(lines)
+
+
 def resolve_team(query_str: str) -> Optional[str]:
     """Find closest matching team name in the dataset."""
     q = query_str.lower().strip()
