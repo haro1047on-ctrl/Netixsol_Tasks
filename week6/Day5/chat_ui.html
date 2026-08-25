@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFL AI Assistant — Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep:    #0a0f0a;
+      --bg-card:    #111811;
+      --bg-input:   #181f18;
+      --afl-green:  #1a7a3a;
+      --afl-light:  #2db055;
+      --afl-gold:   #f0c040;
+      --text-main:  #e8f5e8;
+      --text-muted: #6b876b;
+      --border:     #1e2e1e;
+      --user-bubble: #1a3a1a;
+      --bot-bubble:  #111f11;
+      --radius:     12px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Header ── */
+    header {
+      width: 100%;
+      max-width: 860px;
+      padding: 18px 24px 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--afl-green), var(--afl-gold));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 700; color: #fff;
+      box-shadow: 0 0 18px rgba(26,122,58,0.5);
+    }
+    header h1 { font-size: 1.15rem; font-weight: 600; color: var(--text-main); }
+    header p  { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .status-dot {
+      margin-left: auto;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--afl-light);
+      box-shadow: 0 0 8px var(--afl-light);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    /* ── Chat Window ── */
+    #chat-window {
+      width: 100%;
+      max-width: 860px;
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      scroll-behavior: smooth;
+    }
+    #chat-window::-webkit-scrollbar { width: 5px; }
+    #chat-window::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* ── Messages ── */
+    .msg { display: flex; gap: 10px; max-width: 85%; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .msg.user  { align-self: flex-end; flex-direction: row-reverse; }
+    .msg.agent { align-self: flex-start; }
+
+    .avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; flex-shrink: 0;
+    }
+    .msg.user  .avatar { background: var(--afl-green); color: #fff; }
+    .msg.agent .avatar { background: var(--bg-card); border: 1px solid var(--border); color: var(--afl-gold); }
+
+    .bubble {
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .msg.user  .bubble { background: var(--user-bubble); border: 1px solid var(--afl-green); }
+    .msg.agent .bubble { background: var(--bot-bubble);  border: 1px solid var(--border); }
+
+    /* ── Meta badges ── */
+    .meta {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-top: 6px; padding-left: 42px;
+    }
+    .badge {
+      font-size: 0.68rem; padding: 2px 8px;
+      border-radius: 20px; border: 1px solid var(--border);
+      color: var(--text-muted); background: var(--bg-card);
+    }
+    .badge.intent-prediction  { border-color: var(--afl-gold);  color: var(--afl-gold); }
+    .badge.intent-retrieval   { border-color: #4a9eff; color: #4a9eff; }
+    .badge.intent-factual     { border-color: #a78bfa; color: #a78bfa; }
+    .badge.intent-off_topic   { border-color: #f87171; color: #f87171; }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      font-size: 0.72rem; color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 8px; padding-top: 6px;
+      font-style: italic;
+    }
+
+    /* ── Typing indicator ── */
+    .typing .bubble { display: flex; gap: 4px; align-items: center; padding: 14px 16px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--afl-light); animation: bounce 1.2s infinite; }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce { 0%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+
+    /* ── Input bar ── */
+    #input-area {
+      width: 100%; max-width: 860px;
+      padding: 14px 24px 20px;
+      border-top: 1px solid var(--border);
+    }
+    #input-row {
+      display: flex; gap: 10px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px 8px 8px 16px;
+      transition: border-color 0.2s;
+    }
+    #input-row:focus-within { border-color: var(--afl-light); }
+    #msg-input {
+      flex: 1; background: none; border: none; outline: none;
+      color: var(--text-main); font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; resize: none; max-height: 120px;
+      padding: 4px 0;
+    }
+    #msg-input::placeholder { color: var(--text-muted); }
+    #send-btn {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--afl-green); border: none; cursor: pointer;
+      color: #fff; font-size: 17px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.1s;
+      flex-shrink: 0;
+    }
+    #send-btn:hover  { background: var(--afl-light); }
+    #send-btn:active { transform: scale(0.94); }
+    #send-btn:disabled { background: var(--border); cursor: not-allowed; }
+
+    #hint { font-size: 0.72rem; color: var(--text-muted); margin-top: 8px; text-align: center; }
+
+    /* ── Welcome card ── */
+    #welcome {
+      align-self: center; text-align: center;
+      padding: 30px 24px; max-width: 520px;
+    }
+    #welcome h2 { font-size: 1.3rem; color: var(--afl-gold); margin-bottom: 8px; }
+    #welcome p  { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+    #welcome .chips {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin-top: 18px;
+    }
+    .chip {
+      padding: 7px 14px; border-radius: 20px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--text-main); cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .chip:hover { border-color: var(--afl-light); color: var(--afl-light); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">A</div>
+  <div>
+    <h1>AFL AI Assistant</h1>
+    <p>Powered by LangGraph &amp; Gemini — Domain-locked AFL Intelligence</p>
+  </div>
+  <div class="status-dot" title="API connected"></div>
+</header>
+
+<div id="chat-window">
+  <div id="welcome">
+    <h2>G'Day, AFL Fan!</h2>
+    <p>Ask me anything about AFL — player stats, match predictions, team records, or league rules. I'm grounded in data from 1983 to 2025.</p>
+    <div class="chips">
+      <span class="chip" onclick="fillInput(this)">Sam Walsh disposals 2023</span>
+      <span class="chip" onclick="fillInput(this)">Will the Pies beat the Cats?</span>
+      <span class="chip" onclick="fillInput(this)">Top 5 goal scorers in 2023</span>
+      <span class="chip" onclick="fillInput(this)">Who is the AFL GOAT?</span>
+      <span class="chip" onclick="fillInput(this)">Collingwood win rate 2022-2023</span>
+      <span class="chip" onclick="fillInput(this)">What is a mark inside 50?</span>
+    </div>
+  </div>
+</div>
+
+<div id="input-area">
+  <div id="input-row">
+    <textarea id="msg-input" rows="1" placeholder="Ask an AFL question..." maxlength="800"></textarea>
+    <button id="send-btn" onclick="sendMessage()" title="Send">&#10148;</button>
+  </div>
+  <p id="hint">Powered by LangGraph &bull; AFL data 1983&ndash;2025 &bull; Type /reset to clear</p>
+</div>
+
+<script>
+  const API_BASE = "http://localhost:8000";
+  let conversationId = crypto.randomUUID();
+
+  const chatWindow = document.getElementById("chat-window");
+  const input = document.getElementById("msg-input");
+  const sendBtn = document.getElementById("send-btn");
+  let welcome = document.getElementById("welcome");
+
+  // Auto-resize textarea
+  input.addEventListener("input", () => {
+    input.style.height = "auto";
+    input.style.height = Math.min(input.scrollHeight, 120) + "px";
+  });
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+
+  function fillInput(el) {
+    input.value = el.textContent;
+    input.focus();
+  }
+
+  function appendMessage(role, text, meta) {
+    if (welcome) { welcome.remove(); welcome = null; }
+
+    const wrap = document.createElement("div");
+    wrap.className = `msg ${role}`;
+
+    const av = document.createElement("div");
+    av.className = "avatar";
+    av.textContent = role === "user" ? "U" : "AI";
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.textContent = text;
+
+    if (meta?.disclaimer) {
+      const d = document.createElement("div");
+      d.className = "disclaimer";
+      d.textContent = meta.disclaimer;
+      bubble.appendChild(d);
+    }
+
+    wrap.appendChild(av);
+    wrap.appendChild(bubble);
+    chatWindow.appendChild(wrap);
+
+    if (meta && role === "agent") {
+      const metaRow = document.createElement("div");
+      metaRow.className = "meta";
+      const intent = meta.intent || "unknown";
+      const b1 = document.createElement("span");
+      b1.className = `badge intent-${intent}`;
+      b1.textContent = `Intent: ${intent}`;
+      const b2 = document.createElement("span");
+      b2.className = "badge";
+      b2.textContent = `${meta.latency_ms}ms`;
+      metaRow.appendChild(b1);
+      metaRow.appendChild(b2);
+      if (meta.tools_called?.length) {
+        const b3 = document.createElement("span");
+        b3.className = "badge";
+        b3.textContent = `Tools: ${meta.tools_called.join(", ")}`;
+        metaRow.appendChild(b3);
+      }
+      chatWindow.appendChild(metaRow);
+    }
+
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+    return wrap;
+  }
+
+  function addTypingIndicator() {
+    if (welcome) { welcome.remove(); welcome = null; }
+    const wrap = document.createElement("div");
+    wrap.className = "msg agent typing";
+    wrap.id = "typing-indicator";
+    const av = document.createElement("div");
+    av.className = "avatar"; av.textContent = "AI";
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+    wrap.appendChild(av); wrap.appendChild(bubble);
+    chatWindow.appendChild(wrap);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const t = document.getElementById("typing-indicator");
+    if (t) t.remove();
+  }
+
+  async function sendMessage() {
+    let text = input.value.trim();
+    if (!text || sendBtn.disabled) return;
+
+    if (text.toLowerCase() === "/reset") {
+      conversationId = crypto.randomUUID();
+      chatWindow.innerHTML = "";
+      input.value = "";
+      appendMessage("agent", "Conversation reset. Starting fresh — ask me an AFL question!", {});
+      return;
+    }
+
+    appendMessage("user", text);
+    input.value = "";
+    input.style.height = "auto";
+    sendBtn.disabled = true;
+    addTypingIndicator();
+
+    try {
+      const res = await fetch(`${API_BASE}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, conversation_id: conversationId })
+      });
+      const data = await res.json();
+      removeTypingIndicator();
+
+      if (!res.ok) {
+        appendMessage("agent", `Error: ${data.detail || "Unknown error from API."}`, {});
+      } else {
+        appendMessage("agent", data.response, {
+          intent: data.intent,
+          latency_ms: data.latency_ms,
+          tools_called: data.tools_called,
+          disclaimer: data.disclaimer
+        });
+      }
+    } catch (err) {
+      removeTypingIndicator();
+      appendMessage("agent",
+        "Cannot connect to the AFL API server.\n\nMake sure it is running:\n  uvicorn afl_api:app --port 8000\n\nThen refresh this page.", {});
+    }
+
+    sendBtn.disabled = false;
+    input.focus();
+  }
+</script>
+</body>
+</html>

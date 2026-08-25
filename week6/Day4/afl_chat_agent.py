@@ -115,21 +115,21 @@ def get_goat_player(min_games: int = 50) -> str:
 
     # Build response
     lines = [
-        f"🏆 **AFL GOAT — Greatest of All Time (Statistical Composite)**",
+        f"*** AFL GOAT -- Greatest of All Time (Statistical Composite) ***",
         f"",
-        f"**#{1} {top['player_name']}** — GOAT Score: {round(top['goat_score'] * 100, 1)}/100",
-        f"  • Career Games:    {int(top['games'])}",
-        f"  • Total Disposals: {int(top.get('disposals', 0))}",
-        f"  • Total Goals:     {int(top.get('goals', 0))}",
-        f"  • Total Kicks:     {int(top.get('kicks', 0))}",
-        f"  • Total Marks:     {int(top.get('marks', 0))}",
-        f"  • Total Handballs: {int(top.get('handballs', 0))}",
-        f"  • Total Tackles:   {int(top.get('tackles', 0))}",
+        f"#{1}. {top['player_name']} -- GOAT Score: {round(top['goat_score'] * 100, 1)}/100",
+        f"  Games Played:    {int(top['games'])}",
+        f"  Total Disposals: {int(top.get('disposals', 0))}",
+        f"  Total Goals:     {int(top.get('goals', 0))}",
+        f"  Total Kicks:     {int(top.get('kicks', 0))}",
+        f"  Total Marks:     {int(top.get('marks', 0))}",
+        f"  Total Handballs: {int(top.get('handballs', 0))}",
+        f"  Total Tackles:   {int(top.get('tackles', 0))}",
         f"",
-        f"**Score Breakdown (Weighted):**",
-        f"  Disposals (22%) + Goals (18%) + Games (20%) + Kicks (15%) + Marks (12%) + Handballs (8%) + Tackles (5%)",
+        f"Score Breakdown (Weighted Composite):",
+        f"  Disposals (22%) + Goals (18%) + Games Played (20%) + Kicks (15%) + Marks (12%) + Handballs (8%) + Tackles (5%)",
         f"",
-        f"**Runners-Up:**",
+        f"Runners-Up:",
     ]
     for rank, (_, row) in enumerate(runners_up.iterrows(), 2):
         lines.append(

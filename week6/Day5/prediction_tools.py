@@ -1,0 +1,217 @@
+"""
+AFL Prediction Engine & Tools
+Handles match winner predictions, player performance forecasts, and season premier rankings.
+"""
+
+import os
+import sys
+import re
+import importlib
+import pandas as pd
+import numpy as np
+from typing import Dict, Any, Optional
+
+BASE_DIR = os.path.dirname(__file__)
+PARENT_DIR = os.path.dirname(BASE_DIR)
+
+def find_dataset(filename: str) -> str:
+    for path in [BASE_DIR, os.path.join(PARENT_DIR, "Day3"), os.path.join(PARENT_DIR, "Day1")]:
+        full = os.path.join(path, filename)
+        if os.path.exists(full):
+            return full
+    return os.path.join(BASE_DIR, filename)
+
+feature_df = pd.read_csv(find_dataset("afl_feature_table_v1.csv")) if os.path.exists(find_dataset("afl_feature_table_v1.csv")) else pd.DataFrame()
+home_away_df = pd.read_csv(find_dataset("team_matches_home_away_clean.csv")) if os.path.exists(find_dataset("team_matches_home_away_clean.csv")) else pd.DataFrame()
+player_rbr_df = pd.read_csv(find_dataset("players_round_by_round_clean.csv")) if os.path.exists(find_dataset("players_round_by_round_clean.csv")) else pd.DataFrame()
+player_comb_df = pd.read_csv(find_dataset("afl_comb_CLdata.csv")) if os.path.exists(find_dataset("afl_comb_CLdata.csv")) else pd.DataFrame()
+
+if not player_rbr_df.empty and 'player_name' not in player_rbr_df.columns and not player_comb_df.empty:
+    name_map = dict(zip(player_comb_df['player_id'], player_comb_df['player_name']))
+    player_rbr_df['player_name'] = player_rbr_df['player_id'].map(name_map)
+
+TEAM_ALIASES = {
+    "pies": "Collingwood Magpies", "collingwood": "Collingwood Magpies", "magpies": "Collingwood Magpies",
+    "cats": "Geelong Cats", "geelong": "Geelong Cats", "hawks": "Hawthorn Hawks", "hawthorn": "Hawthorn Hawks",
+    "tigers": "Richmond Tigers", "richmond": "Richmond Tigers", "swans": "Sydney Swans", "sydney": "Sydney Swans",
+    "bombers": "Essendon Bombers", "essendon": "Essendon Bombers", "blues": "Carlton Blues", "carlton": "Carlton Blues",
+    "lions": "Brisbane Lions", "brisbane": "Brisbane Lions", "demons": "Melbourne Demons", "melbourne": "Melbourne Demons",
+    "dees": "Melbourne Demons", "eagles": "West Coast Eagles", "west coast": "West Coast Eagles",
+    "dockers": "Fremantle Dockers", "fremantle": "Fremantle Dockers", "freo": "Fremantle Dockers",
+    "saints": "St Kilda Saints", "st kilda": "St Kilda Saints", "bulldogs": "Western Bulldogs",
+    "doggies": "Western Bulldogs", "kangaroos": "North Melbourne Kangaroos", "roos": "North Melbourne Kangaroos",
+    "crows": "Adelaide Crows", "adelaide": "Adelaide Crows", "power": "Port Adelaide Power", "port": "Port Adelaide Power",
+    "giants": "Greater Western Sydney Giants", "gws": "Greater Western Sydney Giants", "suns": "Gold Coast Suns"
+}
+
+def resolve_team_alias(team_str: Optional[str]) -> Optional[str]:
+    if not team_str:
+        return None
+    q = team_str.lower().strip()
+    if q in TEAM_ALIASES:
+        return TEAM_ALIASES[q]
+    for alias, official in TEAM_ALIASES.items():
+        if len(alias) > 2 and alias in q:
+            return official
+    if not feature_df.empty and 'team' in feature_df.columns:
+        for t in feature_df['team'].unique():
+            if q in t.lower() or t.lower() in q:
+                return t
+    return None
+
+# Load Day 2 Model if present
+DAY2_DIR = os.path.join(PARENT_DIR, "Day2")
+if os.path.exists(DAY2_DIR) and DAY2_DIR not in sys.path:
+    sys.path.append(DAY2_DIR)
+
+DAY2_PREDICT_AVAILABLE = False
+day2_predict = None
+try:
+    day2_predict = importlib.import_module("predict")
+    DAY2_PREDICT_AVAILABLE = True
+except Exception:
+    DAY2_PREDICT_AVAILABLE = False
+
+
+def predict_match_winner(team_a_str: str, team_b_str: str) -> Dict[str, Any]:
+    team_a = resolve_team_alias(team_a_str)
+    team_b = resolve_team_alias(team_b_str)
+
+    if not team_a or not team_b or team_a == team_b:
+        return {"status": "ERROR", "message": "Could not resolve two opposing AFL teams."}
+
+    if DAY2_PREDICT_AVAILABLE:
+        try:
+            res = day2_predict.predict_match_winner(team_a, team_b, "2024-07-20", home_team=team_a)
+            winner = res["winner"]
+            winner_prob = round(res["probability"] * 100, 1)
+            loser = team_b if winner == team_a else team_a
+            return {
+                "status": "SUCCESS", "predicted_winner": winner, "win_probability": winner_prob,
+                "loser": loser, "loser_probability": round(100 - winner_prob, 1),
+                "confidence": res["confidence"].upper(), "team_a": team_a, "team_b": team_b,
+                "driving_features": [
+                    "HistGradientBoosting ML Model trained on rolling AFL match features",
+                    "Incorporates 3-match and 5-match rolling form and goal averages",
+                    "Factored head-to-head records and venue win ratios"
+                ],
+                "disclaimer": "PREDICTION DISCLAIMER: Probabilistic estimate generated by trained ML models."
+            }
+        except Exception:
+            pass
+
+    # Statistical Logit Engine Fallback
+    df_a = feature_df[feature_df['team'] == team_a] if not feature_df.empty else pd.DataFrame()
+    df_b = feature_df[feature_df['team'] == team_b] if not feature_df.empty else pd.DataFrame()
+
+    wr_a = df_a['win'].mean() if not df_a.empty and 'win' in df_a else 0.50
+    wr_b = df_b['win'].mean() if not df_b.empty and 'win' in df_b else 0.50
+
+    score_a = (wr_a * 0.6) + (df_a.tail(10)['win'].mean() * 0.4 if not df_a.empty else 0.2)
+    score_b = (wr_b * 0.6) + (df_b.tail(10)['win'].mean() * 0.4 if not df_b.empty else 0.2)
+
+    prob_a = round(float(np.exp(score_a * 3) / (np.exp(score_a * 3) + np.exp(score_b * 3))) * 100, 1)
+    prob_b = round(100 - prob_a, 1)
+
+    winner, loser = (team_a, team_b) if prob_a >= prob_b else (team_b, team_a)
+    win_p = prob_a if winner == team_a else prob_b
+
+    return {
+        "status": "SUCCESS", "predicted_winner": winner, "win_probability": win_p,
+        "loser": loser, "loser_probability": round(100 - win_p, 1),
+        "confidence": "HIGH" if win_p >= 65 else "MODERATE",
+        "team_a": team_a, "team_b": team_b,
+        "driving_features": [
+            f"Overall Win Rate: {winner} maintains a higher season win rate",
+            f"Recent Form: Evaluated over recent match performance"
+        ],
+        "disclaimer": "PREDICTION DISCLAIMER: Probabilistic estimate based on team statistics."
+    }
+
+
+def predict_top_player(team_or_match_str: Optional[str] = None, stat_type: str = "disposals", top_n: int = 5) -> Dict[str, Any]:
+    stat_col = stat_type.lower().strip()
+    valid_cols = {"disposals", "goals", "kicks", "marks", "tackles", "behinds"}
+    if stat_col not in valid_cols:
+        return {"status": "ERROR", "message": f"Unsupported stat type '{stat_type}'."}
+
+    team_resolved = resolve_team_alias(team_or_match_str) if team_or_match_str else None
+    df = player_rbr_df.copy() if not player_rbr_df.empty else pd.DataFrame()
+
+    if df.empty or stat_col not in df.columns:
+        return {"status": "ERROR", "message": "Player dataset unavailable."}
+
+    if 'year' in df.columns:
+        active = df[df['year'] >= 2020]
+        if not active.empty:
+            df = active
+
+    if team_resolved and 'team' in df.columns:
+        df_team = df[df['team'] == team_resolved]
+        if not df_team.empty:
+            df = df_team
+
+    grouped = df.groupby('player_name').agg({
+        stat_col: ['mean', 'max', 'count'],
+        'team': 'last' if 'team' in df.columns else lambda x: "AFL"
+    }).reset_index()
+
+    grouped.columns = ['player_name', 'mean', 'max', 'count', 'team']
+    grouped = grouped[grouped['count'] >= 5].sort_values(by='mean', ascending=False).reset_index(drop=True)
+
+    if grouped.empty:
+        return {"status": "ERROR", "message": f"No active statistics found for '{team_or_match_str}'."}
+
+    top_list = []
+    for i in range(min(top_n, len(grouped))):
+        r = grouped.iloc[i]
+        top_list.append({
+            "rank": i + 1, "player_name": r['player_name'], "team": r['team'],
+            "expected_average": round(float(r['mean']), 1), "recent_peak": int(r['max'])
+        })
+
+    top_p = grouped.iloc[0]
+
+    return {
+        "status": "SUCCESS", "predicted_player": top_p['player_name'],
+        "top_players": top_list, "stat_type": stat_col.title(),
+        "expected_average": round(float(top_p['mean']), 1), "recent_peak": int(top_p['max']),
+        "team": team_resolved or "League-wide", "confidence": "HIGH",
+        "driving_features": [
+            f"Consistent Form: {top_p['player_name']} averages {round(float(top_p['mean']), 1)} {stat_col}/match",
+            "Active Form Filtering: Calculated on active AFL roster data (2020–2025)"
+        ],
+        "disclaimer": "PREDICTION DISCLAIMER: Player performance predictions reflect probabilistic expectations."
+    }
+
+
+def predict_season_premier(target_year: Optional[int] = None) -> Dict[str, Any]:
+    if feature_df.empty or "win" not in feature_df.columns:
+        return {"status": "ERROR", "message": "Feature data unavailable."}
+
+    scores = []
+    for tname, row in feature_df.groupby("team"):
+        w_all = float(row["win"].mean())
+        w_rec = float(row.tail(10)["win"].mean()) if len(row) >= 10 else w_all
+        margin = float(row["margin"].mean()) if "margin" in row else 0.0
+        score = (w_rec * 0.50) + (w_all * 0.35) + (np.clip(margin, -20, 20) / 100 * 0.15)
+        scores.append({"team": tname, "score": score, "win_rate": w_all})
+
+    sdf = pd.DataFrame(scores).sort_values(by="score", ascending=False).reset_index(drop=True)
+    top5 = sdf.head(5).copy()
+    exp_s = np.exp(top5["score"] * 3)
+    top5["prob"] = (exp_s / exp_s.sum() * 100).round(1)
+
+    top_team = top5.iloc[0]["team"]
+    runners = [f"  - {r['team']}: {r['prob']}% probability (Win Rate: {round(r['win_rate']*100, 1)}%)" for _, r in top5.iloc[1:].iterrows()]
+
+    return {
+        "status": "SUCCESS", "predicted_winner": top_team,
+        "win_probability": float(top5.iloc[0]["prob"]), "target_year": target_year or "Upcoming Season",
+        "confidence": "MODERATE", "runners_up": runners,
+        "driving_features": [
+            "Composite feature score combining 10-match rolling form (50%), overall win rate (35%), and point differential (15%)",
+            f"Top Ranked Team: {top_team} holds the highest form score across all 18 AFL clubs"
+        ],
+        "disclaimer": "PREDICTION DISCLAIMER: Probabilistic forecast generated by Day 2 feature models."
+    }

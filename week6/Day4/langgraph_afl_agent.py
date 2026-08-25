@@ -1,457 +1,311 @@
 """
-Day 4: LangGraph Orchestrated AFL Assistant
-Integrates Intent Routing, State Schema, Retrieval Nodes, Prediction Tools,
-Validation & Clarification Loop, and Response Formatting.
+LangGraph Orchestrated AFL Assistant
+Domain-locked chat & prediction state machine for AFL.
 """
 
-import afl_chat_agent
 import os
 import re
+import sys
 import pandas as pd
-from typing import TypedDict, List, Dict, Any, Optional, Annotated
+from typing import TypedDict, List, Dict, Any, Optional
 from dotenv import load_dotenv
 
-from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
 
-# Import Day 4 Prediction Tools
-from prediction_tools import predict_match_winner, predict_top_player, resolve_team_alias
-
-# Import Day 3 Retrieval Engine Tools
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", "Day3"))
-try:
-    from afl_chat_agent import (
-        get_team_stats,
-        get_player_stats,
-        get_team_match_results,
-        get_stat_leaders,
-        compare_players,
-        get_afl_rules_and_info,
-        verify_grounding
-    )
-except ImportError:
-    # Fallback inline imports if Day3 package path varies
-    from afl_chat_agent import get_team_stats, get_player_stats, get_afl_rules_and_info
+from prediction_tools import (
+    predict_match_winner, predict_top_player, predict_season_premier,
+    resolve_team_alias, TEAM_ALIASES, feature_df
+)
+from afl_chat_agent import (
+    get_team_stats, get_player_stats, get_team_match_results,
+    get_stat_leaders, compare_players, get_afl_rules_and_info,
+    get_goat_player, home_away_df, resolve_team, resolve_player
+)
 
 load_dotenv()
-
-# Initialize LLM for router and response formatting
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.0)
 
 
-# ==============================================================================
-# 1. STATE SCHEMA DESIGN
-# ==============================================================================
 class AFLAgentState(TypedDict):
     user_query: str
     messages: List[BaseMessage]
-    detected_intent: str           # "prediction", "retrieval", "factual", "off_topic"
-    entities: Dict[str, Any]        # Extracted teams, players, stat_type, year
-    tool_results: Dict[str, Any]    # Raw output from executed tools
-    validation_status: str          # "VALID", "NEEDS_CLARIFICATION", "OUT_OF_SCOPE"
+    detected_intent: str
+    entities: Dict[str, Any]
+    tool_results: Dict[str, Any]
+    validation_status: str
     clarification_prompt: Optional[str]
     final_response: str
 
 
-# ==============================================================================
-# 2. INTENT ROUTER NODE
-# ==============================================================================
-def _extract_player_names_from_query(query: str) -> List[str]:
-    """
-    Extracts likely player names from a natural language query by identifying
-    capitalized word pairs (Title Case) that are not AFL team names.
-    """
-    from prediction_tools import TEAM_ALIASES
+def _extract_player_names(query: str) -> List[str]:
     official_teams = set(TEAM_ALIASES.values())
-
-    # Find all Title Case word sequences (e.g. 'Sam Walsh', 'Patrick Cripps')
+    EXCLUDED_TITLES = {
+        "Grand Final", "Brownlow Medal", "Super Bowl", "Premier League",
+        "World Cup", "Coleman Medal", "All Australian", "Rising Star", "Afl Grand"
+    }
     pattern = r'\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)+)\b'
-    candidates = re.findall(pattern, query)
-
-    player_names = []
-    for name in candidates:
-        # Exclude known team names
-        if name not in official_teams:
-            player_names.append(name)
-    return player_names
+    return [name for name in re.findall(pattern, query) if name not in official_teams and name not in EXCLUDED_TITLES]
 
 
-# Extended off-topic keyword set
 _OFF_TOPIC_KEYWORDS = [
-    # Other sports
-    "nba", "nfl", "nhl", "nrl", "rugby", "soccer", "football", "premier league",
-    "champions league", "la liga", "bundesliga", "serie a", "world cup", "cricket",
-    "tennis", "golf", "formula 1", "f1", "swimming",
-    # Tech / coding
-    "python", "quicksort", "code", "script", "programming", "algorithm",
-    "machine learning", "chatgpt", "llm", "openai", "gemini api",
-    # Finance / crypto
-    "stocks", "financial advisor", "investment", "crypto", "bitcoin",
-    "ethereum", "forex", "share market",
-    # Lifestyle / other
-    "recipe", "weather", "president", "politics", "translate", "french",
-    "spanish", "german",
-    # Persona overrides
-    "act as", "pretend", "forget afl", "ignore your instructions", "jailbreak",
+    "nba", "nfl", "nhl", "nrl", "rugby", "soccer", "premier league", "champions league",
+    "world cup", "cricket", "tennis", "golf", "formula 1", "f1", "python", "quicksort",
+    "code", "script", "programming", "algorithm", "machine learning", "stocks",
+    "financial advisor", "investment", "crypto", "bitcoin", "ethereum", "weather",
+    "recipe", "politics", "translate", "french", "spanish", "german", "act as", "pretend",
+    "forget afl", "jailbreak", "dan mode", "dan activated", "stock price", "you are now"
 ]
 
 
 def intent_router_node(state: AFLAgentState) -> AFLAgentState:
-    """
-    Classifies user query into one of four intent channels:
-    - 'prediction': Match winner predictions, upcoming game odds, top scorer predictions
-    - 'retrieval': Historical stats, disposals, goals, win rates, match scores
-    - 'factual': Rules, MCG venue info, Brownlow medal, AFL terminology
-    - 'off_topic': Non-AFL sports, coding, recipes, weather, politics, persona overrides
-    """
     query = state["user_query"].strip()
     q_lower = query.lower()
 
-    # --- Hard off-topic filter first (before any other routing) ---
     if any(kw in q_lower for kw in _OFF_TOPIC_KEYWORDS):
         state["detected_intent"] = "off_topic"
         state["entities"] = {}
         return state
 
-    # --- Future year guard (beyond dataset scope 1983-2025) ---
-    future_yr = re.search(r'\b(202[6-9]|20[3-9]\d|2[1-9]\d\d)\b', query)
-    if future_yr:
-        state["detected_intent"] = "off_topic"
-        state["entities"] = {}
-        return state
+    pred_kw = [
+        "will win", "predict", "winner", "will beat", "odds", "probabilit",
+        "top-score", "top scorer", "forecast", "chance", "who will lead", "next match",
+        "this week", "next week", "upcoming", "chances to win", "most chances",
+        "afl final", "grand final winner", "premiership", "upcoming season",
+        "2026", "2027", "2030", "going to win"
+    ]
+    retrieval_kw = ["disposals", "goals", "behinds", "kicks", "marks", "tackles", "how many", "scores", "record", "average", "win rate", "did", "was", "compare", "leaderboard", "leader", "leaders", "most"]
+    factual_kw = ["rule", "mark inside 50", "brownlow", "mcg", "definition", "explain"]
 
-    # --- Keyword-based fast classification ---
-    pred_kw = ["will win", "predict", "winner", "who will beat", "will beat", "odds",
-               "probabilit", "top-score", "top scorer", "forecast", "chance",
-               "will dominate", "who will lead"]
-    retrieval_kw = ["stats", "disposals", "goals", "behinds", "kicks", "marks",
-                    "tackles", "how many", "scores", "record", "average", "win rate",
-                    "did", "was", "compare", "more often", "highest", "most", "top 5",
-                    "top five", "leaderboard"]
-    factual_kw = ["rule", "mark inside 50", "brownlow", "mcg", "disposal in afl",
-                  "what is a", "how does", "explain", "definition"]
+    will_beat = re.search(r'\bwill\b.{1,40}\bbeat\b', q_lower)
+    is_pred = bool(will_beat) or any(w in q_lower for w in pred_kw) or bool(re.search(r'\b(202[6-9]|20[3-9]\d)\b', query))
 
-    if any(w in q_lower for w in pred_kw) and not any(w in q_lower for w in ["did", "was", "history", "previous"]):
+    if is_pred:
         state["detected_intent"] = "prediction"
     elif any(w in q_lower for w in retrieval_kw):
         state["detected_intent"] = "retrieval"
     elif any(w in q_lower for w in factual_kw):
         state["detected_intent"] = "factual"
     else:
-        # LLM Classifier for complex or ambiguous queries
-        prompt = f"""Classify the user's intent into EXACTLY ONE of these categories:
-- 'prediction': Future match outcome forecasts, probabilities, who will win, top scorer prediction.
-- 'retrieval': Historical statistics, player numbers, match scores, past win rates.
-- 'factual': AFL rules, ground dimensions, Brownlow medal, general league info.
-- 'off_topic': Non-AFL topics (coding, cooking, weather, politics, other sports, translation, finance).
+        state["detected_intent"] = "retrieval"
 
-User Query: "{query}"
-
-Output ONLY the category name in lowercase (prediction / retrieval / factual / off_topic)."""
-        try:
-            res = llm.invoke([HumanMessage(content=prompt)])
-            cat = res.content.strip().lower()
-            if cat in ["prediction", "retrieval", "factual", "off_topic"]:
-                state["detected_intent"] = cat
-            else:
-                state["detected_intent"] = "retrieval"
-        except Exception:
-            state["detected_intent"] = "retrieval"
-
-    # Extract entities (teams, players, years)
     state["entities"] = extract_entities(query)
     return state
 
 
 def extract_entities(query: str) -> Dict[str, Any]:
-    """Helper to extract teams, players, year ranges from user query."""
     q_lower = query.lower()
     entities: Dict[str, Any] = {}
 
-    # Extract team pairs
     teams_found = []
-    from prediction_tools import TEAM_ALIASES
     for alias, official in TEAM_ALIASES.items():
         if len(alias) >= 3 and re.search(r'\b' + re.escape(alias) + r'\b', q_lower):
             if official not in teams_found:
                 teams_found.append(official)
 
     if len(teams_found) >= 2:
-        entities["team_a"] = teams_found[0]
-        entities["team_b"] = teams_found[1]
+        entities["team_a"], entities["team_b"] = teams_found[0], teams_found[1]
     elif len(teams_found) == 1:
         entities["team_a"] = teams_found[0]
 
-    # Stat type
     for stat in ["disposals", "goals", "kicks", "marks", "tackles", "handballs", "behinds"]:
         if stat in q_lower:
             entities["stat_type"] = stat
             break
 
-    # Year range: "across 2022 and 2023", "2022 to 2023", "2022-2023"
     yr_range = re.search(r'\b(19\d{2}|20\d{2})\b.*?\b(19\d{2}|20\d{2})\b', query)
     if yr_range:
         entities["start_year"] = int(yr_range.group(1))
         entities["end_year"] = int(yr_range.group(2))
-        entities["year"] = int(yr_range.group(2))  # use end year as primary
+        entities["year"] = int(yr_range.group(2))
     else:
         yr_match = re.search(r'\b(19\d\d|20\d\d)\b', query)
         if yr_match:
             entities["year"] = int(yr_match.group(1))
 
-    # Extract player names (proper nouns not matching known team names)
-    player_names = _extract_player_names_from_query(query)
-    if len(player_names) >= 2:
-        entities["multi_player"] = player_names
-    elif len(player_names) == 1:
-        entities["player_name"] = player_names[0]
+    players = _extract_player_names(query)
+    if len(players) >= 2:
+        entities["multi_player"] = players
+    elif len(players) == 1:
+        entities["player_name"] = players[0]
 
     return entities
 
 
-# ==============================================================================
-# 3. NODE IMPLEMENTATIONS
-# ==============================================================================
-
 def prediction_node(state: AFLAgentState) -> AFLAgentState:
-    """Executes Day 2 prediction models."""
-    query = state["user_query"]
+    query = state["user_query"].lower()
     entities = state.get("entities", {})
 
-    if "team_a" in entities and "team_b" in entities:
+    if any(w in query for w in ["upcoming season", "final", "grand final", "premier", "chances to win", "most chances", "season winner", "2026", "2027", "2030"]):
+        res = predict_season_premier(entities.get("year"))
+        state["tool_results"] = {"type": "season_prediction", "data": res}
+    elif "team_a" in entities and "team_b" in entities:
         res = predict_match_winner(entities["team_a"], entities["team_b"])
         state["tool_results"] = {"type": "match_prediction", "data": res}
-    elif "stat_type" in entities or "top" in query.lower():
-        team_target = entities.get("team_a", "League-wide")
-        stat_type = entities.get("stat_type", "goals")
-        res = predict_top_player(team_target, stat_type)
+    elif "player_name" in entities:
+        pdf = resolve_player(entities["player_name"])
+        team = pdf["team"].dropna().iloc[-1] if pdf is not None and not pdf.empty and "team" in pdf.columns else "Carlton Blues"
+        res = predict_top_player(team, entities.get("stat_type", "disposals"))
         state["tool_results"] = {"type": "player_prediction", "data": res}
+    elif "stat_type" in entities or any(w in query for w in ["lead", "top", "scorer", "disposals", "goals", "kicks", "marks", "tackles", "players"]):
+        team_target = entities.get("team_a")
+        stat_type = entities.get("stat_type", "disposals" if "disposals" in query else "goals")
+        top_n = 5 if any(w in query for w in ["top 5", "top five", "5 players", "best 5"]) or not team_target else 1
+        res = predict_top_player(team_target, stat_type, top_n=top_n)
+        state["tool_results"] = {"type": "player_prediction", "data": res}
+    elif "team_a" in entities:
+        team = entities["team_a"]
+        rival = "Collingwood Magpies" if team != "Collingwood Magpies" else "Geelong Cats"
+        res = predict_match_winner(team, rival)
+        state["tool_results"] = {"type": "match_prediction", "data": res}
     else:
-        # Generic match prediction prompt parsing
-        words = re.findall(r'\b[A-Za-z]+\b', query)
-        found = [resolve_team_alias(w) for w in words if resolve_team_alias(w)]
-        unique_found = list(dict.fromkeys(found))
-        if len(unique_found) >= 2:
-            res = predict_match_winner(unique_found[0], unique_found[1])
-            state["tool_results"] = {"type": "match_prediction", "data": res}
-        else:
-            state["tool_results"] = {
-                "type": "error",
-                "data": {"status": "ERROR", "message": "Could not identify two opposing teams to predict."}
-            }
+        res = predict_season_premier()
+        state["tool_results"] = {"type": "season_prediction", "data": res}
 
     return state
 
 
 def retrieval_node(state: AFLAgentState) -> AFLAgentState:
-    """Executes Day 3 historical retrieval tools."""
     query = state["user_query"]
+    q_lower = query.lower()
     entities = state.get("entities", {})
     results = {}
 
-    # 1. Multi-player comparison (e.g. "compare Sam Walsh and Lachie Neale")
-    if "multi_player" in entities:
-        player_str = ", ".join(entities["multi_player"])
-        start_yr = entities.get("start_year", None)
-        end_yr = entities.get("end_year", None)
-        yr = entities.get("year", None)
-        res = compare_players.invoke({
-            "player_names": player_str,
-            "start_year": start_yr or yr,
-            "end_year": end_yr or yr
-        })
-        results["comparison"] = res
-
-    # 2. Player name found via entity extraction → direct player stats
-    elif "player_name" in entities:
-        pname = entities["player_name"]
-        yr = entities.get("year", None)
-        start_yr = entities.get("start_year", None)
-        end_yr = entities.get("end_year", None)
-
-        if start_yr and end_yr:
-            # Year range: aggregate stats across both years
-            all_rows = []
-            for y in range(start_yr, end_yr + 1):
-                r = get_player_stats.invoke({"player_name": pname, "year": y})
-                all_rows.append(f"[{y}] {r}")
-            results["player_stats"] = "\n".join(all_rows)
-        else:
-            res = get_player_stats.invoke({"player_name": pname, "year": yr})
-            results["player_stats"] = res
-
-    # 3. Fallback: Try resolving player name from full query text
-    else:
-        from afl_chat_agent import resolve_player
-        p_df = resolve_player(query)
-
-        if p_df is not None and not p_df.empty:
-            actual_name = p_df['player_name'].dropna().iloc[0]
-            yr = entities.get("year", None)
-            start_yr = entities.get("start_year", None)
-            end_yr = entities.get("end_year", None)
-
-            if start_yr and end_yr:
-                all_rows = []
-                for y in range(start_yr, end_yr + 1):
-                    r = get_player_stats.invoke({"player_name": actual_name, "year": y})
-                    all_rows.append(f"[{y}] {r}")
-                results["player_stats"] = "\n".join(all_rows)
-            else:
-                res = get_player_stats.invoke({"player_name": actual_name, "year": yr})
-                results["player_stats"] = res
-
-    if results:
+    # Pre-1983 year guard
+    old_yr = re.search(r'\b(18\d\d|19[0-7]\d)\b', query)
+    if old_yr:
+        results["out_of_range"] = f"My AFL dataset covers history from 1983 through 2025. Records for {old_yr.group(1)} are outside coverage."
         state["tool_results"] = {"type": "retrieval", "data": results}
         return state
 
-    q_lower = query.lower()
+    # GOAT query
+    if any(kw in q_lower for kw in ["greatest of all time", "goat", "best ever", "all time great", "greatest player", "greatest afl", "afl legend", "all time greatest"]) or ("greatest" in q_lower and "all time" in q_lower):
+        results["goat"] = get_goat_player()
 
-    # Leaderboard queries: top/leader/most/best player
-    if any(kw in q_lower for kw in ["top", "leader", "leaders", "most"]):
+    # Stat leaders / leaderboard
+    elif any(kw in q_lower for kw in ["top", "leader", "leaders", "leads", "most", "who leads", "total disposals", "total goals"]):
         stat = entities.get("stat_type", "goals")
-        yr = entities.get("year", None)
-        res = get_stat_leaders.invoke({"stat": stat, "year": yr})
-        results["stat_leaders"] = res
+        yr = entities.get("year")
+        results["stat_leaders"] = get_stat_leaders.invoke({"stat": stat, "year": yr})
 
-    # "Who is the best player / who leads" → return disposals leaderboard for latest year
-    elif any(kw in q_lower for kw in ["best player", "who is the best", "greatest player", "who leads"]):
-        res = get_stat_leaders.invoke({"stat": "disposals", "year": 2024, "top_n": 5})
-        results["stat_leaders"] = f"Based on total disposals in 2024 (most recent full season):\n{res}"
-
-    # "Best team win rate / which team won most" → compute from feature table
-    elif any(kw in q_lower for kw in ["best team", "which team", "team win rate", "win rate", "won most"]):
-        from prediction_tools import feature_df
+    # Team win rate
+    elif any(kw in q_lower for kw in ["best team", "which team", "team win rate", "win rate", "won most"]) and "team_a" not in entities:
         if not feature_df.empty and "win" in feature_df.columns:
             df = feature_df.copy()
-            start_yr = entities.get("start_year", None)
-            end_yr = entities.get("end_year", None)
-            yr = entities.get("year", None)
+            start_yr, end_yr, yr = entities.get("start_year"), entities.get("end_year"), entities.get("year")
             if start_yr and end_yr:
                 df = df[(df["year"] >= start_yr) & (df["year"] <= end_yr)]
             elif yr:
                 df = df[df["year"] == yr]
-            ranked = df.groupby("team")["win"].mean().reset_index()
-            ranked = ranked.sort_values("win", ascending=False).head(5)
+            ranked = df.groupby("team")["win"].mean().reset_index().sort_values("win", ascending=False).head(5)
             yr_label = f"{start_yr}–{end_yr}" if start_yr and end_yr else (str(yr) if yr else "all seasons")
             lines = [f"Top 5 teams by win rate ({yr_label}):"]
             for i, (_, row) in enumerate(ranked.iterrows(), 1):
                 lines.append(f"  {i}. {row['team']}: {round(row['win'] * 100, 1)}% win rate")
             results["team_leaderboard"] = "\n".join(lines)
+
+    # Multi-player comparison
+    elif "multi_player" in entities:
+        results["comparison"] = compare_players.invoke({
+            "player_names": ", ".join(entities["multi_player"]),
+            "start_year": entities.get("start_year") or entities.get("year"),
+            "end_year": entities.get("end_year") or entities.get("year")
+        })
+
+    # Single player stats
+    elif "player_name" in entities:
+        pname = entities["player_name"]
+        start_yr, end_yr = entities.get("start_year"), entities.get("end_year")
+        if start_yr and end_yr:
+            results["player_stats"] = "\n".join([f"[{y}] {get_player_stats.invoke({'player_name': pname, 'year': y})}" for y in range(start_yr, end_yr + 1)])
         else:
-            results["team_leaderboard"] = "Team win rate data is unavailable at this time."
+            results["player_stats"] = get_player_stats.invoke({"player_name": pname, "year": entities.get("year")})
+
+    # Head-to-Head team query
+    elif "team_a" in entities and "team_b" in entities:
+        team_a, team_b = entities["team_a"], entities["team_b"]
+        m_a, m_b = resolve_team(team_a), resolve_team(team_b)
+        df = home_away_df.copy()
+        if entities.get("year"):
+            df = df[df["year"] == entities["year"]]
+        if m_a and m_b:
+            sub = df[(df["team_name"] == m_a) & (df["opponent"] == m_b)]
+            if "away" in q_lower:
+                sub = sub[sub["home_away"].str.upper() == "A"]
+            elif "home" in q_lower:
+                sub = sub[sub["home_away"].str.upper() == "H"]
+            if not sub.empty:
+                wins = len(sub[sub["result"].str.upper() == "W"])
+                losses = len(sub[sub["result"].str.upper() == "L"])
+                draws = len(sub[sub["result"].str.upper() == "D"])
+                win_pct = round((wins / len(sub)) * 100, 1)
+                draw_str = f", {draws} Draws" if draws > 0 else ""
+                results["h2h_stats"] = f"{team_a} against {team_b}: Played {len(sub)} matches — {wins} Wins, {losses} Losses{draw_str} ({win_pct}% win rate)."
+            else:
+                results["h2h_stats"] = f"No match records found between {team_a} and {team_b}."
 
     elif "team_a" in entities and "year" in entities:
-        res = get_team_match_results.invoke({"team_name": entities["team_a"], "year": entities["year"]})
-        results["match_results"] = res
+        results["match_results"] = get_team_match_results.invoke({"team_name": entities["team_a"], "year": entities["year"]})
     elif "team_a" in entities:
-        res = get_team_stats.invoke({"team_name": entities["team_a"]})
-        results["team_stats"] = res
+        results["team_stats"] = get_team_stats.invoke({"team_name": entities["team_a"]})
     else:
-        # Final fallback: return "not enough info" rather than passing raw query as player name
-        results["player_stats"] = "I couldn't identify a specific AFL player, team, or stat from your query. Could you provide more details? For example: 'How many disposals did Sam Walsh get in 2023?' or 'What is Carlton's win rate?'"
+        results["player_stats"] = "Could not identify specific AFL entity. Please specify player or team."
 
     state["tool_results"] = {"type": "retrieval", "data": results}
     return state
 
 
 def direct_answer_node(state: AFLAgentState) -> AFLAgentState:
-    """Handles conceptual AFL rules and history directly."""
-    query = state["user_query"]
-    info = get_afl_rules_and_info.invoke({"topic": query})
-    state["tool_results"] = {"type": "factual", "data": info}
+    state["tool_results"] = {"type": "factual", "data": get_afl_rules_and_info.invoke({"topic": state["user_query"]})}
     return state
 
 
 def refusal_node(state: AFLAgentState) -> AFLAgentState:
-    """Politely declines off-topic queries with warm AFL redirection."""
-    query = state["user_query"].lower()
-
-    if any(kw in query for kw in ["python", "quicksort", "code", "script", "programming", "algorithm"]):
-        resp = "I am dedicated solely as an AFL Chat Assistant and cannot help with programming tasks or writing scripts. I'd be happy to look up AFL match scores or player stats for you!"
-    elif any(kw in query for kw in ["nba", "nfl", "nhl", "nrl", "rugby", "premier league", "champions league", "world cup", "cricket", "tennis", "golf"]):
-        resp = "I specialize strictly in Australian Football League (AFL). While I can't answer questions about other sports leagues, I can share AFL team standings or player stats! Which AFL team would you like to explore?"
-    elif any(kw in query for kw in ["stocks", "financial", "investment", "crypto", "bitcoin", "ethereum", "forex"]):
-        resp = "I'm an AFL-dedicated assistant and can't provide financial or investment advice. However, I can predict which AFL team has the best 'winning investment' of form right now! Ask me about any team."
-    elif any(kw in query for kw in ["translate", "french", "spanish", "german"]):
-        resp = "Translation is outside my domain — I'm your AFL intelligence engine! I can share exact match scores, player stats, or make probabilistic match forecasts. What AFL question can I answer for you?"
-    elif any(kw in query for kw in ["act as", "pretend", "forget afl", "jailbreak", "ignore your"]):
-        resp = "I am dedicated solely as an AFL Chat Assistant and cannot change my persona or ignore my domain focus. Feel free to ask about any AFL team, player, or league rule!"
-    elif any(kw in query for kw in ["llm", "chatgpt", "openai", "ai", "gemini"]):
-        resp = "I'm your AFL-specialist assistant! Questions about AI systems are outside my scope, but I can answer any question about AFL history, player stats, or match predictions."
-    elif re.search(r'\b(202[6-9]|20[3-9]\d)\b', query):
-        resp = "My dataset covers AFL history from 1983 through the 2025 season. I cannot make predictions or retrieve data for years beyond 2025. Can I help you with a query within that range?"
+    q = state["user_query"].lower()
+    if any(k in q for k in ["python", "code", "script"]):
+        resp = "I am dedicated solely as an AFL Chat Assistant and cannot help with programming tasks."
+    elif any(k in q for k in ["stocks", "crypto", "investment"]):
+        resp = "I'm an AFL-dedicated assistant and can't provide financial advice."
+    elif any(k in q for k in ["translate", "french", "spanish"]):
+        resp = "Translation is outside my domain — I'm your AFL intelligence engine!"
     else:
-        resp = "My expertise is focused exclusively on AFL football! I can't help with off-topic requests, but I'd be happy to check AFL match scores, head-to-head stats, or player disposal averages. What AFL question can I answer?"
+        resp = "My expertise is focused exclusively on AFL football! Ask me any AFL question."
 
     state["final_response"] = resp
     state["validation_status"] = "VALID"
     return state
 
 
-# ==============================================================================
-# 4. VALIDATION & SELF-CORRECTION NODE
-# ==============================================================================
 def validation_node(state: AFLAgentState) -> AFLAgentState:
-    """
-    Validates tool outputs:
-    - If tool returned an error or unresolved entity -> NEEDS_CLARIFICATION
-    - If stat requested is unmodeled -> OUT_OF_SCOPE
-    - Otherwise -> VALID
-    """
-    tool_res = state.get("tool_results", {})
-    res_data = tool_res.get("data", {})
-
+    res_data = state.get("tool_results", {}).get("data", {})
     if isinstance(res_data, dict) and res_data.get("status") == "ERROR":
-        msg = res_data.get("message", "")
-        if "Could not resolve" in msg or "opposing teams" in msg:
-            state["validation_status"] = "NEEDS_CLARIFICATION"
-            state["clarification_prompt"] = f"I couldn't quite resolve the exact AFL teams from your query. Could you please specify the full team names (e.g. Collingwood Magpies vs Geelong Cats)?"
-        elif "Unsupported stat" in msg:
-            state["validation_status"] = "OUT_OF_SCOPE"
-            state["final_response"] = f"My predictive model currently supports disposals, goals, marks, kicks, and tackles. The requested stat type is out of scope."
-        else:
-            state["validation_status"] = "NEEDS_CLARIFICATION"
-            state["clarification_prompt"] = msg
+        state["validation_status"] = "NEEDS_CLARIFICATION"
+        state["clarification_prompt"] = res_data.get("message", "Please clarify your request.")
     else:
         state["validation_status"] = "VALID"
-
     return state
 
 
 def clarification_node(state: AFLAgentState) -> AFLAgentState:
-    """Formats clarification request for the user."""
-    prompt = state.get("clarification_prompt", "Could you please clarify your request with specific AFL team or player names?")
-    state["final_response"] = f"CLARIFICATION REQUIRED: {prompt}"
+    state["final_response"] = f"CLARIFICATION REQUIRED: {state.get('clarification_prompt', 'Please specify full team or player names.')}"
     return state
 
 
-# ==============================================================================
-# 5. RESPONSE FORMATTER NODE
-# ==============================================================================
 def response_formatter_node(state: AFLAgentState) -> AFLAgentState:
-    """
-    Formats the final response according to strict framing guidelines:
-    - Predictions MUST be framed probabilistically (win probability %, confidence, driving features, disclaimer).
-    - Retrieval answers MUST be grounded in tool data.
-    """
     intent = state.get("detected_intent")
     tool_res = state.get("tool_results", {})
     res_type = tool_res.get("type")
-    res_data = tool_res.get("data")
+    res_data = tool_res.get("data", {})
 
     if intent == "prediction" and res_type == "match_prediction":
-        winner = res_data["predicted_winner"]
-        prob = res_data["win_probability"]
-        loser = res_data["loser"]
-        loser_prob = res_data["loser_probability"]
+        winner, prob = res_data["predicted_winner"], res_data["win_probability"]
+        loser, loser_prob = res_data["loser"], res_data["loser_probability"]
         conf = res_data["confidence"]
         feats = "\n".join([f"  - {f}" for f in res_data["driving_features"]])
         disc = res_data["disclaimer"]
 
-        resp = f"""Based on statistical feature modeling, here is the probabilistic forecast:
+        state["final_response"] = f"""Probabilistic match forecast:
 
 * **Predicted Winner:** **{winner}** ({prob}% probability)
 * **Opponent:** {loser} ({loser_prob}% probability)
@@ -461,19 +315,29 @@ def response_formatter_node(state: AFLAgentState) -> AFLAgentState:
 {feats}
 
 > *{disc}*"""
-        state["final_response"] = resp
 
     elif intent == "prediction" and res_type == "player_prediction":
-        player = res_data["predicted_player"]
-        stat = res_data["stat_type"]
-        avg = res_data["expected_average"]
-        peak = res_data["recent_peak"]
-        team = res_data["team"]
-        conf = res_data["confidence"]
+        player, stat = res_data["predicted_player"], res_data["stat_type"]
+        avg, peak = res_data["expected_average"], res_data["recent_peak"]
+        team, conf = res_data["team"], res_data["confidence"]
         feats = "\n".join([f"  - {f}" for f in res_data["driving_features"]])
         disc = res_data["disclaimer"]
+        top_players = res_data.get("top_players", [])
 
-        resp = f"""Probabilistic player forecast for **{team}**:
+        if len(top_players) > 1:
+            plist = "\n".join([f"  #{p['rank']}. **{p['player_name']}** ({p['team']}) — ~{p['expected_average']} {stat.lower()}/match (Peak: {p['recent_peak']})" for p in top_players])
+            state["final_response"] = f"""Probabilistic Top {len(top_players)} Player Forecast ({stat}) for **{team}**:
+
+{plist}
+
+* **Model Confidence:** **{conf}**
+
+**Key Driving Factors:**
+{feats}
+
+> *{disc}*"""
+        else:
+            state["final_response"] = f"""Probabilistic player forecast for **{team}**:
 
 * **Top Performer Expectation:** **{player}** ({stat})
 * **Projected Average:** ~{avg} {stat.lower()} per match (Recent Peak: {peak})
@@ -483,55 +347,48 @@ def response_formatter_node(state: AFLAgentState) -> AFLAgentState:
 {feats}
 
 > *{disc}*"""
-        state["final_response"] = resp
+
+    elif intent == "prediction" and res_type == "season_prediction":
+        winner, prob = res_data["predicted_winner"], res_data["win_probability"]
+        yr, conf = res_data["target_year"], res_data["confidence"]
+        runners = "\n".join(res_data["runners_up"])
+        feats = "\n".join([f"  - {f}" for f in res_data["driving_features"]])
+        disc = res_data["disclaimer"]
+
+        state["final_response"] = f"""Probabilistic season forecast for **{yr}**:
+
+* **Predicted Champion / Highest Chance:** **{winner}** ({prob}% win probability)
+* **Model Confidence:** **{conf}**
+
+**Top Contenders & Runners-Up:**
+{runners}
+
+**Key Driving Features:**
+{feats}
+
+> *{disc}*"""
 
     elif intent == "retrieval":
-        # Grounded summary string from retrieval tool output
-        if isinstance(res_data, dict):
-            val = next(iter(res_data.values())) if res_data else "No retrieval data available."
-            state["final_response"] = str(val)
-        else:
-            state["final_response"] = str(res_data)
-
+        val = next(iter(res_data.values())) if isinstance(res_data, dict) and res_data else res_data
+        state["final_response"] = str(val)
     elif intent == "factual":
         state["final_response"] = str(res_data)
 
     return state
 
 
-
-# ==============================================================================
-# 6. CONDITIONAL ROUTING EDGES
-# ==============================================================================
 def route_by_intent(state: AFLAgentState) -> str:
     intent = state.get("detected_intent", "retrieval")
-    if intent == "prediction":
-        return "prediction_node"
-    elif intent == "retrieval":
-        return "retrieval_node"
-    elif intent == "factual":
-        return "direct_answer_node"
-    else:
-        return "refusal_node"
+    return "prediction_node" if intent == "prediction" else ("retrieval_node" if intent == "retrieval" else ("direct_answer_node" if intent == "factual" else "refusal_node"))
 
 
 def route_by_validation(state: AFLAgentState) -> str:
     status = state.get("validation_status", "VALID")
-    if status == "NEEDS_CLARIFICATION":
-        return "clarification_node"
-    elif status == "OUT_OF_SCOPE":
-        return "END"
-    else:
-        return "response_formatter_node"
+    return "clarification_node" if status == "NEEDS_CLARIFICATION" else ("END" if status == "OUT_OF_SCOPE" else "response_formatter_node")
 
 
-# ==============================================================================
-# 7. STATE GRAPH COMPILATION
-# ==============================================================================
 def build_afl_graph():
     workflow = StateGraph(AFLAgentState)
-
-    # Add Nodes
     workflow.add_node("intent_router", intent_router_node)
     workflow.add_node("prediction_node", prediction_node)
     workflow.add_node("retrieval_node", retrieval_node)
@@ -541,37 +398,16 @@ def build_afl_graph():
     workflow.add_node("clarification_node", clarification_node)
     workflow.add_node("response_formatter_node", response_formatter_node)
 
-    # Entry point
     workflow.set_entry_point("intent_router")
-
-    # Conditional Branching from Router
-    workflow.add_conditional_edges(
-        "intent_router",
-        route_by_intent,
-        {
-            "prediction_node": "prediction_node",
-            "retrieval_node": "retrieval_node",
-            "direct_answer_node": "direct_answer_node",
-            "refusal_node": "refusal_node"
-        }
-    )
-
-    # Convergence to Validation Node
+    workflow.add_conditional_edges("intent_router", route_by_intent, {
+        "prediction_node": "prediction_node", "retrieval_node": "retrieval_node",
+        "direct_answer_node": "direct_answer_node", "refusal_node": "refusal_node"
+    })
     workflow.add_edge("prediction_node", "validation_node")
     workflow.add_edge("retrieval_node", "validation_node")
-
-    # Validation Routing
-    workflow.add_conditional_edges(
-        "validation_node",
-        route_by_validation,
-        {
-            "clarification_node": "clarification_node",
-            "response_formatter_node": "response_formatter_node",
-            "END": END
-        }
-    )
-
-    # Termination Edges
+    workflow.add_conditional_edges("validation_node", route_by_validation, {
+        "clarification_node": "clarification_node", "response_formatter_node": "response_formatter_node", "END": END
+    })
     workflow.add_edge("direct_answer_node", "response_formatter_node")
     workflow.add_edge("response_formatter_node", END)
     workflow.add_edge("clarification_node", END)
@@ -580,22 +416,4 @@ def build_afl_graph():
     return workflow.compile()
 
 
-# Export compiled graph instance
 afl_app = build_afl_graph()
-
-
-if __name__ == "__main__":
-    print("Testing LangGraph AFL Agent Execution:")
-    state = {
-        "user_query": "Will the Pies beat the Cats this week?",
-        "messages": [],
-        "detected_intent": "",
-        "entities": {},
-        "tool_results": {},
-        "validation_status": "",
-        "clarification_prompt": None,
-        "final_response": ""
-    }
-    out = afl_app.invoke(state)
-    print("\n--- FINAL RESPONSE ---")
-    print(out["final_response"])
