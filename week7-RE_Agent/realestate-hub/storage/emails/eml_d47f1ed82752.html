@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f4f6f8; margin: 0; padding: 20px; color: #1e293b; }
+    .card { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .header { background: #0f766e; color: #ffffff; padding: 24px; text-align: center; }
+    .header h1 { margin: 0; font-size: 22px; font-weight: 700; }
+    .header p { margin: 6px 0 0 0; opacity: 0.9; font-size: 14px; }
+    .content { padding: 28px; }
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .info-grid { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; }
+    .info-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #64748b; font-weight: 500; }
+    .info-value { color: #0f172a; font-weight: 600; text-align: right; }
+    .btn-container { text-align: center; margin-top: 24px; }
+    .btn { display: inline-block; background: #0284c7; color: #ffffff !important; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; }
+    .footer { background: #f1f5f9; padding: 16px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1>✨ New Property Visit Scheduled</h1>
+      <p>RealEstate Hub Voice Assistant Automation</p>
+    </div>
+    <div class="content">
+      <p style="font-size: 15px; margin-top: 0;">Hello <strong>Bilal Chaudhry</strong>,</p>
+      <p style="font-size: 14px; color: #475569;">A property visit appointment has been scheduled and assigned to you via the LangGraph voice agent.</p>
+      
+      <div class="section">
+        <div class="section-title">📅 Meeting Schedule</div>
+        <div class="info-grid">
+          <div class="info-row"><span class="info-label">Date:</span><span class="info-value">10 October</span></div>
+          <div class="info-row"><span class="info-label">Time:</span><span class="info-value">3:00 PM</span></div>
+          <div class="info-row"><span class="info-label">Assigned Agent:</span><span class="info-value">Bilal Chaudhry</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">🏡 Property Details</div>
+        <div class="info-grid">
+          <div class="info-row"><span class="info-label">Property:</span><span class="info-value">6 Marla House in Johar Town, Lahore, Punjab</span></div>
+          <div class="info-row"><span class="info-label">Listing ID:</span><span class="info-value">PROP-1132</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">👤 Client Details & Requirements</div>
+        <div class="info-grid">
+          <div class="info-row"><span class="info-label">Client Name:</span><span class="info-value">ہارون</span></div>
+          <div class="info-row"><span class="info-label">Phone:</span><span class="info-value">0300-1234567</span></div>
+          <div class="info-row"><span class="info-label">Requirements:</span><span class="info-value">Visit scheduled for 6 Marla House in Johar Town, Lahore, Punjab</span></div>
+          <div class="info-row"><span class="info-label">Call Notes:</span><span class="info-value">CRM Appointment ID: appt_fd712a3b69</span></div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Property+Visit%3A+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab+with+%DB%81%D8%A7%D8%B1%D9%88%D9%86&details=RealEstate+Hub+Scheduled+Property+Visit%0AClient%3A+%DB%81%D8%A7%D8%B1%D9%88%D9%86+%280300-1234567%29%0AAssigned+Agent%3A+Bilal+Chaudhry%0AProperty%3A+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab+%28PROP-1132%29%0ADate%3A+10+October+at+3%3A00+PM%0ANotes%3A+Scheduled+visit+for+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab%0A&location=6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab&dates=20260909T150000Z%2F20260909T154500Z" class="btn" target="_blank">➕ Add to Google Calendar</a>
+      </div>
+    </div>
+    <div class="footer">
+      RealEstate Hub Automated Business Dispatcher &bull; Confirmed via Voice AI
+    </div>
+  </div>
+</body>
+</html>

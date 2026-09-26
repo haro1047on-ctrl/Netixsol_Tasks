@@ -1,0 +1,17 @@
+{
+  "email_id": "eml_d47f1ed82752",
+  "event_type": "booking",
+  "recipient": "bilal.chaudhry@realestatehub.pk",
+  "employee_name": "Bilal Chaudhry",
+  "client_name": "\u06c1\u0627\u0631\u0648\u0646",
+  "client_phone": "0300-1234567",
+  "property_title": "6 Marla House in Johar Town, Lahore, Punjab",
+  "property_id": "PROP-1132",
+  "date_str": "10 October",
+  "time_str": "3:00 PM",
+  "subject": "[NEW VISIT] 6 Marla House in Johar Town, Lahore, Punjab on 10 October with \u06c1\u0627\u0631\u0648\u0646",
+  "plain_text": "\u2728 New Property Visit Scheduled\n===================================\nEmployee: Bilal Chaudhry (bilal.chaudhry@realestatehub.pk)\nClient: \u06c1\u0627\u0631\u0648\u0646 (Phone: 0300-1234567)\nProperty: 6 Marla House in Johar Town, Lahore, Punjab (PROP-1132)\nDate & Time: 10 October at 3:00 PM\nRequirements: Visit scheduled for 6 Marla House in Johar Town, Lahore, Punjab\nNotes: CRM Appointment ID: appt_fd712a3b69\nCalendar Link: https://calendar.google.com/calendar/render?action=TEMPLATE&text=Property+Visit%3A+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab+with+%DB%81%D8%A7%D8%B1%D9%88%D9%86&details=RealEstate+Hub+Scheduled+Property+Visit%0AClient%3A+%DB%81%D8%A7%D8%B1%D9%88%D9%86+%280300-1234567%29%0AAssigned+Agent%3A+Bilal+Chaudhry%0AProperty%3A+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab+%28PROP-1132%29%0ADate%3A+10+October+at+3%3A00+PM%0ANotes%3A+Scheduled+visit+for+6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab%0A&location=6+Marla+House+in+Johar+Town%2C+Lahore%2C+Punjab&dates=20260909T150000Z%2F20260909T154500Z\n",
+  "sent_at": "2026-09-09T12:25:27.230631+00:00",
+  "smtp_delivered": false,
+  "smtp_error": null
+}

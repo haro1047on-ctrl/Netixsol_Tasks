@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # RealEstate Hub Production AI Voice Agent
+  realestate-agent:
+    build:
+      context: ../../
+      dockerfile: day6-evaluation-security/deployment/Dockerfile
+    container_name: realestate-hub-prod-agent
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - APP_ENV=production
+      - LOG_LEVEL=INFO
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GEMINI_LLM_MODEL=gemini-2.5-flash
+      - VAPI_API_KEY=${VAPI_API_KEY}
+      - VAPI_VOICE_ID=Elliot
+      - VAPI_TRANSCRIBER_MODEL=nova-3
+      - VAPI_TRANSCRIBER_LANGUAGE=ur
+    volumes:
+      - realestate_storage:/app/realestate-hub/backend/storage
+      - realestate_results:/app/day6-evaluation-security/results
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/liveness"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # Prometheus Telemetry & Metrics Scraper
+  prometheus:
+    image: prom/prometheus:v2.50.0
+    container_name: realestate-hub-prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      - realestate-agent
+
+volumes:
+  realestate_storage:
+  realestate_results:
+  prometheus_data:

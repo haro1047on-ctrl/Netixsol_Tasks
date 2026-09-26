@@ -1,0 +1,17 @@
+{
+  "model_path": "C:\\Users\\PMYLS\\Downloads\\realestate-hub vapi and deepgram\\day5-langgraph-agent-with-machine-learning\\day5-langgraph-agent\\learning\\models\\intent_clf_20260904_105927.joblib",
+  "accuracy": 0.75,
+  "trained_at": "2026-09-04T05:59:27.805204+00:00",
+  "n_examples": 40,
+  "label_counts": {
+    "greeting": 5,
+    "recommendation": 6,
+    "rag": 5,
+    "booking": 4,
+    "rescheduling": 5,
+    "cancellation": 5,
+    "email": 5,
+    "goodbye": 5
+  },
+  "previous_accuracy": null
+}

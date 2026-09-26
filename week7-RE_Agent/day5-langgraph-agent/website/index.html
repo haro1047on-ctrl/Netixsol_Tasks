@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstate Hub | AI Voice Agent & Property Search</title>
+    <meta name="description" content="Discover premium properties in Pakistan with RealEstate Hub's AI-powered voice assistant.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Background Animated Blobs Container -->
+    <div class="blob-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo" id="nav-logo" style="cursor: pointer;">
+                <span class="logo-icon">✨</span> RealEstate <span class="accent-text">Hub</span>
+            </div>
+            <div class="nav-links">
+                <a href="#discover" class="nav-link active" data-tab="discover">Discover</a>
+                <a href="#projects" class="nav-link" data-tab="projects">Projects</a>
+                <a href="#agents" class="nav-link" data-tab="agents">Agents</a>
+            </div>
+            <div class="nav-actions">
+                <button id="vapi-voice-btn" class="glow-btn">
+                    <span class="mic-icon">🎙️</span> Speak to Agent
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+
+        <!-- TAB 1: DISCOVER (Hero & Property Search) -->
+        <section id="section-discover" class="tab-section active">
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">⚡ Live AI Voice Agent (Vapi + LangGraph)</div>
+                    <h1>Find your perfect <span class="gradient-text">Sanctuary</span></h1>
+                    <p>Explore exclusive properties across Pakistan. Speak directly with our Roman Urdu AI agent for real-time recommendations, price quotes, and site visits.</p>
+                </div>
+                
+                <!-- Search Filters -->
+                <div class="search-glass-panel">
+                    <div class="filter-group">
+                        <label for="filter-city">City</label>
+                        <select id="filter-city">
+                            <option value="">All Cities</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-type">Property Type</label>
+                        <select id="filter-type">
+                            <option value="">All Types</option>
+                            <option value="House">House</option>
+                            <option value="Flat">Flat / Apartment</option>
+                            <option value="Plot">Plot</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-budget">Max Budget</label>
+                        <select id="filter-budget">
+                            <option value="">Any Budget</option>
+                            <option value="15000000">1.5 Crore</option>
+                            <option value="30000000">3.0 Crore</option>
+                            <option value="50000000">5.0 Crore</option>
+                            <option value="100000000">10.0 Crore</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-bedrooms">Bedrooms</label>
+                        <select id="filter-bedrooms">
+                            <option value="">Any Beds</option>
+                            <option value="2">2+ Beds</option>
+                            <option value="3">3+ Beds</option>
+                            <option value="4">4+ Beds</option>
+                        </select>
+                    </div>
+                    <button id="search-btn" class="primary-btn">🔍 Search</button>
+                </div>
+
+                <!-- Quick Filter Tags -->
+                <div class="quick-tags">
+                    <span class="tag-label">Popular:</span>
+                    <button class="quick-tag-btn" data-city="Lahore" data-type="House">🏠 Houses in Lahore</button>
+                    <button class="quick-tag-btn" data-city="Islamabad" data-type="Flat">🏢 Apartments in Islamabad</button>
+                    <button class="quick-tag-btn" data-city="Lahore" data-budget="30000000">💰 Under 3 Crore</button>
+                </div>
+            </header>
+
+            <div class="container">
+                <!-- Stats Grid -->
+                <div class="stats-container" id="stats-container">
+                    <div class="stat-card glass-card">
+                        <div class="stat-value shimmer" id="stat-total">-</div>
+                        <div class="stat-label">Available Properties</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-value shimmer" id="stat-lahore">-</div>
+                        <div class="stat-label">Lahore Prime Listings</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-value shimmer" id="stat-isb">-</div>
+                        <div class="stat-label">Islamabad Capital Listings</div>
+                    </div>
+                </div>
+
+                <!-- Featured Listings Header -->
+                <div class="section-header">
+                    <div>
+                        <h2>Featured <span class="gradient-text">Listings</span></h2>
+                        <p id="results-count">Loading properties...</p>
+                    </div>
+                    <button id="reset-filters-btn" class="secondary-btn" style="display: none;">Reset Filters</button>
+                </div>
+
+                <!-- Properties Grid -->
+                <div class="properties-grid" id="properties-grid">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: PROJECTS -->
+        <section id="section-projects" class="tab-section">
+            <div class="container" style="padding-top: 120px;">
+                <div class="section-header">
+                    <div>
+                        <h2>Premium Housing <span class="gradient-text">Projects</span></h2>
+                        <p>Top master-planned communities in Pakistan</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass-card">
+                        <div class="project-img-header" style="background: linear-gradient(135deg, #1A1A2E, #16213E);">
+                            <span class="project-tag">Lahore</span>
+                            <h3>DHA Phase 6 & 8</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>State-of-the-art infrastructure, sports complexes, underground utilities, and luxury residential sectors.</p>
+                            <div class="project-meta">
+                                <span>📍 Defence, Lahore</span>
+                                <span>🏠 5, 10 & 20 Marla</span>
+                            </div>
+                            <button class="primary-btn full-width" onclick="filterBySociety('DHA')">View DHA Properties</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card">
+                        <div class="project-img-header" style="background: linear-gradient(135deg, #0F3460, #533483);">
+                            <span class="project-tag">Islamabad</span>
+                            <h3>Bahria Town Phase 7 & 8</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>World-class security, commercial hubs, food streets, and gated community living.</p>
+                            <div class="project-meta">
+                                <span>📍 Rawalpindi / Islamabad</span>
+                                <span>🏢 Villas & Apartments</span>
+                            </div>
+                            <button class="primary-btn full-width" onclick="filterBySociety('Bahria')">View Bahria Properties</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card">
+                        <div class="project-img-header" style="background: linear-gradient(135deg, #1F4068, #162447);">
+                            <span class="project-tag">Lahore</span>
+                            <h3>Gulberg Commercial & Greens</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Heart of Lahore's financial center. High-rise apartments, corporate suites, and shopping malls.</p>
+                            <div class="project-meta">
+                                <span>📍 Main Boulevard Gulberg</span>
+                                <span>🏢 Luxury High-Rise</span>
+                            </div>
+                            <button class="primary-btn full-width" onclick="filterBySociety('Gulberg')">View Gulberg Properties</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: AGENTS -->
+        <section id="section-agents" class="tab-section">
+            <div class="container" style="padding-top: 120px;">
+                <div class="section-header">
+                    <div>
+                        <h2>Verified Real Estate <span class="gradient-text">Agents</span></h2>
+                        <p>Connect with expert consultants or speak with our AI agent 24/7</p>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <div class="agent-card glass-card">
+                        <div class="agent-card-header">
+                            <div class="agent-avatar-large">🤖</div>
+                            <div>
+                                <h3>AI Assistant</h3>
+                                <span class="agent-role-badge">24/7 Automated Consultant</span>
+                            </div>
+                        </div>
+                        <p>Powered by LangGraph & Vapi. Answers queries in Roman Urdu & English, provides instant recommendations, and schedules site visits.</p>
+                        <button class="glow-btn full-width call-agent-trigger" style="margin-top: 1rem;">
+                            🎙️ Speak to AI Agent Now
+                        </button>
+                    </div>
+
+                    <div class="agent-card glass-card">
+                        <div class="agent-card-header">
+                            <div class="agent-avatar-large">👨‍💼</div>
+                            <div>
+                                <h3>Ali Khan</h3>
+                                <span class="agent-role-badge">Senior DHA Specialist</span>
+                            </div>
+                        </div>
+                        <p>Over 8 years experience in Lahore DHA residential & commercial property investments.</p>
+                        <button class="secondary-btn full-width call-agent-trigger" style="margin-top: 1rem;">
+                            📞 Inquire via AI Assistant
+                        </button>
+                    </div>
+
+                    <div class="agent-card glass-card">
+                        <div class="agent-card-header">
+                            <div class="agent-avatar-large">👩‍💼</div>
+                            <div>
+                                <h3>Sara Ahmed</h3>
+                                <span class="agent-role-badge">Islamabad Capital Expert</span>
+                            </div>
+                        </div>
+                        <p>Specializing in F-6, F-7, E-7 luxury houses and Park View City developments.</p>
+                        <button class="secondary-btn full-width call-agent-trigger" style="margin-top: 1rem;">
+                            📞 Inquire via AI Assistant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PROPERTY DETAIL MODAL -->
+    <div id="property-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card glass-card">
+            <button class="modal-close-btn" id="close-prop-modal">✕</button>
+            <div id="prop-modal-content">
+                <!-- Injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- VAPI AI VOICE & CHAT AGENT MODAL -->
+    <div id="vapi-modal" class="modal-overlay" style="display: none;">
+        <div class="vapi-call-card glass-card">
+            <button class="modal-close-btn" id="close-vapi-modal">✕</button>
+            
+            <!-- Header & Status -->
+            <div class="vapi-call-header">
+                <div class="agent-status-badge" id="vapi-status-badge">
+                    <span class="status-dot pulsing"></span>
+                    <span id="vapi-status-text">AI Agent Active</span>
+                </div>
+                <div class="vapi-timer" id="vapi-call-timer">00:00</div>
+            </div>
+
+            <!-- Animated Voice Orb & Soundwaves -->
+            <div class="vapi-orb-container" id="orb-wrapper">
+                <div class="vapi-orb-wave wave-3" id="orb-wave-3"></div>
+                <div class="vapi-orb-wave wave-2" id="orb-wave-2"></div>
+                <div class="vapi-orb-wave wave-1" id="orb-wave-1"></div>
+                <div class="vapi-orb" id="vapi-main-orb">
+                    <span class="orb-icon">🤖</span>
+                </div>
+            </div>
+
+            <div class="vapi-agent-meta">
+                <h3>RealEstate Hub Agent</h3>
+                <p class="vapi-subtext">LangGraph AI Assistant (Urdu / English)</p>
+            </div>
+
+            <!-- Inquired Property Context Banner (if applicable) -->
+            <div id="vapi-property-context" class="vapi-property-context" style="display: none;">
+                <span class="context-icon">🏷️</span>
+                <span id="vapi-context-text">Inquiring about: Property</span>
+            </div>
+
+            <!-- Live Transcript & Chat Messages Container -->
+            <div class="vapi-transcript-box" id="vapi-transcript-box">
+                <!-- Live transcripts & chat messages appended dynamically -->
+            </div>
+
+            <!-- Text Chat Input Box -->
+            <div class="vapi-chat-input-bar">
+                <input type="text" id="vapi-chat-input" placeholder="Type a message or query in Urdu / English..." autocomplete="off">
+                <button id="vapi-send-msg-btn" class="send-btn">📩 Send</button>
+            </div>
+
+            <!-- Call Controls -->
+            <div class="vapi-controls" style="margin-top: 1rem;">
+                <button id="vapi-mute-btn" class="control-btn" title="Toggle Mute">
+                    <span id="mute-icon">🎤</span>
+                </button>
+                <button id="vapi-end-call-btn" class="control-btn end-call-btn" title="End Call / Close Session">
+                    <span>🛑 End Session</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimal Single-Bar Footer -->
+    <footer class="footer">
+        <div class="footer-bar">
+            <div class="logo footer-logo">
+                <span class="logo-icon">✨</span> RealEstate <span class="accent-text">Hub</span>
+            </div>
+            <p class="footer-copy">© 2026 RealEstate Hub</p>
+            <div class="footer-legal-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Security</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local Vapi Web SDK & App Logic -->
+    <script src="/vapi.sdk.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-09-01T11:53:41Z",
+  "total_conversations_evaluated": 46,
+  "total_turns_evaluated": 57,
+  "conversation_success_rate": 89.13,
+  "turn_success_rate": 91.23,
+  "booking_success_rate": 100.0,
+  "tool_failure_rate": 0.0,
+  "rag_accuracy": 83.33,
+  "memory_fidelity_accuracy": 100.0,
+  "hallucination_rate": 0.0,
+  "latency_metrics": {
+    "min_ms": 0.0,
+    "avg_ms": 526.78,
+    "p50_ms": 5.93,
+    "p90_ms": 2163.32,
+    "p95_ms": 2962.21,
+    "p99_ms": 3211.71,
+    "max_ms": 3234.46,
+    "slo_met": true
+  },
+  "category_performance": {
+    "Buyer": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 131.92500000002383
+    },
+    "Seller": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 1575.6371000000513
+    },
+    "Investor": {
+      "total": 4,
+      "passed": 1,
+      "failed": 3,
+      "success_rate": 25.0,
+      "avg_latency_ms": 752.6916500000311
+    },
+    "Rental": {
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "success_rate": 75.0,
+      "avg_latency_ms": 166.59897499994258
+    },
+    "Appointment": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 54.0283875000398
+    },
+    "Cancellation": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 2682.00643749995
+    },
+    "Rescheduling": {
+      "total": 4,
+      "passed": 3,
+      "failed": 1,
+      "success_rate": 75.0,
+      "avg_latency_ms": 1472.958100000028
+    },
+    "Off-topic": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 3.8222500000415494
+    },
+    "Prompt injection": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 0.054899999986446346
+    },
+    "Angry customer": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 56.067862500043475
+    },
+    "Silent caller": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "success_rate": 100.0,
+      "avg_latency_ms": 0.9236124999461026
+    }
+  },
+  "sla_compliance": {
+    "p95_latency_slo": true,
+    "conversation_success_slo": true,
+    "tool_failure_slo": true,
+    "hallucination_slo": true
+  },
+  "summary_verdict": "PASSED"
+}

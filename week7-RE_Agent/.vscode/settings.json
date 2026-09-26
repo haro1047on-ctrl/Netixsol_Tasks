@@ -1,0 +1,25 @@
+{
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/day5-langgraph-agent",
+    "${workspaceFolder}/day6-evaluation-security",
+    "${workspaceFolder}/day6-evaluation-security/deployment",
+    "${workspaceFolder}/day6-evaluation-security/monitoring",
+    "${workspaceFolder}/day6-evaluation-security/performance",
+    "${workspaceFolder}/day6-evaluation-security/security",
+    "${workspaceFolder}/day6-evaluation-security/eval_suite",
+    "${workspaceFolder}/realestate-hub",
+    "${workspaceFolder}/realestate-hub/backend"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/day5-langgraph-agent",
+    "${workspaceFolder}/day6-evaluation-security",
+    "${workspaceFolder}/day6-evaluation-security/deployment",
+    "${workspaceFolder}/day6-evaluation-security/monitoring",
+    "${workspaceFolder}/day6-evaluation-security/performance",
+    "${workspaceFolder}/day6-evaluation-security/security",
+    "${workspaceFolder}/day6-evaluation-security/eval_suite",
+    "${workspaceFolder}/realestate-hub",
+    "${workspaceFolder}/realestate-hub/backend"
+  ],
+  "css.lint.unknownAtRules": "ignore"
+}

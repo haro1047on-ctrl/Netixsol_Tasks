@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'><path d='M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealEstate Hub | Luxury 3D Living & AI Voice Consultant</title>
+    <meta name="description" content="Pakistan's premier luxury real estate ecosystem powered by Day 5 LangGraph AI Voice & Chat Consultant, 3D Architectural Visualizer, and CRM." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS JIT Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              emerald: {
+                300: '#6ee7b7',
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                950: '#022c22',
+              },
+              cyan: {
+                300: '#67e8f9',
+                400: '#22d3ee',
+                500: '#06b6d4',
+                950: '#083344',
+              },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', '"Cormorant Garamond"', 'Georgia', 'serif'],
+              cormorant: ['"Cormorant Garamond"', 'serif'],
+              heading: ['Outfit', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            animation: {
+              'spin-slow': 'spin 12s linear infinite',
+              'float': 'float-slow 6s ease-in-out infinite',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#070a12] text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200 min-h-screen overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
