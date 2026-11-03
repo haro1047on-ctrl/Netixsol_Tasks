@@ -1,0 +1,5 @@
+strategy,decision_threshold,accuracy,precision,recall,f1,roc_auc,pr_auc,precision_top20,lift_top20
+1. No Balancing,0.5,0.7889,0.6222,0.4118,0.4956,0.7648,0.546,0.5926,2.35
+2. Class Weights (scale_pos_weight=2.96),0.5,0.7407,0.4884,0.6176,0.5455,0.771,0.5619,0.6111,2.43
+3. SMOTE Over-sampling,0.5,0.7722,0.5644,0.4191,0.481,0.7549,0.5424,0.5833,2.32
+4. Threshold Tuned (t*=0.37),0.37,0.7685,0.5396,0.5515,0.5455,0.7648,0.546,0.5926,2.35

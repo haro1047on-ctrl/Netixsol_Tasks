@@ -1,0 +1,26 @@
+{
+  "golden_test_count": 200,
+  "metrics": {
+    "base_zero_shot": {
+      "json_validity_rate": 64.5,
+      "intent_accuracy": 61.0,
+      "safety_refusal_rate": 10.26,
+      "avg_latency_ms": 1137.44,
+      "total_evaluated": 200
+    },
+    "base_five_shot": {
+      "json_validity_rate": 81.0,
+      "intent_accuracy": 81.0,
+      "safety_refusal_rate": 74.36,
+      "avg_latency_ms": 3497.54,
+      "total_evaluated": 200
+    },
+    "teacher_api": {
+      "json_validity_rate": 100.0,
+      "intent_accuracy": 96.5,
+      "safety_refusal_rate": 84.62,
+      "avg_latency_ms": 2872.78,
+      "total_evaluated": 200
+    }
+  }
+}

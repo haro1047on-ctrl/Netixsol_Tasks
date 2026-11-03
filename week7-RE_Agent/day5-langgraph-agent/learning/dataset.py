@@ -10,7 +10,15 @@ from config import get_engine
 
 logger = logging.getLogger("LearningDataset")
 
-def log_training_example(user_text: str, true_intent: str, session_id: str, confidence: float = 1.0) -> None:
+def log_training_example(
+    user_text: str,
+    true_intent: str,
+    session_id: str = "default_session",
+    confidence: float = 1.0,
+    clarification_needed: bool = False,
+    source: str = "rule_engine",
+    **kwargs
+) -> None:
     """Log a single training example to the DB."""
     if not user_text.strip():
         return

@@ -1,0 +1,25 @@
+# Modelfile
+# Zarya Digital Bank (Pakistan) — Ollama / llama.cpp Modelfile
+# CPU-Compatible UrduLish Banking Assistant (GGUF Q4_K_M)
+
+FROM ./models/zarya-qwen2.5-3b-gguf/zarya-qwen2.5-3b-q4_k_m.gguf
+
+# Generation Parameters
+PARAMETER temperature 0.2
+PARAMETER top_p 0.90
+PARAMETER top_k 40
+PARAMETER repeat_penalty 1.10
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|endoftext|>"
+PARAMETER stop "<|im_start|>"
+
+# ChatML Template for Qwen 2.5 Architecture
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+# Production System Prompt
+SYSTEM """You are Zarya Assistant (Zarya Madadgaar), the official bilingual AI banking concierge for Zarya Digital Bank (Pakistan). Follow all SBP guidelines, reply in polite UrduLish, apologize empathetically for failed debits, never ask for OTP/PIN, and output strictly valid JSON conforming to ZaryaBankingAssistantResponse."""

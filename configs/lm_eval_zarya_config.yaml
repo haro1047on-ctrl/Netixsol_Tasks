@@ -1,0 +1,50 @@
+# configs/lm_eval_zarya_config.yaml
+# EleutherAI lm-evaluation-harness configuration for Zarya Digital Bank
+# Benchmarks general reasoning retention (MMLU, HellaSwag, GSM8K) against catastrophic forgetting
+
+model: hf
+model_args:
+  pretrained: "models/zarya-qwen2.5-3b-dpo"
+  dtype: "float16"
+  trust_remote_code: true
+  device_map: "auto"
+
+tasks:
+  - task: mmlu_banking_and_logic
+    dataset_name: "cais/mmlu"
+    dataset_path: "mmlu"
+    subtasks:
+      - business_ethics
+      - professional_accounting
+      - elementary_mathematics
+      - formal_logic
+    num_fewshot: 5
+    metric_list:
+      - metric: acc
+        aggregation: mean
+        higher_is_better: true
+
+  - task: hellaswag
+    num_fewshot: 0
+    metric_list:
+      - metric: acc_norm
+        aggregation: mean
+        higher_is_better: true
+
+  - task: gsm8k
+    num_fewshot: 8
+    metric_list:
+      - metric: exact_match
+        aggregation: mean
+        higher_is_better: true
+
+generation_kwargs:
+  temperature: 0.1
+  top_p: 0.95
+  max_gen_toks: 512
+
+metadata:
+  project: "Zarya Digital Bank (Pakistan) — Week 10 Capstone"
+  target_max_degradation_pct: 2.5
+  evaluation_date: "October 2026"
+  hardware_target: "NVIDIA T4 / A100"

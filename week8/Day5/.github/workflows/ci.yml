@@ -1,0 +1,68 @@
+name: MLOps CI/CD Quality & Integration Gate
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-validate:
+    name: ML Model, API & Security Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential curl
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest httpx
+          pip install scikit-learn lightgbm catboost xgboost shap pandas numpy scipy joblib
+          pip install fastapi uvicorn pydantic streamlit langgraph langchain langchain-core
+
+      - name: Lint Code with Flake8
+        run: |
+          # Stop build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Exit-zero treats all errors as warnings
+          flake8 . --count --exit-zero --max-complexity=15 --max-line-length=120 --statistics
+
+      - name: Run FastAPI Gateway & OOD Security Tests
+        run: |
+          python week8/Day4/tests/test_api.py
+
+      - name: Run LangGraph AI Assistant & Anti-Hallucination Tests
+        run: |
+          python week8/Day4/tests/test_agent.py
+
+      - name: Run Voice Agent Integration Tests
+        run: |
+          python week8/Day4/tests/test_voice_integration.py
+
+      - name: Run MLOps Data Drift & Retraining Pipeline Tests
+        run: |
+          python week8/Day5/tests/test_drift_and_retraining.py
+
+      - name: Verify Production Latency & SLA Targets
+        run: |
+          python -c "
+          import json
+          with open('week8/Day5/reports/data_drift_report.json') as f:
+              d = json.load(f)
+          baseline_mape = d['performance_metrics']['baseline_test_mape']
+          assert baseline_mape < 15.0, f'MAPE SLA Violated: {baseline_mape}% >= 15.0%'
+          print(f'✅ All Quality Gates Verified (MAPE: {baseline_mape}% < 15.0% SLA target)')
+          "

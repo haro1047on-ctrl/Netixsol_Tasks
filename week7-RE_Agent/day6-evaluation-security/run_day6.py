@@ -21,7 +21,7 @@ DAY5_DIR = WORKSPACE_DIR / "day5-langgraph-agent"
 if str(CURRENT_DIR) not in sys.path:
     sys.path.insert(0, str(CURRENT_DIR))
 if str(DAY5_DIR) not in sys.path:
-    sys.path.insert(0, str(DAY5_DIR))
+    sys.path.append(str(DAY5_DIR))
 
 
 def run_security():

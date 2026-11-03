@@ -9,6 +9,7 @@ from logger import default_agent_logger
 from state import AgentState
 from tools.availability_tools import check_property_availability
 from tools.search_tools import search_properties_core
+from tools.valuation_tool import evaluate_property_valuation_core
 
 
 def _format_price_pkr(price: Any) -> str:
@@ -112,7 +113,20 @@ def recommendation_node(state: AgentState) -> Dict[str, Any]:
             clean_loc = _clean_locality_str(p.get("locality", ""))
             bed_count = p.get("bedrooms")
             bed_str = f", {bed_count} bedrooms" if bed_count else ""
-            formatted_opts.append(f"Option {idx}: {marla_str} {p.get('property_type', 'House')} in {clean_loc}, price {price_spoken}{bed_str}.")
+
+            # Week 8 ML Property Valuation integration
+            val_res = evaluate_property_valuation_core(
+                city=p.get("city", city),
+                area_society=clean_loc,
+                property_type=p.get("property_type", "House"),
+                plot_size_marla=float(marla_val) if marla_val else 10.0,
+                bedrooms=int(bed_count) if bed_count else 4,
+                listed_price_pkr=float(p.get("price", 0)),
+            )
+            p["ml_valuation"] = val_res
+            verdict_tag = f" (AI Market Verdict: {val_res.get('verdict', 'Fair Price')})" if val_res else ""
+
+            formatted_opts.append(f"Option {idx}: {marla_str} {p.get('property_type', 'House')} in {clean_loc}, price {price_spoken}{bed_str}{verdict_tag}.")
 
         options_block = " ".join(formatted_opts)
         

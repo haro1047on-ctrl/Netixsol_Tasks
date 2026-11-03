@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-09-29T10:55:14.636672+00:00",
+  "overall_health": "WARNING_DRIFT",
+  "alerts": {
+    "retrain_recommended": false,
+    "data_drift_alert": true,
+    "prediction_drift_alert": false,
+    "mape_threshold_exceeded": false
+  },
+  "performance_metrics": {
+    "baseline_test_mape": 6.25,
+    "current_monitored_mape": 13.44,
+    "mape_degradation_pct": 7.19,
+    "alert_threshold_mape": 15.0,
+    "current_mae_pkr": "49.3 lac",
+    "current_rmse_pkr": "2.07 crore"
+  },
+  "prediction_drift": {
+    "drift_detected": false,
+    "ks_statistic": 0.0483,
+    "p_value": 0.48536892698523965,
+    "reference_median_predicted": "1.40 crore",
+    "current_median_predicted": "1.33 crore"
+  },
+  "feature_drift_summary": {
+    "total_features_monitored": 7,
+    "drifted_features_count": 4,
+    "drifted_features_ratio": 0.57,
+    "features_detail": {
+      "plot_size_marla": {
+        "feature_name": "plot_size_marla",
+        "drift_detected": true,
+        "ks_statistic": 0.0695,
+        "p_value": 0.012276763137710187,
+        "wasserstein_distance": 0.6738,
+        "psi": 0.0276,
+        "reference_mean": 9.14,
+        "current_mean": 9.26
+      },
+      "covered_area_sqft": {
+        "feature_name": "covered_area_sqft",
+        "drift_detected": false,
+        "ks_statistic": 0.0421,
+        "p_value": 0.3043496982100818,
+        "wasserstein_distance": 125.6965,
+        "psi": 0.0442,
+        "reference_mean": 2503.89,
+        "current_mean": 2542.13
+      },
+      "bedrooms": {
+        "feature_name": "bedrooms",
+        "drift_detected": false,
+        "ks_statistic": 0.0393,
+        "p_value": 0.386056134229506,
+        "wasserstein_distance": 0.1078,
+        "psi": 0.0169,
+        "reference_mean": 3.76,
+        "current_mean": 3.67
+      },
+      "bathrooms": {
+        "feature_name": "bathrooms",
+        "drift_detected": true,
+        "ks_statistic": 0.0602,
+        "p_value": 0.043627029761328186,
+        "wasserstein_distance": 0.1721,
+        "psi": 0.0186,
+        "reference_mean": 4.1,
+        "current_mean": 3.97
+      },
+      "age_years": {
+        "feature_name": "age_years",
+        "drift_detected": true,
+        "ks_statistic": 0.2763,
+        "p_value": 1.2535015363828464e-35,
+        "wasserstein_distance": 1.1329,
+        "psi": 1.2972,
+        "reference_mean": 6.0,
+        "current_mean": 7.13
+      },
+      "amenity_score": {
+        "feature_name": "amenity_score",
+        "drift_detected": true,
+        "ks_statistic": 0.2188,
+        "p_value": 2.1974419308180764e-22,
+        "wasserstein_distance": 1.0299,
+        "psi": 0.2765,
+        "reference_mean": 4.24,
+        "current_mean": 5.27
+      },
+      "distance_to_main_road_km": {
+        "feature_name": "distance_to_main_road_km",
+        "drift_detected": false,
+        "ks_statistic": 0.0516,
+        "p_value": 0.11946495728594057,
+        "wasserstein_distance": 0.0791,
+        "psi": 0.0351,
+        "reference_mean": 2.28,
+        "current_mean": 2.22
+      }
+    }
+  }
+}

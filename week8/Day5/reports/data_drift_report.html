@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MLOps Data & Prediction Drift Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #F9FAFB; color: #111827; padding: 24px; }
+        .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 24px; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #E5E7EB; padding-bottom: 16px; margin-bottom: 20px; }
+        .status-badge { background: #D97706; color: white; padding: 8px 16px; border-radius: 9999px; font-weight: 700; font-size: 14px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .metric-box { background: #F3F4F6; padding: 16px; border-radius: 8px; border-left: 4px solid #2563EB; }
+        .metric-val { font-size: 24px; font-weight: 700; color: #1F2937; margin-top: 4px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        th { background: #F3F4F6; text-align: left; padding: 10px; border: 1px solid #E5E7EB; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div>
+                <h1 style="margin:0; font-size: 24px; color: #1E3A8A;">Enterprise Real Estate MLOps Drift Monitor</h1>
+                <p style="margin:4px 0 0 0; color: #6B7280;">Automated Statistical Surveillance & Alerting Gateway (Week 8 Capstone)</p>
+            </div>
+            <div class="status-badge">⚠️ WARNING: DATA DRIFT DETECTED</div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-box">
+                <div style="font-size:12px; color:#6B7280; text-transform:uppercase;">Baseline MAPE</div>
+                <div class="metric-val">6.25%</div>
+            </div>
+            <div class="metric-box" style="border-left-color: #D97706;">
+                <div style="font-size:12px; color:#6B7280; text-transform:uppercase;">Monitored Batch MAPE</div>
+                <div class="metric-val" style="color:#D97706;">13.44%</div>
+                <div style="font-size:11px; color:#6B7280;">Threshold: &gt; 15.0%</div>
+            </div>
+            <div class="metric-box">
+                <div style="font-size:12px; color:#6B7280; text-transform:uppercase;">Drifted Features</div>
+                <div class="metric-val">4 / 7</div>
+                <div style="font-size:11px; color:#6B7280;">Ratio: 57%</div>
+            </div>
+            <div class="metric-box">
+                <div style="font-size:12px; color:#6B7280; text-transform:uppercase;">Prediction Shift</div>
+                <div class="metric-val">1.40 crore &rarr; 1.33 crore</div>
+            </div>
+        </div>
+
+        <h3>Feature Drift Breakdown (Kolmogorov-Smirnov & PSI Tests)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Drift State</th>
+                    <th>KS Statistic</th>
+                    <th>p-value</th>
+                    <th>PSI</th>
+                    <th>Mean Shift (Ref &rarr; Current)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>plot_size_marla</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:red; font-weight:bold;'>DRIFTED</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0695</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>1.2277e-02</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0276</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>9.14 &rarr; 9.26</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>covered_area_sqft</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:green;'>Stable</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0421</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>3.0435e-01</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0442</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>2503.89 &rarr; 2542.13</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>bedrooms</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:green;'>Stable</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0393</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>3.8606e-01</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0169</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>3.76 &rarr; 3.67</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>bathrooms</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:red; font-weight:bold;'>DRIFTED</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0602</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>4.3627e-02</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0186</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>4.1 &rarr; 3.97</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>age_years</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:red; font-weight:bold;'>DRIFTED</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.2763</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>1.2535e-35</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>1.2972</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>6.0 &rarr; 7.13</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>amenity_score</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:red; font-weight:bold;'>DRIFTED</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.2188</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>2.1974e-22</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.2765</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>4.24 &rarr; 5.27</td>
+            </tr>
+            
+            <tr>
+                <td style='padding:8px; border:1px solid #E5E7EB; font-weight:600;'>distance_to_main_road_km</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'><span style='color:green;'>Stable</span></td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0516</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>1.1946e-01</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>0.0351</td>
+                <td style='padding:8px; border:1px solid #E5E7EB;'>2.28 &rarr; 2.22</td>
+            </tr>
+            
+            </tbody>
+        </table>
+
+        <div style="margin-top: 24px; padding: 16px; background: #EFF6FF; border-radius: 8px; font-size: 13px; color: #1E40AF;">
+            <b>Operational Directive:</b> Whenever monitored MAPE exceeds the <b>15.0% SLA boundary</b> or over 30% of core geographical/structural features exhibit KS p-values &lt; 0.05, the orchestration daemon automatically dispatches an alert to Slack/PagerDuty and triggers the <b>Automated Retraining Pipeline</b> to fit a Challenger model on the refreshed data lake.
+        </div>
+    </div>
+</body>
+</html>

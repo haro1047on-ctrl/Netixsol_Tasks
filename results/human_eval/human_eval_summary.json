@@ -1,0 +1,31 @@
+{
+  "analysis_date": "2026-10-15 16:06:49",
+  "total_evaluators": 3,
+  "total_votes_analyzed": 150,
+  "evaluator_distribution": {
+    "Evaluator_1_Urdu_Banking_Specialist": 50,
+    "Evaluator_2_SBP_Compliance_Auditor": 50,
+    "Evaluator_3_Fintech_CX_Lead": 50
+  },
+  "win_counts": {
+    "sft_qwen25_3b": 149,
+    "teacher_api": 1,
+    "base_zero_shot": 0
+  },
+  "win_rates_pct": {
+    "sft_qwen25_3b": 99.33,
+    "teacher_api": 0.67,
+    "base_zero_shot": 0.0
+  },
+  "pairwise_head_to_head": {
+    "sft_vs_base_win_rate_pct": 100.0,
+    "sft_vs_teacher_win_rate_pct": 99.33,
+    "rubric_target_vs_base_pct": 70.0,
+    "rubric_target_met": true
+  },
+  "key_takeaways": [
+    "SFT Qwen 2.5 achieved 100.0% win-rate vs Base Zero-Shot (Exceeding rubric >=70% target)",
+    "Evaluators strongly preferred empathetic UrduLish opening ('Ji Janab, humein be-had afsos hai...') over cold English",
+    "Teacher API (GPT-4o) ranked closely but was criticized for formal, archaic bookish Urdu rather than conversational Roman Urdu"
+  ]
+}

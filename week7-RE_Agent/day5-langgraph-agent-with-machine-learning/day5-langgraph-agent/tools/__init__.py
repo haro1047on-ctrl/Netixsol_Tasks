@@ -16,6 +16,7 @@ from tools.calendar_tools import (
 from tools.email_tools import email_tool, send_appointment_email
 from tools.crm_tools import crm_tool, upsert_lead, log_appointment, get_appointment
 from tools.rag_tools import rag_search_tool, search_kb_core
+from tools.valuation_tool import property_valuation_tool, evaluate_property_valuation_core
 
 ALL_TOOLS = [
     property_search_tool,
@@ -24,6 +25,7 @@ ALL_TOOLS = [
     email_tool,
     crm_tool,
     rag_search_tool,
+    property_valuation_tool,
 ]
 
 __all__ = [
@@ -45,4 +47,6 @@ __all__ = [
     "get_appointment",
     "rag_search_tool",
     "search_kb_core",
+    "property_valuation_tool",
+    "evaluate_property_valuation_core",
 ]

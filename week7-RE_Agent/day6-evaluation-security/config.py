@@ -42,9 +42,13 @@ CHROMA_DIR = str(VECTORSTORE_DIR / os.getenv("CHROMA_DIR", "chroma_db"))
 COLLECTION_NAME = os.getenv("CHROMA_COLLECTION", "properties").strip()
 SQLITE_PATH = DB_DIR / os.getenv("SQLITE_DB", "realestate_kb.db")
 if not SQLITE_PATH.exists():
-    fallback_db = BACKEND_DIR / "storage" / "realestate.db"
-    if fallback_db.exists():
-        SQLITE_PATH = fallback_db
+    day5_db = DAY5_DIR / "db" / "realestate_kb.db"
+    if day5_db.exists():
+        SQLITE_PATH = day5_db
+    else:
+        fallback_db = BACKEND_DIR / "storage" / "realestate.db"
+        if fallback_db.exists():
+            SQLITE_PATH = fallback_db
 
 PORT = int(os.getenv("PORT", "8000"))
 HOST = os.getenv("HOST", "0.0.0.0")

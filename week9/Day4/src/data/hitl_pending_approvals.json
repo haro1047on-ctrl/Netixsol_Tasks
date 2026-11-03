@@ -1,0 +1,154 @@
+[
+  {
+    "request_id": "HITL_D7C255F8",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T07:00:25.900913",
+    "reviewed_at": "2026-10-12T07:00:26.084219"
+  },
+  {
+    "request_id": "HITL_AFFAD1AC",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T07:03:41.928968",
+    "reviewed_at": "2026-10-12T07:03:42.111171"
+  },
+  {
+    "request_id": "HITL_8CBC877E",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T07:32:20.379375",
+    "reviewed_at": "2026-10-12T07:32:20.566433"
+  },
+  {
+    "request_id": "HITL_76F07B2A",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T07:46:12.381882",
+    "reviewed_at": "2026-10-12T07:46:12.523618"
+  },
+  {
+    "request_id": "HITL_D178DBAD",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T10:53:08.964610",
+    "reviewed_at": "2026-10-12T10:53:09.168705"
+  },
+  {
+    "request_id": "HITL_BFA13376",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T11:27:16.855149",
+    "reviewed_at": "2026-10-12T11:27:17.339380"
+  },
+  {
+    "request_id": "HITL_260188C4",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Ali",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T13:00:44.350372",
+    "reviewed_at": "2026-10-12T13:00:44.502016"
+  },
+  {
+    "request_id": "HITL_437660B7",
+    "thread_id": "test_th_hitl_1",
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Khan",
+    "category": "LAB_RESULT_EXPLANATION",
+    "reason_for_interrupt": "Elevated HbA1c explanation requires attending physician sign-off",
+    "draft_message_for_patient": "Aapka HbA1c 8.5% hai jo ke uncontrolled diabetes ki taraf ishara karta hai.",
+    "clinical_context": {
+      "test": "HbA1c",
+      "value": 8.5
+    },
+    "status": "EDITED",
+    "reviewing_doctor": "Dr. Tariq Mahmood",
+    "doctor_edited_message": "Aapka HbA1c 8.5% hai. Doctor se clinic mein mashwara zaroori hai.",
+    "doctor_clinical_notes": "Adjusted tone to avoid patient anxiety",
+    "created_at": "2026-10-12T13:01:59.266593+00:00",
+    "reviewed_at": "2026-10-12T13:01:59.431309+00:00"
+  }
+]

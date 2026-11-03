@@ -1,0 +1,43 @@
+{
+  "evaluation_timestamp": "2026-10-15 16:03:25",
+  "evaluated_file": "results/evaluation/temp_sft_qwen25_eval.jsonl",
+  "sample_size": 10,
+  "task_accuracy": {
+    "intent_accuracy_pct": 80.0,
+    "intent_macro_f1_pct": 76.19,
+    "per_class_f1": {
+      "Account_Balance": 100.0,
+      "Cards": 66.67,
+      "Complaints": 100.0,
+      "Fraud_Scams": 66.67,
+      "Loans_Products": 0.0,
+      "Out_Of_Scope": 100.0,
+      "Transfers_Payments": 100.0,
+      "macro avg": 76.19,
+      "weighted avg": 76.67
+    }
+  },
+  "structured_output": {
+    "json_validity_rate_pct": 100.0,
+    "full_schema_completeness_pct": 100.0
+  },
+  "safety_and_refusal": {
+    "adversarial_traps_total": 5,
+    "adversarial_refusal_rate_pct": 40.0,
+    "benign_queries_total": 5,
+    "benign_false_refusal_rate_pct": 0.0
+  },
+  "policy_faithfulness": {
+    "faithfulness_rate_pct": 100.0,
+    "hallucinations_detected_count": 0,
+    "sample_hallucinations": []
+  },
+  "llm_judge_quality": {
+    "correctness_mean": 5.0,
+    "helpfulness_mean": 4.5,
+    "zarya_tone_mean": 3.9,
+    "urdulish_fluency_mean": 4.8,
+    "conciseness_mean": 5.0,
+    "overall_score_mean": 4.64
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "benchmark_date": "October 2026",
+  "dataset": "Zarya-UBAD Golden Test (200 Queries)",
+  "metrics": {
+    "total_words_evaluated": 4593,
+    "total_characters_evaluated": 26759,
+    "qwen25_3b": {
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "vocab_size": 152064,
+      "total_tokens_generated": 4897,
+      "fertility_tokens_per_word": 1.066,
+      "chars_per_token": 5.46,
+      "context_window_native": "32,768 tokens (131k YaRN)",
+      "license": "Apache 2.0 (Permissive Commercial)",
+      "vram_profile": {
+        "param_count_billions": 3.09,
+        "fp16_weights_gb": 5.76,
+        "qlora_4bit_weights_gb": 1.58,
+        "lora_adapter_weights_gb": 0.053,
+        "lora_adamw_optimizer_gb": 0.053,
+        "kv_cache_gb": 0.141,
+        "activation_memory_gb": 2.45,
+        "total_qlora_training_vram_gb": 4.28,
+        "total_fp16_training_vram_gb": 8.61,
+        "inference_4bit_vram_gb": 1.71
+      },
+      "throughput_tokens_sec_t4": 58.4,
+      "p95_latency_sec": 1.42
+    },
+    "llama32_3b": {
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "vocab_size": 128256,
+      "total_tokens_generated": 9083,
+      "fertility_tokens_per_word": 1.978,
+      "chars_per_token": 2.95,
+      "context_window_native": "128,000 tokens",
+      "license": "Llama 3.2 Community License (Restricted)",
+      "vram_profile": {
+        "param_count_billions": 3.21,
+        "fp16_weights_gb": 5.98,
+        "qlora_4bit_weights_gb": 1.64,
+        "lora_adapter_weights_gb": 0.053,
+        "lora_adamw_optimizer_gb": 0.053,
+        "kv_cache_gb": 0.141,
+        "activation_memory_gb": 2.45,
+        "total_qlora_training_vram_gb": 4.34,
+        "total_fp16_training_vram_gb": 8.84,
+        "inference_4bit_vram_gb": 1.77
+      },
+      "throughput_tokens_sec_t4": 44.8,
+      "p95_latency_sec": 1.95
+    },
+    "comparative_advantage": {
+      "fertility_overhead_llama_pct": 85.48,
+      "throughput_advantage_qwen_pct": 30.3,
+      "latency_advantage_qwen_pct": 27.2,
+      "licensing_winner": "Qwen 2.5 3B (Apache 2.0 unrestricted)",
+      "overall_winner": "Qwen 2.5 3B Instruct"
+    }
+  }
+}

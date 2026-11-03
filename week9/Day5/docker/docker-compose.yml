@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # 1. Production PostgreSQL Database (FHIR Schema)
+  clinic-postgres:
+    image: postgres:15-alpine
+    container_name: citycare-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: clinic_fhir
+      POSTGRES_USER: clinic_admin
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-CityCareSecure2026!}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clinic_admin -d clinic_fhir"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 2. Production FastAPI Backend & MCP Server Gateway
+  clinic-api:
+    build:
+      context: ../../../
+      dockerfile: week9/Day5/docker/Dockerfile.api
+    container_name: citycare-api
+    restart: unless-stopped
+    depends_on:
+      clinic-postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://clinic_admin:${DB_PASSWORD:-CityCareSecure2026!}@clinic-postgres:5432/clinic_fhir
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      ENVIRONMENT: production
+    ports:
+      - "8000:8000"
+
+  # 3. Streamlit Doctor Oversight & HITL Portal
+  doctor-dashboard:
+    build:
+      context: ../../../
+      dockerfile: week9/Day5/docker/Dockerfile.dashboard
+    container_name: citycare-doctor-dashboard
+    restart: unless-stopped
+    depends_on:
+      - clinic-api
+    environment:
+      API_ENDPOINT: http://clinic-api:8000
+    ports:
+      - "8501:8501"
+
+  # 4. Streamlit Patient Web Chat Portal
+  patient-portal:
+    build:
+      context: ../../../
+      dockerfile: week9/Day5/docker/Dockerfile.dashboard
+    container_name: citycare-patient-portal
+    restart: unless-stopped
+    command: ["streamlit", "run", "week9/Day5/src/patient_web_app.py", "--server.port=8502", "--server.address=0.0.0.0"]
+    depends_on:
+      - clinic-api
+    environment:
+      API_ENDPOINT: http://clinic-api:8000
+    ports:
+      - "8502:8502"
+
+volumes:
+  pgdata:

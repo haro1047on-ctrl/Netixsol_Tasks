@@ -1,0 +1,541 @@
+lead_id,client_name,phone,lead_source,budget_raw,budget_pkr,preferred_city,property_type,purpose,number_of_calls,avg_call_duration_mins,response_time_hours,visit_booked,days_since_first_contact,objection_raised,converted,budget_pkr_normalized,converted_binary,lead_engagement_score,response_speed_category,interaction_intensity,objection_severity_score,budget_to_market_ratio,is_high_intent
+LEAD-2026607,Usman Qureshi,+92-315-6778395,Call,8500000,8500000.0,Karachi,Flat,Buy,2,9.4,4.09,Yes,66,None,No,8500000.0,0,18.8,Standard (1-6h),0.03,0,0.81,1
+LEAD-2027794,Imran Raza,+92-310-9247468,Website,1.5 Crores,15000000.0,Islamabad,Flat,Buy,3,2.4,2.49,No,14,Price too high,No,15000000.0,0,7.2,Standard (1-6h),0.2,4,1.22,0
+LEAD-2026573,Ayesha Raza,+92-329-7696033,Facebook,1.5 Cr,15000000.0,Rawalpindi,House,Buy,4,5.4,0.44,No,43,None,No,15000000.0,0,21.6,Fast (15-60m),0.091,0,1.1,0
+LEAD-2025818,Usman Bhatti,+92-318-3315314,Website,75000,75000.0,Lahore,Plot,Rent,3,13.6,0.22,Yes,17,Location too far,Yes,75000.0,1,40.8,Immediate (<15m),0.167,2,0.86,1
+LEAD-2026146,Bilal Malik,+92-326-7579407,Call,250.0 Lacs,25000000.0,Islamabad,House,Buy,4,3.0,2.86,Yes,40,None,Yes,25000000.0,1,12.0,Standard (1-6h),0.098,0,1.06,1
+LEAD-2027340,Omer Bhatti,+92-316-1991160,WhatsApp,2.5 Crores,25000000.0,Karachi,House,Buy,2,4.2,0.28,Yes,66,None,Yes,25000000.0,1,8.4,Fast (15-60m),0.03,0,1.22,1
+LEAD-2025266,Hina Chaudhry,+92-330-2234676,WhatsApp,7.5 Crore,75000000.0,Rawalpindi,Commercial,Buy,1,2.4,0.5,No,24,Waiting for family approval,No,75000000.0,0,2.4,Fast (15-60m),0.04,1,3.0,0
+LEAD-2025531,Ali Qureshi,+92-315-6791050,WhatsApp,1.5 Cr,15000000.0,Rawalpindi,Plot,Invest,4,3.2,1.34,Yes,59,Waiting for family approval,Yes,15000000.0,1,12.8,Standard (1-6h),0.067,1,0.6,1
+LEAD-2025749,Sana Raza,+92-340-7784554,Facebook,2.5 crore,25000000.0,Islamabad,House,Buy,1,13.3,47.31,No,68,Location too far,No,25000000.0,0,13.3,Delayed (>6h),0.014,2,1.06,0
+LEAD-2028372,Hina Qureshi,+92-314-8754625,Call,2.5 Cr,25000000.0,Islamabad,House,Buy,1,12.6,11.8,Yes,28,Price too high,No,25000000.0,0,12.6,Delayed (>6h),0.034,4,1.06,1
+LEAD-2025909,Bilal Khan,+92-318-6704584,WhatsApp,50000,50000.0,Islamabad,House,Rent,1,0.6,2.16,Yes,50,Price too high,No,50000.0,0,0.6,Standard (1-6h),0.02,4,0.61,0
+LEAD-2028533,Ali Raza,+92-320-6445447,Website,3.5 Lakh,350000.0,Karachi,House,Rent,4,11.6,0.81,Yes,26,Legal document questions,Yes,350000.0,1,46.4,Fast (15-60m),0.148,3,4.88,1
+LEAD-2026124,Hina Chaudhry,+92-320-8976884,Call,85.0 Lakh,8500000.0,Karachi,House,Buy,2,1.9,36.41,Yes,21,Price too high,Yes,8500000.0,1,3.8,Delayed (>6h),0.091,4,0.41,0
+LEAD-2026021,Fahad Sheikh,+92-346-6023012,WhatsApp,0.3 Lac,30000.0,Faisalabad,House,Rent,5,3.0,0.16,No,80,Location too far,No,30000.0,0,15.0,Immediate (<15m),0.062,2,0.7,0
+LEAD-2026467,Fatima Chaudhry,+92-344-9959359,WhatsApp,4.0 crore,40000000.0,Rawalpindi,House,Buy,3,0.8,6.47,No,67,None,No,40000000.0,0,2.4,Delayed (>6h),0.044,0,2.95,0
+LEAD-2025910,Fahad Dar,+92-347-2314304,Website,1.5 Cr,15000000.0,Islamabad,Flat,Buy,5,5.4,0.26,No,24,None,No,15000000.0,0,27.0,Fast (15-60m),0.2,0,1.22,0
+LEAD-2028024,Mariam Butt,+92-346-6314978,WhatsApp,1.5 Crores,15000000.0,Islamabad,House,Invest,4,1.6,0.27,Yes,82,None,No,15000000.0,0,6.4,Fast (15-60m),0.048,0,0.64,0
+LEAD-2026186,Ahmed Butt,+92-310-6949370,WhatsApp,150.0 Lacs,15000000.0,Lahore,House,Buy,1,2.4,23.35,No,49,Legal document questions,Yes,15000000.0,1,2.4,Delayed (>6h),0.02,3,0.76,0
+LEAD-2027068,Sana Malik,+92-311-3272378,Call,2.0 Lacs,200000.0,Faisalabad,Flat,Rent,5,1.7,1.36,No,68,No response / Call dropped,No,200000.0,0,8.5,Standard (1-6h),0.072,5,5.0,0
+LEAD-2027708,Fahad Sheikh,+92-316-9065387,WhatsApp,85.0 Lakh,8500000.0,Rawalpindi,House,Buy,1,12.5,30.38,No,50,Legal document questions,No,8500000.0,0,12.5,Delayed (>6h),0.02,3,0.63,0
+LEAD-2025905,Saad Sheikh,+92-347-2342685,Call,1.2 lac,120000.0,Faisalabad,Flat,Rent,3,4.4,1.68,No,50,No response / Call dropped,No,120000.0,0,13.2,Standard (1-6h),0.059,5,4.92,0
+LEAD-2026300,Muhammad Butt,+92-348-7299428,Facebook,350000,350000.0,Karachi,House,Rent,5,4.0,5.45,No,3,Price too high,No,350000.0,0,20.0,Standard (1-6h),1.25,4,4.88,0
+LEAD-2027974,Ahmed Bhatti,+92-316-6914516,WhatsApp,4.0 Crore,40000000.0,Faisalabad,Plot,Invest,10,2.6,43.55,Yes,88,Low trust in scheme/NOC,Yes,40000000.0,1,26.0,Delayed (>6h),0.112,4,1.6,1
+LEAD-2028344,Ali Qureshi,+92-330-8498105,Facebook,4.0 crore,40000000.0,Faisalabad,Plot,Buy,1,4.4,2.67,Yes,80,Price too high,No,40000000.0,0,4.4,Standard (1-6h),0.012,4,1.6,0
+LEAD-2026155,Imran Mirza,+92-343-7201492,WhatsApp,4.0 Crore,40000000.0,Faisalabad,House,Buy,3,1.5,1.05,No,24,None,No,40000000.0,0,4.5,Standard (1-6h),0.12,0,3.28,0
+LEAD-2028154,Ahmed Shah,+92-330-3457929,Call,2.5 Cr,25000000.0,Lahore,House,Buy,6,5.7,5.0,No,61,Waiting for family approval,Yes,25000000.0,1,34.2,Standard (1-6h),0.097,1,1.27,0
+LEAD-2027769,Tariq Sheikh,+92-338-5991265,Website,2.5 Cr,25000000.0,Islamabad,House,Buy,4,13.6,0.24,Yes,42,Waiting for family approval,Yes,25000000.0,1,54.4,Immediate (<15m),0.093,1,1.06,1
+LEAD-2026084,Omer Chaudhry,+92-344-8271425,Call,85.0 Lacs,8500000.0,Faisalabad,Plot,Buy,4,1.5,0.17,No,35,Price too high,No,8500000.0,0,6.0,Immediate (<15m),0.111,4,0.34,0
+LEAD-2025157,Zainab Chaudhry,+92-332-9338635,Facebook,150.0 Lakh,15000000.0,Rawalpindi,House,Buy,1,7.2,2.44,No,2,Price too high,No,15000000.0,0,7.2,Standard (1-6h),0.333,4,1.1,0
+LEAD-2028572,Ali Bhatti,+92-348-6283720,WhatsApp,2.0 Lakh,200000.0,Karachi,House,Rent,3,1.2,0.66,No,5,None,No,200000.0,0,3.6,Fast (15-60m),0.5,0,2.79,0
+LEAD-2028221,Sana Malik,+92-336-8773146,Website,"15,000,000",15000000.0,Rawalpindi,House,Invest,2,3.4,0.4,No,11,None,No,15000000.0,0,6.8,Fast (15-60m),0.167,0,1.1,0
+LEAD-2025437,Muhammad Abbasi,+92-336-9717534,Website,85.0 Lakh,8500000.0,Islamabad,House,Buy,4,9.4,0.38,Yes,83,None,No,8500000.0,0,37.6,Fast (15-60m),0.048,0,0.36,1
+LEAD-2028285,Bilal Butt,+92-340-9091613,Call,2.5 Cr,25000000.0,Islamabad,Flat,Buy,2,9.4,3.62,No,32,Price too high,No,25000000.0,0,18.8,Standard (1-6h),0.061,4,2.03,0
+LEAD-2026988,Omer Bhatti,+92-316-2879072,Call,3.5 lac,350000.0,Rawalpindi,Flat,Rent,3,3.0,0.65,Yes,54,Location too far,No,350000.0,0,9.0,Fast (15-60m),0.055,2,5.0,1
+LEAD-2028507,Hina Butt,+92-333-9888981,WhatsApp,1.2 Lakh,120000.0,Faisalabad,House,Rent,1,4.8,0.23,No,10,None,No,120000.0,0,4.8,Immediate (<15m),0.091,0,2.81,0
+LEAD-2025729,Ahmed Raza,+92-327-9315733,Call,85.0 Lacs,8500000.0,Islamabad,Commercial,Buy,4,2.2,1.2,No,28,None,No,8500000.0,0,8.8,Standard (1-6h),0.138,0,0.34,0
+LEAD-2025013,Omer Malik,+92-326-7972660,Call,85.0 Lacs,8500000.0,Karachi,House,Buy,1,2.3,0.84,No,18,None,No,8500000.0,0,2.3,Fast (15-60m),0.053,0,0.41,0
+LEAD-2026294,Hina Bhatti,+92-331-2815374,Call,35000,35000.0,Islamabad,Flat,Rent,2,1.9,7.63,No,48,Legal document questions,Yes,35000.0,1,3.8,Delayed (>6h),0.041,3,0.81,0
+LEAD-2028452,Mariam Bhatti,+92-349-7175409,Website,"50,000",50000.0,Rawalpindi,House,Rent,4,2.4,0.12,No,88,None,No,50000.0,0,9.6,Immediate (<15m),0.045,0,1.05,0
+LEAD-2028179,Hina Bhatti,+92-323-5471396,WhatsApp,85.0 Lakh,8500000.0,Islamabad,House,Invest,2,3.5,1.87,No,18,Price too high,No,8500000.0,0,7.0,Standard (1-6h),0.105,4,0.36,0
+LEAD-2026067,Hamza Mirza,+92-314-7264973,Website,150.0 lac,15000000.0,Rawalpindi,House,Buy,2,1.3,10.32,Yes,72,Price too high,Yes,15000000.0,1,2.6,Delayed (>6h),0.027,4,1.1,0
+LEAD-2025148,Bilal Khan,+92-321-7183717,WhatsApp,0.5 Lacs,50000.0,Karachi,Plot,Rent,6,3.5,0.47,No,50,No response / Call dropped,No,50000.0,0,21.0,Fast (15-60m),0.118,5,0.57,0
+LEAD-2026938,Usman Butt,+92-338-8642765,WhatsApp,12.0 Crore,120000000.0,Karachi,Plot,Invest,1,2.0,1.4,No,65,No response / Call dropped,No,120000000.0,0,2.0,Standard (1-6h),0.015,5,4.8,0
+LEAD-2028435,Saad Siddiqui,+92-342-1131790,Call,85.0 Lacs,8500000.0,Rawalpindi,Flat,Buy,3,2.5,0.47,No,58,Location too far,No,8500000.0,0,7.5,Fast (15-60m),0.051,2,1.01,0
+LEAD-2028028,Mariam Abbasi,+92-314-5498645,Website,0.5 lac,50000.0,Lahore,Plot,Rent,4,4.6,3.07,No,29,Waiting for family approval,No,50000.0,0,18.4,Standard (1-6h),0.133,1,0.57,0
+LEAD-2026847,Ahmed Khan,+92-322-8772511,Website,85.0 Lacs,8500000.0,Faisalabad,House,Buy,5,4.9,2.93,No,35,None,No,8500000.0,0,24.5,Standard (1-6h),0.139,0,0.7,0
+LEAD-2026730,Ali Dar,+92-349-2515858,Website,2.5 Crores,25000000.0,Faisalabad,House,Buy,3,0.7,1.37,Yes,87,None,No,25000000.0,0,2.1,Standard (1-6h),0.034,0,2.05,0
+LEAD-2026439,Usman Sheikh,+92-336-4058992,Facebook,0.8 Lacs,80000.0,Lahore,House,Rent,2,3.2,3.08,No,41,Waiting for family approval,No,80000.0,0,6.4,Standard (1-6h),0.048,1,1.16,0
+LEAD-2028537,Mariam Sheikh,+92-342-6006599,Website,85.0 Lakh,8500000.0,Faisalabad,House,Buy,1,6.5,0.19,No,3,Location too far,No,8500000.0,0,6.5,Immediate (<15m),0.25,2,0.7,0
+LEAD-2025522,Imran Shah,+92-329-9887453,Call,150.0 Lacs,15000000.0,Faisalabad,House,Buy,2,1.6,1.03,No,22,None,No,15000000.0,0,3.2,Standard (1-6h),0.087,0,1.23,0
+LEAD-2026508,Ali Bhatti,+92-343-7447205,WhatsApp,"200,000",200000.0,Lahore,Flat,Rent,2,5.1,0.76,No,15,None,Yes,200000.0,1,10.2,Fast (15-60m),0.125,0,4.8,0
+LEAD-2028197,Hamza Butt,+92-312-8714621,Call,12.0 Crore,120000000.0,Rawalpindi,House,Buy,1,11.9,32.6,No,49,None,No,120000000.0,0,11.9,Delayed (>6h),0.02,0,5.0,0
+LEAD-2025860,Ayesha Siddiqui,+92-348-4579046,Website,4.0 Crores,40000000.0,Islamabad,House,Buy,1,1.6,2.51,No,33,None,No,40000000.0,0,1.6,Standard (1-6h),0.029,0,1.7,0
+LEAD-2025160,Mariam Bhatti,+92-343-5543131,Facebook,"25,000,000",25000000.0,Karachi,House,Buy,5,8.0,2.03,No,31,Location too far,Yes,25000000.0,1,40.0,Standard (1-6h),0.156,2,1.22,0
+LEAD-2025716,Usman Raza,+92-345-9811616,Facebook,1.2 Lakh,120000.0,Lahore,Flat,Rent,1,9.7,2.54,No,17,None,No,120000.0,0,9.7,Standard (1-6h),0.056,0,2.88,0
+LEAD-2026297,Sana Abbasi,+92-349-5154267,Call,150.0 Lakh,15000000.0,Islamabad,House,Invest,1,3.3,39.38,No,69,Price too high,No,15000000.0,0,3.3,Delayed (>6h),0.014,4,0.64,0
+LEAD-2028012,Zubair Khan,+92-339-4019227,Website,1.5 Crores,15000000.0,Karachi,Flat,Buy,2,2.4,0.16,No,41,Location too far,No,15000000.0,0,4.8,Immediate (<15m),0.048,2,1.44,0
+LEAD-2027292,Hina Raza,+92-318-3724409,Facebook,1.5 crore,15000000.0,Lahore,House,Buy,2,3.8,1.44,No,89,Location too far,No,15000000.0,0,7.6,Standard (1-6h),0.022,2,0.76,0
+LEAD-2027201,Bilal Chaudhry,+92-327-9131076,WhatsApp,1.5 Cr,15000000.0,Lahore,House,Buy,2,0.8,5.95,No,8,None,No,15000000.0,0,1.6,Standard (1-6h),0.222,0,0.76,0
+LEAD-2028530,Zubair Chaudhry,+92-313-9245231,Call,1.5 Cr,15000000.0,Rawalpindi,House,Buy,1,0.9,23.07,No,67,Price too high,No,15000000.0,0,0.9,Delayed (>6h),0.015,4,1.1,0
+LEAD-2027547,Mariam Chaudhry,+92-314-9210632,Call,4.0 Crores,40000000.0,Karachi,Flat,Buy,5,3.8,0.34,No,69,None,No,40000000.0,0,19.0,Fast (15-60m),0.071,0,3.84,0
+LEAD-2028395,Usman Dar,+92-320-6029828,WhatsApp,15000000,15000000.0,Islamabad,Flat,Buy,2,2.2,2.72,No,31,Price too high,No,15000000.0,0,4.4,Standard (1-6h),0.062,4,1.22,0
+LEAD-2027269,Mariam Chaudhry,+92-319-3376580,Website,85.0 lac,8500000.0,Islamabad,Plot,Buy,1,5.8,0.37,No,46,Price too high,No,8500000.0,0,5.8,Fast (15-60m),0.021,4,0.34,0
+LEAD-2028100,Ayesha Abbasi,+92-315-7183904,Call,0.8 Lacs,80000.0,Karachi,Flat,Rent,3,3.3,9.94,No,17,Waiting for family approval,No,80000.0,0,9.9,Delayed (>6h),0.167,1,2.19,0
+LEAD-2027542,Ali Bhatti,+92-316-1913166,WhatsApp,85.0 lac,8500000.0,Karachi,House,Buy,8,1.5,2.18,No,53,None,No,8500000.0,0,12.0,Standard (1-6h),0.148,0,0.41,0
+LEAD-2027132,Sana Chaudhry,+92-338-7841891,Facebook,40000000,40000000.0,Islamabad,House,Buy,6,4.2,1.43,No,2,Price too high,No,40000000.0,0,25.2,Standard (1-6h),2.0,4,1.7,0
+LEAD-2025275,Zainab Qureshi,+92-326-1463956,Facebook,250.0 lac,25000000.0,Karachi,Flat,Invest,2,2.1,0.12,No,8,None,No,25000000.0,0,4.2,Immediate (<15m),0.222,0,2.4,0
+LEAD-2028156,Hina Malik,+92-311-4939468,WhatsApp,85.0 Lakh,8500000.0,Faisalabad,House,Buy,2,5.9,1.07,Yes,49,None,No,8500000.0,0,11.8,Standard (1-6h),0.04,0,0.7,1
+LEAD-2028262,Mariam Butt,+92-326-8001007,Facebook,3.5 Lacs,350000.0,Karachi,House,Rent,2,4.5,2.62,No,41,None,No,350000.0,0,9.0,Standard (1-6h),0.048,0,4.88,0
+LEAD-2025612,Imran Malik,+92-330-5428288,Facebook,85.0 Lac,8500000.0,Rawalpindi,House,Invest,4,8.9,4.25,No,86,Price too high,No,8500000.0,0,35.6,Standard (1-6h),0.046,4,0.63,0
+LEAD-2027875,Bilal Mirza,+92-310-6150710,WhatsApp,0.5 Lacs,50000.0,Islamabad,House,Rent,2,1.0,0.74,No,13,Low trust in scheme/NOC,No,50000.0,0,2.0,Fast (15-60m),0.143,4,0.61,0
+LEAD-2025866,Ahmed Butt,+92-331-2234366,WhatsApp,1.5 crore,15000000.0,Faisalabad,Flat,Buy,1,5.8,5.5,No,30,Price too high,No,15000000.0,0,5.8,Standard (1-6h),0.032,4,2.15,0
+LEAD-2027661,Tariq Javed,+92-311-3317593,Facebook,1.2 Lac,120000.0,Faisalabad,House,Rent,6,0.6,8.12,No,22,Location too far,Yes,120000.0,1,3.6,Delayed (>6h),0.261,2,2.81,0
+LEAD-2025389,Hina Shah,+92-341-2060104,WhatsApp,150.0 Lac,15000000.0,Rawalpindi,Plot,Buy,4,4.1,4.75,No,58,None,No,15000000.0,0,16.4,Standard (1-6h),0.068,0,0.6,0
+LEAD-2028117,Bilal Butt,+92-315-1769793,WhatsApp,2.5 crore,25000000.0,Rawalpindi,Flat,Buy,1,2.0,0.18,Yes,72,None,No,25000000.0,0,2.0,Immediate (<15m),0.014,0,2.97,0
+LEAD-2025939,Zainab Javed,+92-333-9294308,WhatsApp,0.8 Lakh,80000.0,Rawalpindi,Flat,Rent,8,2.2,2.15,No,83,Legal document questions,No,80000.0,0,17.6,Standard (1-6h),0.095,3,2.71,0
+LEAD-2027435,Sana Dar,+92-314-7822331,Call,85.0 Lacs,8500000.0,Islamabad,House,Buy,1,1.6,1.77,No,3,Low trust in scheme/NOC,No,8500000.0,0,1.6,Standard (1-6h),0.25,4,0.36,0
+LEAD-2028313,Saad Abbasi,+92-313-8086927,Call,85.0 Lakh,8500000.0,Faisalabad,Plot,Buy,2,0.9,6.84,No,63,Waiting for family approval,No,8500000.0,0,1.8,Delayed (>6h),0.031,1,0.34,0
+LEAD-2025073,Saad Butt,+92-332-6143542,Website,4.0 crore,40000000.0,Rawalpindi,Commercial,Buy,1,11.0,2.11,No,17,No response / Call dropped,No,40000000.0,0,11.0,Standard (1-6h),0.056,5,1.6,0
+LEAD-2028444,Zainab Chaudhry,+92-337-3469466,Call,3.5 Lac,350000.0,Islamabad,House,Rent,5,4.3,0.24,No,80,Location too far,No,350000.0,0,21.5,Immediate (<15m),0.062,2,4.24,0
+LEAD-2028178,Omer Butt,+92-327-9632112,Website,2.5 Cr,25000000.0,Faisalabad,House,Buy,2,4.0,3.66,No,34,None,Yes,25000000.0,1,8.0,Standard (1-6h),0.057,0,2.05,0
+LEAD-2027282,Usman Butt,+92-336-7235429,Call,1.2 Lacs,120000.0,Islamabad,Plot,Rent,1,2.7,1.68,No,13,Legal document questions,No,120000.0,0,2.7,Standard (1-6h),0.071,3,1.37,0
+LEAD-2028212,Zainab Mirza,+92-335-1450364,Website,1.5 Crore,15000000.0,Islamabad,House,Buy,1,4.2,0.5,No,39,No response / Call dropped,No,15000000.0,0,4.2,Fast (15-60m),0.025,5,0.64,0
+LEAD-2026646,Fahad Shah,+92-336-1998757,Website,"25,000,000",25000000.0,Karachi,House,Buy,2,6.0,2.94,Yes,20,Low trust in scheme/NOC,No,25000000.0,0,12.0,Standard (1-6h),0.095,4,1.22,1
+LEAD-2028434,Ali Abbasi,+92-325-8776048,WhatsApp,85.0 Lacs,8500000.0,Islamabad,House,Buy,1,11.4,1.99,No,57,None,No,8500000.0,0,11.4,Standard (1-6h),0.017,0,0.36,0
+LEAD-2025036,Hina Bhatti,+92-314-9799040,Call,"40,000,000",40000000.0,Islamabad,House,Buy,3,3.2,1.02,No,65,No response / Call dropped,No,40000000.0,0,9.6,Standard (1-6h),0.045,5,1.7,0
+LEAD-2025324,Ahmed Raza,+92-314-5656458,Facebook,4.0 Crore,40000000.0,Lahore,House,Buy,1,1.4,1.65,No,25,Low trust in scheme/NOC,No,40000000.0,0,1.4,Standard (1-6h),0.038,4,2.03,0
+LEAD-2028000,Bilal Mirza,+92-310-4209852,Call,2.0 Lakh,200000.0,Islamabad,Plot,Rent,1,1.9,5.11,No,48,None,No,200000.0,0,1.9,Standard (1-6h),0.02,0,2.29,0
+LEAD-2026108,Ahmed Mirza,+92-338-2374562,Facebook,250.0 Lacs,25000000.0,Rawalpindi,House,Buy,2,9.6,2.67,Yes,53,Price too high,No,25000000.0,0,19.2,Standard (1-6h),0.037,4,1.84,1
+LEAD-2025340,Ali Sheikh,+92-333-1776210,Facebook,0.5 Lac,50000.0,Faisalabad,House,Rent,5,3.8,0.45,No,34,Location too far,Yes,50000.0,1,19.0,Fast (15-60m),0.143,2,1.17,0
+LEAD-2028494,Muhammad Bhatti,+92-314-1523018,Call,4.0 Crore,40000000.0,Lahore,House,Invest,3,5.4,0.28,No,51,No response / Call dropped,No,40000000.0,0,16.2,Fast (15-60m),0.058,5,2.03,0
+LEAD-2025602,Sana Malik,+92-312-6771342,WhatsApp,150.0 lac,15000000.0,Islamabad,House,Buy,3,2.7,1.77,No,25,Price too high,No,15000000.0,0,8.1,Standard (1-6h),0.115,4,0.64,0
+LEAD-2026488,Fahad Abbasi,+92-330-9374883,Facebook,15000000,15000000.0,Islamabad,Commercial,Buy,3,5.1,1.93,Yes,85,Price too high,No,15000000.0,0,15.3,Standard (1-6h),0.035,4,0.6,1
+LEAD-2028593,Bilal Dar,+92-339-2795600,Call,1.5 Cr,15000000.0,Islamabad,Plot,Invest,6,1.3,30.18,No,89,Waiting for family approval,Yes,15000000.0,1,7.8,Delayed (>6h),0.067,1,0.6,0
+LEAD-2027492,Usman Dar,+92-333-5760323,WhatsApp,85.0 Lac,8500000.0,Faisalabad,Plot,Invest,1,0.8,9.04,Yes,18,Low trust in scheme/NOC,No,8500000.0,0,0.8,Delayed (>6h),0.053,4,0.34,0
+LEAD-2026703,Muhammad Raza,+92-335-6413980,WhatsApp,2.5 Cr,25000000.0,Lahore,House,Buy,6,5.4,4.65,No,73,None,Yes,25000000.0,1,32.4,Standard (1-6h),0.081,0,1.27,0
+LEAD-2026005,Bilal Dar,+92-321-3349967,WhatsApp,"25,000,000",25000000.0,Karachi,House,Buy,1,4.9,0.42,No,82,None,No,25000000.0,0,4.9,Fast (15-60m),0.012,0,1.22,0
+LEAD-2028525,Imran Mirza,+92-341-3754350,Facebook,400.0 lac,40000000.0,Karachi,House,Buy,4,4.6,0.94,No,55,Low trust in scheme/NOC,No,40000000.0,0,18.4,Fast (15-60m),0.071,4,1.95,0
+LEAD-2027870,Tariq Dar,+92-317-3656392,Call,"15,000,000",15000000.0,Lahore,Flat,Buy,2,0.6,1.23,No,28,Legal document questions,No,15000000.0,0,1.2,Standard (1-6h),0.069,3,1.26,0
+LEAD-2028367,Hina Butt,+92-315-1741710,WhatsApp,85.0 Lacs,8500000.0,Rawalpindi,House,Invest,5,13.4,6.94,No,76,Price too high,No,8500000.0,0,67.0,Delayed (>6h),0.065,4,0.63,0
+LEAD-2028468,Zubair Malik,+92-348-8200057,Facebook,0.5 Lacs,50000.0,Karachi,Flat,Rent,8,0.8,0.42,Yes,90,None,Yes,50000.0,1,6.4,Fast (15-60m),0.088,0,1.37,0
+LEAD-2025008,Ali Siddiqui,+92-314-1618590,Call,2.5 Cr,25000000.0,Faisalabad,Flat,Buy,4,4.1,2.96,No,58,Low trust in scheme/NOC,No,25000000.0,0,16.4,Standard (1-6h),0.068,4,3.59,0
+LEAD-2027977,Ali Javed,+92-341-4349890,Call,0.3 lac,30000.0,Lahore,House,Rent,1,4.4,1.68,No,28,Legal document questions,No,30000.0,0,4.4,Standard (1-6h),0.034,3,0.43,0
+LEAD-2025001,Zubair Sheikh,+92-324-2201579,Website,0.3 Lacs,30000.0,Karachi,House,Rent,1,3.1,1.7,No,45,No response / Call dropped,No,30000.0,0,3.1,Standard (1-6h),0.022,5,0.42,0
+LEAD-2028168,Bilal Chaudhry,+92-341-2756827,Website,35000,35000.0,Islamabad,House,Rent,3,0.8,19.44,No,74,No response / Call dropped,No,35000.0,0,2.4,Delayed (>6h),0.04,5,0.42,0
+LEAD-2026299,Imran Chaudhry,+92-341-1098417,Website,85.0 Lakh,8500000.0,Faisalabad,House,Invest,5,4.9,0.32,No,47,None,Yes,8500000.0,1,24.5,Fast (15-60m),0.104,0,0.7,0
+LEAD-2027984,Bilal Shah,+92-344-2107810,Call,1.5 Crore,15000000.0,Islamabad,House,Buy,5,2.1,1.55,No,58,Price too high,Yes,15000000.0,1,10.5,Standard (1-6h),0.085,4,0.64,0
+LEAD-2028261,Omer Malik,+92-332-9992392,WhatsApp,35000,35000.0,Lahore,Flat,Rent,1,0.7,0.13,No,14,None,No,35000.0,0,0.7,Immediate (<15m),0.067,0,0.84,0
+LEAD-2027593,Fatima Mirza,+92-345-7688377,Facebook,25000000,25000000.0,Faisalabad,House,Buy,1,11.5,2.23,Yes,41,Waiting for family approval,No,25000000.0,0,11.5,Standard (1-6h),0.024,1,2.05,1
+LEAD-2027260,Sana Javed,+92-336-7429946,Facebook,150.0 Lacs,15000000.0,Lahore,House,Buy,2,1.1,0.1,Yes,71,None,No,15000000.0,0,2.2,Immediate (<15m),0.028,0,0.76,0
+LEAD-2027963,Omer Raza,+92-349-9400198,Call,85.0 lac,8500000.0,Faisalabad,House,Buy,3,2.5,1.16,No,56,None,No,8500000.0,0,7.5,Standard (1-6h),0.053,0,0.7,0
+LEAD-2025172,Fahad Bhatti,+92-322-9987078,Call,1.2 lac,120000.0,Lahore,House,Rent,5,5.0,1.95,No,85,Price too high,No,120000.0,0,25.0,Standard (1-6h),0.058,4,1.74,0
+LEAD-2025047,Omer Javed,+92-347-5128139,WhatsApp,50000,50000.0,Faisalabad,Flat,Rent,2,1.8,2.38,No,73,Price too high,No,50000.0,0,3.6,Standard (1-6h),0.027,4,2.05,0
+LEAD-2027049,Zubair Mirza,+92-323-8169966,WhatsApp,85.0 lac,8500000.0,Rawalpindi,House,Buy,1,0.5,1.21,Yes,86,None,No,8500000.0,0,0.5,Standard (1-6h),0.011,0,0.63,0
+LEAD-2026399,Ali Raza,+92-311-9342037,WhatsApp,1.5 Crores,15000000.0,Karachi,Flat,Buy,1,4.2,0.43,No,88,Price too high,No,15000000.0,0,4.2,Fast (15-60m),0.011,4,1.44,0
+LEAD-2026654,Ahmed Butt,+92-325-8638574,WhatsApp,1.5 crore,15000000.0,Faisalabad,House,Buy,2,1.5,2.47,No,89,Price too high,No,15000000.0,0,3.0,Standard (1-6h),0.022,4,1.23,0
+LEAD-2025618,Hamza Malik,+92-349-1448539,Call,0.5 lac,50000.0,Karachi,Flat,Rent,2,2.3,1.68,Yes,55,None,Yes,50000.0,1,4.6,Standard (1-6h),0.036,0,1.37,0
+LEAD-2025465,Fahad Butt,+92-326-4018660,Call,4.0 Crore,40000000.0,Karachi,House,Buy,3,3.1,0.13,No,54,Price too high,No,40000000.0,0,9.3,Immediate (<15m),0.055,4,1.95,0
+LEAD-2026472,Omer Siddiqui,+92-341-7470996,Call,85.0 lac,8500000.0,Faisalabad,Plot,Buy,4,8.1,0.16,Yes,18,Low trust in scheme/NOC,No,8500000.0,0,32.4,Immediate (<15m),0.211,4,0.34,1
+LEAD-2028589,Imran Butt,+92-339-1491139,WhatsApp,150.0 Lacs,15000000.0,Faisalabad,House,Buy,2,4.6,0.4,No,31,None,No,15000000.0,0,9.2,Fast (15-60m),0.062,0,1.23,0
+LEAD-2026260,Zubair Khan,+92-311-8119968,Call,3.5 Lacs,350000.0,Rawalpindi,House,Rent,1,1.0,2.48,Yes,69,Price too high,No,350000.0,0,1.0,Standard (1-6h),0.014,4,5.0,0
+LEAD-2025436,Zubair Javed,+92-327-7442668,Website,400.0 Lac,40000000.0,Faisalabad,House,Buy,2,14.7,0.4,No,49,No response / Call dropped,No,40000000.0,0,29.4,Fast (15-60m),0.04,5,3.28,0
+LEAD-2026890,Ali Mirza,+92-316-1382703,Facebook,400.0 Lacs,40000000.0,Karachi,Flat,Buy,8,3.5,1.78,No,39,None,Yes,40000000.0,1,28.0,Standard (1-6h),0.2,0,3.84,0
+LEAD-2027382,Fatima Dar,+92-323-1639206,WhatsApp,1.5 crore,15000000.0,Faisalabad,House,Invest,1,3.3,32.79,No,42,Waiting for family approval,No,15000000.0,0,3.3,Delayed (>6h),0.023,1,1.23,0
+LEAD-2028224,Tariq Sheikh,+92-317-8170229,WhatsApp,85.0 Lacs,8500000.0,Karachi,Plot,Buy,1,1.3,5.34,No,58,Price too high,No,8500000.0,0,1.3,Standard (1-6h),0.017,4,0.34,0
+LEAD-2025721,Mariam Butt,+92-342-6012361,WhatsApp,2.5 Crores,25000000.0,Rawalpindi,Flat,Buy,2,5.9,4.06,No,10,Price too high,No,25000000.0,0,11.8,Standard (1-6h),0.182,4,2.97,0
+LEAD-2026521,Zainab Bhatti,+92-337-1717832,WhatsApp,3.5 lac,350000.0,Lahore,Flat,Rent,3,8.5,2.71,No,72,None,No,350000.0,0,25.5,Standard (1-6h),0.041,0,5.0,0
+LEAD-2025113,Fatima Javed,+92-312-2035189,Call,75000000,75000000.0,Rawalpindi,Plot,Buy,2,5.4,4.63,No,48,None,Yes,75000000.0,1,10.8,Standard (1-6h),0.041,0,3.0,0
+LEAD-2026551,Ahmed Butt,+92-349-6601658,Facebook,1.5 Crore,15000000.0,Islamabad,House,Buy,1,3.2,0.33,Yes,3,No response / Call dropped,No,15000000.0,0,3.2,Fast (15-60m),0.25,5,0.64,0
+LEAD-2025844,Imran Dar,+92-328-8113333,WhatsApp,2.5 crore,25000000.0,Lahore,Flat,Buy,3,11.1,0.67,No,64,None,No,25000000.0,0,33.3,Fast (15-60m),0.046,0,2.1,0
+LEAD-2027625,Ahmed Malik,+92-346-9608666,Call,2.0 Lac,200000.0,Islamabad,Flat,Rent,1,1.3,0.91,No,16,Waiting for family approval,No,200000.0,0,1.3,Fast (15-60m),0.059,1,4.65,0
+LEAD-2027782,Omer Chaudhry,+92-333-1022356,WhatsApp,0.5 lac,50000.0,Faisalabad,Flat,Rent,4,3.8,0.14,No,59,Waiting for family approval,No,50000.0,0,15.2,Immediate (<15m),0.067,1,2.05,0
+LEAD-2026699,Muhammad Khan,+92-333-7145179,WhatsApp,0.3 Lakh,30000.0,Karachi,House,Rent,10,12.1,6.39,Yes,27,None,Yes,30000.0,1,121.0,Delayed (>6h),0.357,0,0.42,1
+LEAD-2026150,Fahad Mirza,+92-315-8617689,Website,75000,75000.0,Faisalabad,House,Rent,2,3.0,2.54,No,54,Price too high,No,75000.0,0,6.0,Standard (1-6h),0.036,4,1.76,0
+LEAD-2026471,Hamza Siddiqui,+92-345-1458251,Website,2.5 Crore,25000000.0,Lahore,Flat,Buy,1,1.2,0.12,No,86,None,No,25000000.0,0,1.2,Immediate (<15m),0.011,0,2.1,0
+LEAD-2028220,Tariq Malik,+92-342-6810768,Website,250.0 Lakh,25000000.0,Lahore,Flat,Buy,3,1.5,2.63,No,50,No response / Call dropped,No,25000000.0,0,4.5,Standard (1-6h),0.059,5,2.1,0
+LEAD-2025005,Zubair Malik,+92-344-9370199,Facebook,85.0 Lakh,8500000.0,Islamabad,Flat,Buy,1,1.9,0.12,Yes,80,Price too high,No,8500000.0,0,1.9,Immediate (<15m),0.012,4,0.69,0
+LEAD-2025270,Ahmed Shah,+92-315-8571405,Call,1.5 crore,15000000.0,Lahore,House,Buy,4,1.8,0.62,No,13,Waiting for family approval,Yes,15000000.0,1,7.2,Fast (15-60m),0.286,1,0.76,0
+LEAD-2027411,Ahmed Mirza,+92-347-1760428,Call,85.0 Lac,8500000.0,Faisalabad,House,Buy,1,12.8,3.66,No,56,Waiting for family approval,No,8500000.0,0,12.8,Standard (1-6h),0.018,1,0.7,0
+LEAD-2028473,Fahad Raza,+92-334-3975192,Facebook,2.0 Lakh,200000.0,Karachi,House,Rent,8,11.1,0.17,No,11,None,Yes,200000.0,1,88.8,Immediate (<15m),0.667,0,2.79,0
+LEAD-2025003,Mariam Bhatti,+92-333-1736032,WhatsApp,1.2 Lacs,120000.0,Islamabad,House,Rent,6,3.7,7.04,No,65,None,Yes,120000.0,1,22.2,Delayed (>6h),0.091,0,1.45,0
+LEAD-2027391,Imran Khan,+92-317-8487734,Facebook,3.5 Lakh,350000.0,Rawalpindi,House,Rent,1,4.5,0.18,No,24,Legal document questions,No,350000.0,0,4.5,Immediate (<15m),0.04,3,5.0,0
+LEAD-2025718,Usman Malik,+92-314-8716727,Website,85.0 Lacs,8500000.0,Rawalpindi,House,Buy,2,2.8,0.42,Yes,83,Price too high,No,8500000.0,0,5.6,Fast (15-60m),0.024,4,0.63,0
+LEAD-2025423,Zainab Mirza,+92-314-3844797,WhatsApp,2.5 Cr,25000000.0,Karachi,Flat,Buy,5,1.1,1.09,No,3,Price too high,Yes,25000000.0,1,5.5,Standard (1-6h),1.25,4,2.4,0
+LEAD-2028214,Omer Khan,+92-310-8901633,Facebook,7.5 Cr,75000000.0,Islamabad,House,Buy,3,4.1,36.1,No,57,None,No,75000000.0,0,12.3,Delayed (>6h),0.052,0,3.18,0
+LEAD-2027931,Tariq Javed,+92-313-1517608,Website,12.0 Crore,120000000.0,Islamabad,House,Buy,5,2.0,0.3,No,58,Waiting for family approval,Yes,120000000.0,1,10.0,Fast (15-60m),0.085,1,5.0,0
+LEAD-2025142,Zainab Butt,+92-338-1967000,Facebook,150.0 Lac,15000000.0,Rawalpindi,House,Invest,4,2.9,7.74,No,5,Price too high,No,15000000.0,0,11.6,Delayed (>6h),0.667,4,1.1,0
+LEAD-2026881,Omer Mirza,+92-325-8917019,Call,"35,000",35000.0,Lahore,Commercial,Rent,4,1.6,0.24,No,33,Price too high,No,35000.0,0,6.4,Immediate (<15m),0.118,4,0.4,0
+LEAD-2026647,Omer Qureshi,+92-321-5855713,WhatsApp,"25,000,000",25000000.0,Islamabad,House,Buy,3,4.0,32.02,No,82,Price too high,No,25000000.0,0,12.0,Delayed (>6h),0.036,4,1.06,0
+LEAD-2028134,Fahad Abbasi,+92-326-9524785,Facebook,85.0 lac,8500000.0,Islamabad,Plot,Buy,3,8.8,0.26,No,78,Location too far,Yes,8500000.0,1,26.4,Fast (15-60m),0.038,2,0.34,0
+LEAD-2028347,Ali Abbasi,+92-328-7025508,WhatsApp,"25,000,000",25000000.0,Rawalpindi,House,Buy,4,3.6,0.17,No,58,None,No,25000000.0,0,14.4,Immediate (<15m),0.068,0,1.84,0
+LEAD-2025870,Muhammad Siddiqui,+92-321-7799268,Call,4.0 Crores,40000000.0,Faisalabad,Flat,Buy,2,4.6,1.08,No,24,Low trust in scheme/NOC,No,40000000.0,0,9.2,Standard (1-6h),0.08,4,5.0,0
+LEAD-2027111,Imran Mirza,+92-327-2444994,Call,4.0 crore,40000000.0,Faisalabad,House,Buy,1,3.0,0.19,No,17,Waiting for family approval,No,40000000.0,0,3.0,Immediate (<15m),0.056,1,3.28,0
+LEAD-2028428,Bilal Chaudhry,+92-336-9124324,Call,0.8 lac,80000.0,Lahore,Plot,Rent,1,4.4,10.2,Yes,69,None,No,80000.0,0,4.4,Delayed (>6h),0.014,0,0.91,0
+LEAD-2025205,Ahmed Abbasi,+92-340-3497304,Facebook,2.5 Crore,25000000.0,Islamabad,House,Buy,1,2.2,0.21,No,14,Price too high,No,25000000.0,0,2.2,Immediate (<15m),0.067,4,1.06,0
+LEAD-2025586,Muhammad Malik,+92-314-8184073,Website,7.5 crore,75000000.0,Faisalabad,Plot,Invest,4,5.1,1.83,No,4,None,Yes,75000000.0,1,20.4,Standard (1-6h),0.8,0,3.0,0
+LEAD-2025388,Fahad Bhatti,+92-341-3653221,WhatsApp,150.0 lac,15000000.0,Faisalabad,House,Invest,3,3.9,5.77,No,38,Price too high,No,15000000.0,0,11.7,Standard (1-6h),0.077,4,1.23,0
+LEAD-2027011,Mariam Abbasi,+92-320-5680124,Website,150.0 Lakh,15000000.0,Faisalabad,House,Invest,2,4.0,6.27,No,44,Legal document questions,Yes,15000000.0,1,8.0,Delayed (>6h),0.044,3,1.23,0
+LEAD-2027676,Tariq Dar,+92-332-7818996,Call,250.0 Lakh,25000000.0,Islamabad,House,Invest,4,3.9,0.18,Yes,88,Waiting for family approval,Yes,25000000.0,1,15.6,Immediate (<15m),0.045,1,1.06,1
+LEAD-2027594,Usman Dar,+92-331-1803688,Website,85.0 Lac,8500000.0,Karachi,House,Buy,5,1.1,3.1,No,15,None,No,8500000.0,0,5.5,Standard (1-6h),0.312,0,0.41,0
+LEAD-2026018,Omer Shah,+92-329-2245150,WhatsApp,1.5 Cr,15000000.0,Faisalabad,House,Buy,4,2.2,1.92,No,69,None,No,15000000.0,0,8.8,Standard (1-6h),0.057,0,1.23,0
+LEAD-2026993,Hamza Butt,+92-343-9876144,Call,7.5 crore,75000000.0,Lahore,Flat,Buy,2,12.9,2.04,No,67,None,No,75000000.0,0,25.8,Standard (1-6h),0.029,0,5.0,0
+LEAD-2026331,Ayesha Khan,+92-340-3218332,WhatsApp,0.8 Lakh,80000.0,Islamabad,Flat,Rent,1,4.5,1.6,No,21,Waiting for family approval,No,80000.0,0,4.5,Standard (1-6h),0.045,1,1.86,0
+LEAD-2026681,Muhammad Mirza,+92-327-8438736,WhatsApp,150.0 Lakh,15000000.0,Lahore,House,Buy,1,3.6,20.12,No,18,None,No,15000000.0,0,3.6,Delayed (>6h),0.053,0,0.76,0
+LEAD-2026586,Fahad Butt,+92-346-6920864,Call,1.5 crore,15000000.0,Karachi,House,Buy,1,7.8,42.96,No,14,None,No,15000000.0,0,7.8,Delayed (>6h),0.067,0,0.73,0
+LEAD-2028451,Ali Abbasi,+92-335-6924681,WhatsApp,4.0 Crores,40000000.0,Karachi,House,Buy,2,1.5,0.41,No,75,None,No,40000000.0,0,3.0,Fast (15-60m),0.026,0,1.95,0
+LEAD-2025834,Muhammad Shah,+92-320-6230505,Website,2.5 Crores,25000000.0,Lahore,Plot,Invest,4,1.2,1.83,No,72,Location too far,No,25000000.0,0,4.8,Standard (1-6h),0.055,2,1.0,0
+LEAD-2026878,Ahmed Abbasi,+92-337-5681702,Call,0.5 Lac,50000.0,Faisalabad,Commercial,Rent,1,10.8,0.11,No,14,Location too far,No,50000.0,0,10.8,Immediate (<15m),0.067,2,0.57,0
+LEAD-2026133,Omer Mirza,+92-329-1966711,Call,85.0 Lac,8500000.0,Karachi,Plot,Buy,3,2.7,1.68,No,27,Location too far,No,8500000.0,0,8.1,Standard (1-6h),0.107,2,0.34,0
+LEAD-2026799,Fahad Qureshi,+92-339-4467449,WhatsApp,2.5 Cr,25000000.0,Lahore,House,Buy,1,3.5,30.93,Yes,27,None,No,25000000.0,0,3.5,Delayed (>6h),0.036,0,1.27,0
+LEAD-2026105,Bilal Qureshi,+92-326-8366384,Website,"350,000",350000.0,Rawalpindi,House,Rent,2,3.1,2.61,No,17,Price too high,No,350000.0,0,6.2,Standard (1-6h),0.111,4,5.0,0
+LEAD-2028136,Hamza Bhatti,+92-313-6527038,Call,15000000,15000000.0,Karachi,Plot,Buy,5,12.3,3.15,No,51,Price too high,No,15000000.0,0,61.5,Standard (1-6h),0.096,4,0.6,0
+LEAD-2025867,Imran Raza,+92-325-9657835,Facebook,2.5 Crores,25000000.0,Karachi,Commercial,Invest,1,3.5,0.24,No,62,No response / Call dropped,No,25000000.0,0,3.5,Immediate (<15m),0.016,5,1.0,0
+LEAD-2026249,Bilal Abbasi,+92-318-5096680,Call,1.5 crore,15000000.0,Rawalpindi,Plot,Buy,1,4.0,0.78,No,25,Waiting for family approval,No,15000000.0,0,4.0,Fast (15-60m),0.038,1,0.6,0
+LEAD-2027423,Bilal Raza,+92-332-6825825,Call,12.0 Crores,120000000.0,Rawalpindi,Commercial,Buy,1,3.0,0.68,No,58,Price too high,No,120000000.0,0,3.0,Fast (15-60m),0.017,4,4.8,0
+LEAD-2027395,Usman Raza,+92-345-8619169,Website,85.0 lac,8500000.0,Faisalabad,House,Buy,1,4.8,2.75,No,9,None,Yes,8500000.0,1,4.8,Standard (1-6h),0.1,0,0.7,0
+LEAD-2026451,Saad Sheikh,+92-317-1116392,WhatsApp,250.0 Lac,25000000.0,Islamabad,Flat,Buy,1,1.1,0.14,No,40,None,No,25000000.0,0,1.1,Immediate (<15m),0.024,0,2.03,0
+LEAD-2026677,Hamza Raza,+92-321-1422807,Website,2.5 Crore,25000000.0,Lahore,House,Buy,8,4.8,4.49,Yes,64,Waiting for family approval,Yes,25000000.0,1,38.4,Standard (1-6h),0.123,1,1.27,1
+LEAD-2025125,Usman Qureshi,+92-324-4157668,WhatsApp,8500000,8500000.0,Rawalpindi,House,Buy,1,1.6,0.83,No,54,Price too high,No,8500000.0,0,1.6,Fast (15-60m),0.018,4,0.63,0
+LEAD-2028437,Usman Butt,+92-322-7882339,Call,0.3 Lakh,30000.0,Rawalpindi,House,Rent,1,3.8,0.92,No,89,No response / Call dropped,No,30000.0,0,3.8,Fast (15-60m),0.011,5,0.63,0
+LEAD-2027126,Zainab Dar,+92-317-2098513,Call,85.0 Lacs,8500000.0,Islamabad,Flat,Buy,2,9.3,1.08,No,66,Legal document questions,Yes,8500000.0,1,18.6,Standard (1-6h),0.03,3,0.69,0
+LEAD-2028132,Zubair Chaudhry,+92-315-6213284,Website,150.0 lac,15000000.0,Karachi,Plot,Buy,2,5.3,5.0,No,86,None,No,15000000.0,0,10.6,Standard (1-6h),0.023,0,0.6,0
+LEAD-2025634,Muhammad Chaudhry,+92-330-6128219,WhatsApp,85.0 Lac,8500000.0,Faisalabad,House,Buy,2,5.3,46.66,No,51,Location too far,No,8500000.0,0,10.6,Delayed (>6h),0.038,2,0.7,0
+LEAD-2027057,Ahmed Mirza,+92-348-4305149,Call,15000000,15000000.0,Karachi,House,Buy,4,1.9,1.11,No,78,None,No,15000000.0,0,7.6,Standard (1-6h),0.051,0,0.73,0
+LEAD-2027798,Hamza Javed,+92-345-7390750,Call,150.0 Lacs,15000000.0,Karachi,Flat,Buy,1,3.8,0.41,Yes,39,None,No,15000000.0,0,3.8,Fast (15-60m),0.025,0,1.44,0
+LEAD-2028264,Fahad Chaudhry,+92-328-2784771,Call,0.5 Lac,50000.0,Faisalabad,House,Rent,5,14.0,2.72,No,10,None,Yes,50000.0,1,70.0,Standard (1-6h),0.455,0,1.17,0
+LEAD-2025495,Saad Siddiqui,+92-347-2085758,Facebook,1.5 Cr,15000000.0,Karachi,Plot,Buy,1,0.9,6.59,Yes,47,Price too high,No,15000000.0,0,0.9,Delayed (>6h),0.021,4,0.6,0
+LEAD-2027808,Imran Shah,+92-336-5138834,Facebook,150.0 Lacs,15000000.0,Rawalpindi,Flat,Buy,2,5.2,0.31,No,9,Price too high,No,15000000.0,0,10.4,Fast (15-60m),0.2,4,1.78,0
+LEAD-2028500,Zubair Siddiqui,+92-313-7389782,Website,85.0 Lakh,8500000.0,Islamabad,House,Buy,1,4.8,1.71,No,81,None,No,8500000.0,0,4.8,Standard (1-6h),0.012,0,0.36,0
+LEAD-2025821,Hamza Qureshi,+92-333-4204319,WhatsApp,0.5 Lac,50000.0,Karachi,Plot,Rent,1,5.3,10.1,Yes,17,None,Yes,50000.0,1,5.3,Delayed (>6h),0.056,0,0.57,0
+LEAD-2026278,Ayesha Butt,+92-348-6059018,Call,8500000,8500000.0,Faisalabad,House,Invest,1,5.5,0.12,No,50,Waiting for family approval,Yes,8500000.0,1,5.5,Immediate (<15m),0.02,1,0.7,0
+LEAD-2027480,Hina Bhatti,+92-323-2070335,Call,1.5 crore,15000000.0,Faisalabad,Commercial,Invest,5,2.9,27.42,No,71,None,Yes,15000000.0,1,14.5,Delayed (>6h),0.069,0,0.6,0
+LEAD-2027589,Saad Shah,+92-318-5695144,WhatsApp,1.5 Crore,15000000.0,Rawalpindi,Flat,Buy,2,3.6,9.89,No,76,Legal document questions,No,15000000.0,0,7.2,Delayed (>6h),0.026,3,1.78,0
+LEAD-2026356,Ahmed Butt,+92-347-3960360,Website,4.0 Cr,40000000.0,Rawalpindi,House,Buy,5,1.8,0.41,No,1,Price too high,Yes,40000000.0,1,9.0,Fast (15-60m),2.5,4,2.95,0
+LEAD-2026182,Zubair Mirza,+92-344-6838276,Website,3.5 lac,350000.0,Karachi,Flat,Rent,1,5.4,1.71,No,87,Waiting for family approval,No,350000.0,0,5.4,Standard (1-6h),0.011,1,5.0,0
+LEAD-2025890,Ayesha Shah,+92-349-4073926,Call,1.5 Cr,15000000.0,Islamabad,House,Invest,1,1.3,4.01,No,58,None,No,15000000.0,0,1.3,Standard (1-6h),0.017,0,0.64,0
+LEAD-2025221,Imran Malik,+92-317-7894432,WhatsApp,1.5 Crore,15000000.0,Lahore,Flat,Buy,1,2.2,2.2,No,74,None,Yes,15000000.0,1,2.2,Standard (1-6h),0.013,0,1.26,0
+LEAD-2028477,Ahmed Javed,+92-331-8233983,WhatsApp,2.5 Cr,25000000.0,Lahore,House,Buy,1,5.2,1.39,Yes,8,None,No,25000000.0,0,5.2,Standard (1-6h),0.111,0,1.27,0
+LEAD-2025497,Hamza Mirza,+92-346-1110415,WhatsApp,7.5 crore,75000000.0,Islamabad,House,Buy,1,2.2,2.19,Yes,54,Location too far,No,75000000.0,0,2.2,Standard (1-6h),0.018,2,3.18,0
+LEAD-2027646,Sana Siddiqui,+92-322-7632904,Website,0.8 Lac,80000.0,Karachi,Plot,Rent,1,4.8,0.45,No,53,None,Yes,80000.0,1,4.8,Fast (15-60m),0.019,0,0.91,0
+LEAD-2025178,Fahad Qureshi,+92-329-7951282,WhatsApp,"75,000",75000.0,Islamabad,Plot,Rent,2,9.5,1.83,No,4,None,No,75000.0,0,19.0,Standard (1-6h),0.4,0,0.86,0
+LEAD-2028403,Saad Abbasi,+92-315-9306273,Call,150.0 Lac,15000000.0,Rawalpindi,House,Buy,3,2.5,18.96,No,34,Low trust in scheme/NOC,No,15000000.0,0,7.5,Delayed (>6h),0.086,4,1.1,0
+LEAD-2025981,Hamza Javed,+92-349-1035741,WhatsApp,"8,500,000",8500000.0,Lahore,Plot,Invest,2,2.2,13.85,Yes,49,None,No,8500000.0,0,4.4,Delayed (>6h),0.04,0,0.34,0
+LEAD-2027124,Muhammad Siddiqui,+92-337-3128158,Facebook,2.5 Cr,25000000.0,Karachi,House,Buy,1,1.5,2.24,No,30,None,No,25000000.0,0,1.5,Standard (1-6h),0.032,0,1.22,0
+LEAD-2027326,Mariam Siddiqui,+92-340-9711621,WhatsApp,2.5 Cr,25000000.0,Rawalpindi,House,Invest,5,14.1,5.82,No,42,Legal document questions,Yes,25000000.0,1,70.5,Standard (1-6h),0.116,3,1.84,0
+LEAD-2025803,Ayesha Chaudhry,+92-319-9144605,Call,1.5 Crore,15000000.0,Karachi,House,Buy,1,2.0,0.62,No,35,None,No,15000000.0,0,2.0,Fast (15-60m),0.028,0,0.73,0
+LEAD-2027441,Fatima Malik,+92-331-5534499,Call,12.0 crore,120000000.0,Rawalpindi,Flat,Buy,6,1.3,1.73,No,27,None,Yes,120000000.0,1,7.8,Standard (1-6h),0.214,0,5.0,0
+LEAD-2025262,Zubair Mirza,+92-322-2938565,Call,85.0 Lakh,8500000.0,Islamabad,Flat,Invest,1,0.8,1.3,No,14,None,No,8500000.0,0,0.8,Standard (1-6h),0.067,0,0.69,0
+LEAD-2025810,Imran Javed,+92-314-5139633,Facebook,"25,000,000",25000000.0,Islamabad,House,Invest,4,4.8,1.74,Yes,83,None,Yes,25000000.0,1,19.2,Standard (1-6h),0.048,0,1.06,1
+LEAD-2027741,Saad Dar,+92-328-4331327,WhatsApp,2.5 crore,25000000.0,Rawalpindi,Flat,Invest,1,2.8,1.14,No,20,None,No,25000000.0,0,2.8,Standard (1-6h),0.048,0,2.97,0
+LEAD-2027609,Ayesha Butt,+92-310-4314897,Call,1.5 Crore,15000000.0,Islamabad,House,Buy,3,2.4,9.24,No,30,None,No,15000000.0,0,7.2,Delayed (>6h),0.097,0,0.64,0
+LEAD-2025129,Mariam Khan,+92-346-9134016,WhatsApp,0.8 Lakh,80000.0,Faisalabad,House,Rent,1,3.5,5.27,No,27,Low trust in scheme/NOC,No,80000.0,0,3.5,Standard (1-6h),0.036,4,1.87,0
+LEAD-2025628,Muhammad Chaudhry,+92-347-3989307,Website,2.0 Lac,200000.0,Islamabad,Flat,Rent,1,4.4,0.31,No,61,Waiting for family approval,No,200000.0,0,4.4,Fast (15-60m),0.016,1,4.65,0
+LEAD-2025648,Hamza Mirza,+92-318-5541983,Call,2.5 Cr,25000000.0,Rawalpindi,House,Buy,1,0.8,0.16,No,7,Location too far,No,25000000.0,0,0.8,Immediate (<15m),0.125,2,1.84,0
+LEAD-2026469,Tariq Javed,+92-342-8994134,Website,1.2 lac,120000.0,Lahore,House,Rent,2,13.0,0.3,No,47,No response / Call dropped,No,120000.0,0,26.0,Fast (15-60m),0.042,5,1.74,0
+LEAD-2026342,Tariq Qureshi,+92-346-4346205,Website,1.2 lac,120000.0,Karachi,House,Rent,3,0.9,0.86,Yes,26,None,No,120000.0,0,2.7,Fast (15-60m),0.111,0,1.67,0
+LEAD-2027722,Muhammad Chaudhry,+92-346-9609343,WhatsApp,"15,000,000",15000000.0,Islamabad,Commercial,Buy,1,2.6,0.19,No,57,None,No,15000000.0,0,2.6,Immediate (<15m),0.017,0,0.6,0
+LEAD-2026983,Saad Siddiqui,+92-339-2850275,WhatsApp,2.5 Crores,25000000.0,Faisalabad,House,Buy,2,13.0,2.65,No,81,None,Yes,25000000.0,1,26.0,Standard (1-6h),0.024,0,2.05,0
+LEAD-2028287,Usman Bhatti,+92-345-4465529,Website,0.8 Lacs,80000.0,Karachi,Plot,Rent,3,1.9,1.66,No,9,None,No,80000.0,0,5.7,Standard (1-6h),0.3,0,0.91,0
+LEAD-2028373,Ayesha Siddiqui,+92-342-5826017,Call,250.0 Lacs,25000000.0,Islamabad,Flat,Buy,2,2.7,1.78,No,19,Legal document questions,No,25000000.0,0,5.4,Standard (1-6h),0.1,3,2.03,0
+LEAD-2026361,Mariam Shah,+92-314-3081769,Website,7.5 Crores,75000000.0,Karachi,House,Invest,1,3.2,1.71,Yes,72,No response / Call dropped,No,75000000.0,0,3.2,Standard (1-6h),0.014,5,3.66,0
+LEAD-2028406,Fahad Dar,+92-331-3870161,Call,85.0 Lac,8500000.0,Lahore,Flat,Buy,6,5.9,8.32,No,8,Price too high,No,8500000.0,0,35.4,Delayed (>6h),0.667,4,0.71,0
+LEAD-2026908,Ahmed Sheikh,+92-320-7909622,Website,4.0 Cr,40000000.0,Islamabad,Flat,Buy,1,5.6,1.06,No,87,Waiting for family approval,No,40000000.0,0,5.6,Standard (1-6h),0.011,1,3.25,0
+LEAD-2026725,Imran Sheikh,+92-336-9138227,Call,"200,000",200000.0,Lahore,Flat,Rent,1,2.9,1.57,No,16,None,No,200000.0,0,2.9,Standard (1-6h),0.059,0,4.8,0
+LEAD-2025942,Ayesha Bhatti,+92-313-8128721,WhatsApp,7.5 Cr,75000000.0,Islamabad,Flat,Invest,1,1.5,0.37,Yes,8,None,Yes,75000000.0,1,1.5,Fast (15-60m),0.111,0,5.0,0
+LEAD-2026401,Hamza Dar,+92-329-9262932,WhatsApp,8500000,8500000.0,Karachi,Flat,Invest,1,13.7,1.02,No,27,Low trust in scheme/NOC,No,8500000.0,0,13.7,Standard (1-6h),0.036,4,0.81,0
+LEAD-2026484,Fahad Raza,+92-346-7093180,Call,85.0 Lacs,8500000.0,Faisalabad,Plot,Buy,3,4.9,0.4,No,43,None,Yes,8500000.0,1,14.7,Fast (15-60m),0.068,0,0.34,0
+LEAD-2026749,Ahmed Bhatti,+92-319-6118574,WhatsApp,15000000,15000000.0,Lahore,Flat,Invest,3,0.7,0.12,Yes,21,Price too high,No,15000000.0,0,2.1,Immediate (<15m),0.136,4,1.26,0
+LEAD-2025534,Zainab Siddiqui,+92-332-2458008,Website,0.8 Lacs,80000.0,Lahore,Flat,Rent,3,3.3,1.79,No,1,Price too high,No,80000.0,0,9.9,Standard (1-6h),1.5,4,1.92,0
+LEAD-2026081,Hamza Sheikh,+92-322-5967378,Call,2.0 Lac,200000.0,Islamabad,Flat,Rent,4,3.4,1.18,Yes,41,No response / Call dropped,No,200000.0,0,13.6,Standard (1-6h),0.095,5,4.65,1
+LEAD-2027458,Saad Mirza,+92-310-7557093,Call,250.0 lac,25000000.0,Lahore,Plot,Invest,2,2.0,2.2,Yes,73,Price too high,No,25000000.0,0,4.0,Standard (1-6h),0.027,4,1.0,0
+LEAD-2025285,Sana Dar,+92-315-7717694,WhatsApp,7.5 Crores,75000000.0,Faisalabad,House,Invest,1,2.5,0.24,No,10,Waiting for family approval,No,75000000.0,0,2.5,Immediate (<15m),0.091,1,5.0,0
+LEAD-2027953,Usman Khan,+92-334-8109765,WhatsApp,"15,000,000",15000000.0,Lahore,Flat,Buy,4,4.4,0.44,No,10,Price too high,No,15000000.0,0,17.6,Fast (15-60m),0.364,4,1.26,0
+LEAD-2027261,Bilal Siddiqui,+92-328-7887832,Call,250.0 lac,25000000.0,Karachi,House,Buy,5,1.1,0.42,No,2,None,Yes,25000000.0,1,5.5,Fast (15-60m),1.667,0,1.22,0
+LEAD-2026925,Ayesha Abbasi,+92-340-5687057,Website,85.0 Lac,8500000.0,Karachi,Flat,Buy,1,5.4,2.0,No,4,None,No,8500000.0,0,5.4,Standard (1-6h),0.2,0,0.81,0
+LEAD-2026724,Muhammad Khan,+92-345-1911701,WhatsApp,25000000,25000000.0,Karachi,House,Buy,1,0.6,8.76,Yes,46,Low trust in scheme/NOC,No,25000000.0,0,0.6,Delayed (>6h),0.021,4,1.22,0
+LEAD-2025885,Omer Dar,+92-349-3670208,WhatsApp,1.5 crore,15000000.0,Faisalabad,House,Buy,2,2.9,2.1,No,16,No response / Call dropped,No,15000000.0,0,5.8,Standard (1-6h),0.118,5,1.23,0
+LEAD-2026006,Zubair Shah,+92-330-3193431,Website,0.5 lac,50000.0,Karachi,House,Rent,5,4.7,2.71,No,33,Waiting for family approval,No,50000.0,0,23.5,Standard (1-6h),0.147,1,0.7,0
+LEAD-2028089,Saad Bhatti,+92-331-5449587,WhatsApp,1.5 Crores,15000000.0,Islamabad,House,Buy,1,2.4,3.3,No,51,Location too far,No,15000000.0,0,2.4,Standard (1-6h),0.019,2,0.64,0
+LEAD-2027418,Ayesha Butt,+92-329-2536172,Facebook,0.8 Lakh,80000.0,Karachi,Flat,Rent,1,2.3,1.37,No,76,Price too high,No,80000.0,0,2.3,Standard (1-6h),0.013,4,2.19,0
+LEAD-2026743,Mariam Dar,+92-310-4726267,Website,4.0 Cr,40000000.0,Rawalpindi,House,Buy,1,5.0,0.18,Yes,1,None,No,40000000.0,0,5.0,Immediate (<15m),0.5,0,2.95,0
+LEAD-2025090,Omer Qureshi,+92-312-2030355,WhatsApp,3.5 Lacs,350000.0,Rawalpindi,Flat,Rent,5,4.6,9.54,No,47,None,No,350000.0,0,23.0,Delayed (>6h),0.104,0,5.0,0
+LEAD-2027071,Imran Qureshi,+92-349-3563151,WhatsApp,150.0 Lac,15000000.0,Rawalpindi,House,Buy,6,6.0,9.44,No,38,None,Yes,15000000.0,1,36.0,Delayed (>6h),0.154,0,1.1,0
+LEAD-2028084,Saad Qureshi,+92-346-5424907,Call,400.0 Lac,40000000.0,Lahore,House,Buy,3,4.1,10.25,No,55,None,No,40000000.0,0,12.3,Delayed (>6h),0.054,0,2.03,0
+LEAD-2026561,Imran Dar,+92-328-2938365,Call,"350,000",350000.0,Rawalpindi,Commercial,Rent,1,1.1,10.14,No,87,Waiting for family approval,No,350000.0,0,1.1,Delayed (>6h),0.011,1,4.0,0
+LEAD-2025715,Hina Javed,+92-318-7788384,Call,12.0 Crores,120000000.0,Rawalpindi,Plot,Buy,1,0.6,9.08,No,90,Price too high,No,120000000.0,0,0.6,Delayed (>6h),0.011,4,4.8,0
+LEAD-2025487,Ahmed Khan,+92-322-2939842,Website,150.0 Lac,15000000.0,Lahore,Commercial,Invest,1,6.5,2.56,Yes,15,Price too high,No,15000000.0,0,6.5,Standard (1-6h),0.062,4,0.6,0
+LEAD-2025645,Saad Raza,+92-312-5850694,Website,8500000,8500000.0,Karachi,House,Buy,5,7.4,1.35,No,17,None,Yes,8500000.0,1,37.0,Standard (1-6h),0.278,0,0.41,0
+LEAD-2025651,Hina Mirza,+92-314-3163665,Facebook,50000,50000.0,Karachi,House,Rent,2,3.9,0.49,Yes,13,Waiting for family approval,Yes,50000.0,1,7.8,Fast (15-60m),0.143,1,0.7,0
+LEAD-2027669,Muhammad Siddiqui,+92-332-8184417,WhatsApp,"8,500,000",8500000.0,Islamabad,Flat,Buy,5,4.0,0.66,No,61,None,No,8500000.0,0,20.0,Fast (15-60m),0.081,0,0.69,0
+LEAD-2026946,Zainab Qureshi,+92-337-5083301,Website,7.5 Crore,75000000.0,Rawalpindi,Flat,Buy,1,3.7,2.36,No,13,None,No,75000000.0,0,3.7,Standard (1-6h),0.071,0,5.0,0
+LEAD-2026094,Zainab Butt,+92-324-5817732,Call,2.5 Cr,25000000.0,Islamabad,Commercial,Buy,3,2.7,2.73,No,35,None,No,25000000.0,0,8.1,Standard (1-6h),0.083,0,1.0,0
+LEAD-2025652,Fatima Siddiqui,+92-310-1421075,Facebook,0.8 lac,80000.0,Islamabad,Flat,Rent,1,3.6,45.46,No,78,Low trust in scheme/NOC,No,80000.0,0,3.6,Delayed (>6h),0.013,4,1.86,0
+LEAD-2027702,Ali Mirza,+92-348-9609344,Call,85.0 Lakh,8500000.0,Islamabad,Flat,Buy,1,3.9,0.48,No,33,None,Yes,8500000.0,1,3.9,Fast (15-60m),0.029,0,0.69,0
+LEAD-2026569,Omer Siddiqui,+92-327-9037890,Facebook,85.0 lac,8500000.0,Faisalabad,House,Invest,1,1.8,1.64,No,76,Price too high,No,8500000.0,0,1.8,Standard (1-6h),0.013,4,0.7,0
+LEAD-2026154,Muhammad Siddiqui,+92-320-4997555,Facebook,85.0 Lakh,8500000.0,Islamabad,Plot,Invest,1,2.4,1.85,Yes,22,Price too high,No,8500000.0,0,2.4,Standard (1-6h),0.043,4,0.34,0
+LEAD-2025220,Zainab Butt,+92-333-2684805,Call,85.0 Lakh,8500000.0,Rawalpindi,Flat,Buy,3,4.8,0.14,Yes,43,None,Yes,8500000.0,1,14.4,Immediate (<15m),0.068,0,1.01,1
+LEAD-2028063,Imran Sheikh,+92-346-5969033,Website,150.0 Lac,15000000.0,Rawalpindi,House,Buy,2,1.5,0.38,No,30,None,No,15000000.0,0,3.0,Fast (15-60m),0.065,0,1.1,0
+LEAD-2027734,Hamza Malik,+92-326-2078583,Website,150.0 Lac,15000000.0,Karachi,House,Buy,1,2.5,2.97,No,51,Price too high,No,15000000.0,0,2.5,Standard (1-6h),0.019,4,0.73,0
+LEAD-2026675,Imran Malik,+92-341-1207753,WhatsApp,12.0 Crore,120000000.0,Rawalpindi,House,Buy,5,12.4,1.77,No,25,None,No,120000000.0,0,62.0,Standard (1-6h),0.192,0,5.0,0
+LEAD-2027025,Hamza Qureshi,+92-347-7785988,Facebook,1.5 Crores,15000000.0,Rawalpindi,Plot,Invest,1,5.3,42.76,Yes,41,Price too high,Yes,15000000.0,1,5.3,Delayed (>6h),0.024,4,0.6,0
+LEAD-2025232,Bilal Javed,+92-347-4432254,Website,250.0 Lac,25000000.0,Rawalpindi,Flat,Buy,4,14.9,0.21,No,2,Waiting for family approval,No,25000000.0,0,59.6,Immediate (<15m),1.333,1,2.97,0
+LEAD-2027873,Fahad Abbasi,+92-344-9783721,Call,85.0 Lakh,8500000.0,Faisalabad,House,Buy,6,7.4,0.25,Yes,34,None,Yes,8500000.0,1,44.4,Fast (15-60m),0.171,0,0.7,1
+LEAD-2027730,Usman Malik,+92-335-1112092,WhatsApp,1.5 Crore,15000000.0,Karachi,House,Buy,1,4.2,26.12,No,63,Waiting for family approval,Yes,15000000.0,1,4.2,Delayed (>6h),0.016,1,0.73,0
+LEAD-2026444,Zainab Dar,+92-340-4430978,Website,25000000,25000000.0,Karachi,Flat,Buy,1,0.8,2.67,No,6,None,Yes,25000000.0,1,0.8,Standard (1-6h),0.143,0,2.4,0
+LEAD-2025688,Ali Butt,+92-330-2242283,Facebook,75000000,75000000.0,Islamabad,House,Buy,2,5.1,0.12,No,84,None,No,75000000.0,0,10.2,Immediate (<15m),0.024,0,3.18,0
+LEAD-2027994,Tariq Javed,+92-326-3403325,Call,1.5 Cr,15000000.0,Lahore,Flat,Buy,4,1.1,2.79,No,13,Low trust in scheme/NOC,No,15000000.0,0,4.4,Standard (1-6h),0.286,4,1.26,0
+LEAD-2027174,Hamza Raza,+92-313-6601211,Website,1.5 Crores,15000000.0,Lahore,House,Buy,5,3.4,0.14,Yes,5,None,Yes,15000000.0,1,17.0,Immediate (<15m),0.833,0,0.76,1
+LEAD-2027768,Ali Bhatti,+92-327-9550567,Website,1.5 Crores,15000000.0,Lahore,House,Buy,1,2.8,0.32,No,50,Waiting for family approval,No,15000000.0,0,2.8,Fast (15-60m),0.02,1,0.76,0
+LEAD-2025101,Imran Siddiqui,+92-313-6815660,Website,"15,000,000",15000000.0,Lahore,Commercial,Buy,2,1.1,1.98,Yes,56,Price too high,Yes,15000000.0,1,2.2,Standard (1-6h),0.035,4,0.6,0
+LEAD-2027647,Bilal Mirza,+92-332-1765275,WhatsApp,0.5 Lac,50000.0,Faisalabad,House,Rent,1,9.6,2.89,No,80,Price too high,No,50000.0,0,9.6,Standard (1-6h),0.012,4,1.17,0
+LEAD-2025412,Fatima Qureshi,+92-342-2259592,Facebook,2.5 Crore,25000000.0,Karachi,House,Buy,4,2.5,0.49,Yes,44,Price too high,No,25000000.0,0,10.0,Fast (15-60m),0.089,4,1.22,1
+LEAD-2027639,Fahad Siddiqui,+92-322-2044766,Facebook,2.5 Crore,25000000.0,Islamabad,Flat,Buy,1,7.4,2.21,No,56,None,No,25000000.0,0,7.4,Standard (1-6h),0.018,0,2.03,0
+LEAD-2028493,Muhammad Dar,+92-344-8632193,Facebook,85.0 Lacs,8500000.0,Lahore,House,Buy,3,9.7,0.25,No,63,Price too high,No,8500000.0,0,29.1,Fast (15-60m),0.047,4,0.43,0
+LEAD-2026218,Sana Butt,+92-313-9124312,WhatsApp,8500000,8500000.0,Islamabad,Plot,Buy,2,1.5,1.12,No,4,Price too high,No,8500000.0,0,3.0,Standard (1-6h),0.4,4,0.34,0
+LEAD-2028457,Zubair Sheikh,+92-325-5963362,WhatsApp,150.0 lac,15000000.0,Rawalpindi,Flat,Buy,6,2.2,7.88,No,78,Price too high,No,15000000.0,0,13.2,Delayed (>6h),0.076,4,1.78,0
+LEAD-2025996,Sana Abbasi,+92-322-5476465,Call,85.0 Lakh,8500000.0,Lahore,House,Buy,1,4.0,1.68,No,30,No response / Call dropped,No,8500000.0,0,4.0,Standard (1-6h),0.032,5,0.43,0
+LEAD-2026096,Saad Malik,+92-316-1881970,Website,85.0 lac,8500000.0,Karachi,Flat,Buy,3,6.0,1.71,No,74,No response / Call dropped,No,8500000.0,0,18.0,Standard (1-6h),0.04,5,0.81,0
+LEAD-2025929,Ahmed Raza,+92-340-4578092,WhatsApp,250.0 Lakh,25000000.0,Islamabad,House,Buy,1,5.8,1.28,No,14,No response / Call dropped,No,25000000.0,0,5.8,Standard (1-6h),0.067,5,1.06,0
+LEAD-2026772,Zubair Qureshi,+92-321-8003048,Website,4.0 crore,40000000.0,Islamabad,House,Buy,1,5.0,0.45,No,68,None,No,40000000.0,0,5.0,Fast (15-60m),0.014,0,1.7,0
+LEAD-2028349,Tariq Raza,+92-330-4245721,Website,2.5 Cr,25000000.0,Lahore,Plot,Buy,8,3.5,0.87,No,21,Price too high,No,25000000.0,0,28.0,Fast (15-60m),0.364,4,1.0,0
+LEAD-2026912,Sana Javed,+92-323-4223903,WhatsApp,0.8 lac,80000.0,Rawalpindi,House,Rent,5,5.2,1.74,No,12,None,Yes,80000.0,1,26.0,Standard (1-6h),0.385,0,1.68,0
+LEAD-2026616,Hamza Khan,+92-331-1100971,Call,3.5 lac,350000.0,Lahore,Commercial,Rent,2,2.4,10.82,Yes,5,None,Yes,350000.0,1,4.8,Delayed (>6h),0.333,0,4.0,0
+LEAD-2025595,Tariq Javed,+92-324-7093273,Facebook,4.0 Crore,40000000.0,Islamabad,House,Invest,1,8.9,2.94,No,24,Price too high,No,40000000.0,0,8.9,Standard (1-6h),0.04,4,1.7,0
+LEAD-2025748,Fahad Siddiqui,+92-317-4264087,WhatsApp,25000000,25000000.0,Islamabad,House,Buy,1,4.7,27.64,No,52,Price too high,No,25000000.0,0,4.7,Delayed (>6h),0.019,4,1.06,0
+LEAD-2026693,Ayesha Dar,+92-321-4621288,Call,2.5 Crores,25000000.0,Karachi,Flat,Buy,6,2.5,0.4,No,51,Price too high,No,25000000.0,0,15.0,Fast (15-60m),0.115,4,2.4,0
+LEAD-2027558,Saad Shah,+92-327-5458858,Facebook,0.8 lac,80000.0,Islamabad,House,Rent,2,2.1,0.27,Yes,88,Legal document questions,No,80000.0,0,4.2,Fast (15-60m),0.022,3,0.97,0
+LEAD-2025701,Ayesha Khan,+92-330-6907794,Call,4.0 crore,40000000.0,Faisalabad,Flat,Buy,2,2.1,0.69,No,59,None,Yes,40000000.0,1,4.2,Fast (15-60m),0.033,0,5.0,0
+LEAD-2025120,Ayesha Sheikh,+92-315-6303057,WhatsApp,2.0 Lac,200000.0,Islamabad,Flat,Rent,5,0.8,0.42,No,59,Price too high,No,200000.0,0,4.0,Fast (15-60m),0.083,4,4.65,0
+LEAD-2025347,Bilal Chaudhry,+92-333-2426346,Call,1.5 Crores,15000000.0,Faisalabad,House,Buy,1,9.0,7.94,No,1,None,No,15000000.0,0,9.0,Delayed (>6h),0.5,0,1.23,0
+LEAD-2025106,Saad Khan,+92-340-5799853,Call,7.5 Crore,75000000.0,Islamabad,Plot,Buy,1,2.5,2.13,No,26,Price too high,No,75000000.0,0,2.5,Standard (1-6h),0.037,4,3.0,0
+LEAD-2026850,Zainab Sheikh,+92-347-5052069,WhatsApp,250.0 Lakh,25000000.0,Rawalpindi,House,Buy,3,2.9,0.18,Yes,49,None,Yes,25000000.0,1,8.7,Immediate (<15m),0.06,0,1.84,1
+LEAD-2027331,Zainab Siddiqui,+92-311-9497179,WhatsApp,1.5 Crore,15000000.0,Rawalpindi,House,Buy,1,1.3,47.6,No,4,Waiting for family approval,No,15000000.0,0,1.3,Delayed (>6h),0.2,1,1.1,0
+LEAD-2028338,Mariam Shah,+92-327-6185659,Call,1.5 Crore,15000000.0,Rawalpindi,House,Buy,5,1.4,0.77,No,4,None,Yes,15000000.0,1,7.0,Fast (15-60m),1.0,0,1.1,0
+LEAD-2026557,Fatima Sheikh,+92-326-9198993,Call,"15,000,000",15000000.0,Karachi,Flat,Buy,1,5.2,2.98,No,17,Waiting for family approval,No,15000000.0,0,5.2,Standard (1-6h),0.056,1,1.44,0
+LEAD-2026440,Mariam Qureshi,+92-313-7098471,Call,4.0 Cr,40000000.0,Lahore,House,Buy,6,4.5,2.98,No,34,Waiting for family approval,No,40000000.0,0,27.0,Standard (1-6h),0.171,1,2.03,0
+LEAD-2026827,Hina Abbasi,+92-325-7226657,Call,"50,000",50000.0,Karachi,Plot,Rent,5,2.9,0.38,No,35,Location too far,No,50000.0,0,14.5,Fast (15-60m),0.139,2,0.57,0
+LEAD-2026883,Bilal Chaudhry,+92-312-6090887,Call,250.0 Lac,25000000.0,Rawalpindi,House,Buy,4,4.4,0.45,No,37,None,Yes,25000000.0,1,17.6,Fast (15-60m),0.105,0,1.84,0
+LEAD-2026750,Sana Mirza,+92-317-9362666,WhatsApp,4.0 Crores,40000000.0,Lahore,Commercial,Buy,2,2.1,1.51,No,1,Low trust in scheme/NOC,No,40000000.0,0,4.2,Standard (1-6h),1.0,4,1.6,0
+LEAD-2025192,Fatima Malik,+92-317-8734701,Facebook,2.0 Lac,200000.0,Lahore,Flat,Rent,1,4.5,0.72,No,37,Price too high,No,200000.0,0,4.5,Fast (15-60m),0.026,4,4.8,0
+LEAD-2026577,Hina Qureshi,+92-317-9178481,Website,250.0 Lac,25000000.0,Lahore,House,Invest,2,1.9,7.52,No,86,Legal document questions,No,25000000.0,0,3.8,Delayed (>6h),0.023,3,1.27,0
+LEAD-2026086,Fahad Malik,+92-342-6604330,Call,2.5 Cr,25000000.0,Rawalpindi,Flat,Invest,4,2.5,11.07,No,39,Legal document questions,No,25000000.0,0,10.0,Delayed (>6h),0.1,3,2.97,0
+LEAD-2026301,Fahad Abbasi,+92-334-8223420,Call,7.5 Crore,75000000.0,Faisalabad,Plot,Invest,2,2.1,15.36,No,48,None,No,75000000.0,0,4.2,Delayed (>6h),0.041,0,3.0,0
+LEAD-2027517,Ali Sheikh,+92-327-3527718,Call,1.5 Cr,15000000.0,Islamabad,House,Buy,1,5.5,1.68,No,38,None,Yes,15000000.0,1,5.5,Standard (1-6h),0.026,0,0.64,0
+LEAD-2026746,Fahad Chaudhry,+92-324-3779128,Website,1.2 Lacs,120000.0,Karachi,Flat,Rent,3,1.0,0.33,No,52,Low trust in scheme/NOC,No,120000.0,0,3.0,Fast (15-60m),0.057,4,3.29,0
+LEAD-2026732,Tariq Mirza,+92-332-2966564,WhatsApp,0.3 Lac,30000.0,Rawalpindi,Flat,Rent,3,0.6,6.04,No,15,None,No,30000.0,0,1.8,Delayed (>6h),0.188,0,1.02,0
+LEAD-2026789,Fatima Mirza,+92-338-4576700,WhatsApp,400.0 Lakh,40000000.0,Islamabad,Flat,Buy,1,4.2,35.11,No,70,Legal document questions,No,40000000.0,0,4.2,Delayed (>6h),0.014,3,3.25,0
+LEAD-2028216,Saad Bhatti,+92-321-7278911,WhatsApp,"120,000",120000.0,Lahore,House,Rent,2,2.3,27.24,No,81,Price too high,No,120000.0,0,4.6,Delayed (>6h),0.024,4,1.74,0
+LEAD-2027690,Hina Khan,+92-335-2347649,WhatsApp,"15,000,000",15000000.0,Karachi,House,Buy,2,2.5,6.66,No,28,Location too far,No,15000000.0,0,5.0,Delayed (>6h),0.069,2,0.73,0
+LEAD-2026751,Ayesha Bhatti,+92-340-9667532,Call,250.0 Lakh,25000000.0,Rawalpindi,House,Buy,6,0.7,2.55,No,87,None,Yes,25000000.0,1,4.2,Standard (1-6h),0.068,0,1.84,0
+LEAD-2027961,Fatima Chaudhry,+92-336-3207818,Facebook,85.0 lac,8500000.0,Lahore,Flat,Buy,5,4.9,0.92,Yes,1,Low trust in scheme/NOC,No,8500000.0,0,24.5,Fast (15-60m),2.5,4,0.71,1
+LEAD-2027605,Sana Mirza,+92-343-4678548,WhatsApp,150.0 Lacs,15000000.0,Lahore,House,Invest,5,11.0,0.34,Yes,12,Waiting for family approval,Yes,15000000.0,1,55.0,Fast (15-60m),0.385,1,0.76,1
+LEAD-2026327,Ali Mirza,+92-327-8038782,WhatsApp,85.0 lac,8500000.0,Faisalabad,House,Buy,1,0.7,2.32,No,21,None,No,8500000.0,0,0.7,Standard (1-6h),0.045,0,0.7,0
+LEAD-2025145,Zainab Bhatti,+92-314-1148634,Website,7.5 Crore,75000000.0,Islamabad,Flat,Buy,1,2.3,4.74,No,15,Price too high,No,75000000.0,0,2.3,Standard (1-6h),0.062,4,5.0,0
+LEAD-2026201,Hamza Khan,+92-348-1592479,Call,150.0 Lac,15000000.0,Lahore,Commercial,Buy,1,3.0,0.58,No,69,None,No,15000000.0,0,3.0,Fast (15-60m),0.014,0,0.6,0
+LEAD-2027074,Fahad Siddiqui,+92-321-5107747,WhatsApp,0.3 Lakh,30000.0,Karachi,House,Rent,1,2.0,0.34,No,61,None,No,30000.0,0,2.0,Fast (15-60m),0.016,0,0.42,0
+LEAD-2027304,Fatima Dar,+92-329-6681355,Website,1.5 Crore,15000000.0,Rawalpindi,House,Buy,3,3.3,0.15,No,73,Waiting for family approval,No,15000000.0,0,9.9,Immediate (<15m),0.041,1,1.1,0
+LEAD-2026445,Muhammad Malik,+92-315-1424737,Website,2.5 crore,25000000.0,Islamabad,Plot,Invest,5,3.8,1.96,No,1,None,Yes,25000000.0,1,19.0,Standard (1-6h),2.5,0,1.0,0
+LEAD-2025775,Fahad Mirza,+92-341-6519497,WhatsApp,1.5 Cr,15000000.0,Lahore,House,Invest,3,1.0,9.39,No,8,None,No,15000000.0,0,3.0,Delayed (>6h),0.333,0,0.76,0
+LEAD-2028120,Ali Bhatti,+92-330-6301838,Call,12.0 crore,120000000.0,Rawalpindi,Plot,Buy,1,0.7,0.35,No,39,No response / Call dropped,No,120000000.0,0,0.7,Fast (15-60m),0.025,5,4.8,0
+LEAD-2027264,Ahmed Sheikh,+92-317-5836429,WhatsApp,4.0 Crores,40000000.0,Faisalabad,Commercial,Buy,3,3.2,9.36,No,19,Location too far,No,40000000.0,0,9.6,Delayed (>6h),0.15,2,1.6,0
+LEAD-2025480,Sana Qureshi,+92-323-2042402,WhatsApp,7.5 Crore,75000000.0,Rawalpindi,Flat,Buy,3,3.7,0.21,No,86,Legal document questions,No,75000000.0,0,11.1,Immediate (<15m),0.034,3,5.0,0
+LEAD-2026020,Saad Malik,+92-333-3502358,WhatsApp,400.0 lac,40000000.0,Islamabad,Flat,Buy,3,2.9,0.9,No,56,Low trust in scheme/NOC,No,40000000.0,0,8.7,Fast (15-60m),0.053,4,3.25,0
+LEAD-2027509,Saad Sheikh,+92-333-9184223,WhatsApp,2.5 Crores,25000000.0,Islamabad,House,Buy,2,3.9,4.18,No,12,Price too high,No,25000000.0,0,7.8,Standard (1-6h),0.154,4,1.06,0
+LEAD-2028383,Zainab Chaudhry,+92-339-4805666,Facebook,2.5 Crore,25000000.0,Faisalabad,Plot,Buy,10,6.2,10.7,No,89,None,Yes,25000000.0,1,62.0,Delayed (>6h),0.111,0,1.0,0
+LEAD-2026389,Usman Qureshi,+92-343-9350117,Facebook,0.3 Lacs,30000.0,Karachi,Plot,Rent,1,6.8,9.87,No,13,Price too high,No,30000.0,0,6.8,Delayed (>6h),0.071,4,0.34,0
+LEAD-2025361,Hamza Abbasi,+92-348-9529460,WhatsApp,0.3 Lac,30000.0,Islamabad,Plot,Rent,3,11.7,0.44,No,59,None,No,30000.0,0,35.1,Fast (15-60m),0.05,0,0.34,0
+LEAD-2025046,Ahmed Sheikh,+92-320-8429752,Facebook,4.0 crore,40000000.0,Lahore,Plot,Buy,1,3.4,0.39,No,47,Price too high,No,40000000.0,0,3.4,Fast (15-60m),0.021,4,1.6,0
+LEAD-2028140,Hamza Sheikh,+92-317-7348937,Website,150.0 Lakh,15000000.0,Karachi,Commercial,Buy,2,5.3,2.86,No,22,Legal document questions,No,15000000.0,0,10.6,Standard (1-6h),0.087,3,0.6,0
+LEAD-2027488,Muhammad Mirza,+92-339-2263252,Call,150.0 Lac,15000000.0,Faisalabad,House,Buy,3,2.8,3.65,No,58,None,No,15000000.0,0,8.4,Standard (1-6h),0.051,0,1.23,0
+LEAD-2027433,Ayesha Siddiqui,+92-312-1046644,WhatsApp,85.0 Lakh,8500000.0,Karachi,Plot,Buy,3,3.9,0.24,Yes,56,Waiting for family approval,Yes,8500000.0,1,11.7,Immediate (<15m),0.053,1,0.34,1
+LEAD-2025919,Mariam Mirza,+92-314-3820053,Call,2.0 Lakh,200000.0,Faisalabad,House,Rent,2,3.1,2.54,No,58,None,No,200000.0,0,6.2,Standard (1-6h),0.034,0,4.68,0
+LEAD-2027780,Zainab Qureshi,+92-341-9269642,Call,0.8 lac,80000.0,Karachi,House,Rent,5,1.6,0.15,No,76,Low trust in scheme/NOC,Yes,80000.0,1,8.0,Immediate (<15m),0.065,4,1.11,0
+LEAD-2025808,Tariq Qureshi,+92-343-7350398,Website,"15,000,000",15000000.0,Rawalpindi,Plot,Buy,3,7.3,0.16,No,89,Waiting for family approval,No,15000000.0,0,21.9,Immediate (<15m),0.033,1,0.6,0
+LEAD-2027380,Zubair Qureshi,+92-325-5559989,WhatsApp,85.0 Lacs,8500000.0,Karachi,Plot,Buy,3,5.2,0.14,No,20,None,Yes,8500000.0,1,15.6,Immediate (<15m),0.143,0,0.34,0
+LEAD-2026455,Zainab Raza,+92-328-9072474,WhatsApp,0.8 Lakh,80000.0,Karachi,House,Rent,1,1.3,0.31,Yes,47,None,No,80000.0,0,1.3,Fast (15-60m),0.021,0,1.11,0
+LEAD-2025069,Bilal Dar,+92-315-8313592,Facebook,400.0 Lac,40000000.0,Rawalpindi,Flat,Buy,3,0.9,43.4,Yes,79,None,No,40000000.0,0,2.7,Delayed (>6h),0.038,0,4.75,0
+LEAD-2026058,Hamza Siddiqui,+92-316-8538085,WhatsApp,12.0 crore,120000000.0,Lahore,House,Buy,5,3.1,2.47,No,70,None,Yes,120000000.0,1,15.5,Standard (1-6h),0.07,0,5.0,0
+LEAD-2026610,Bilal Shah,+92-311-3927239,Website,3.5 Lacs,350000.0,Karachi,House,Rent,2,4.1,0.82,Yes,61,Waiting for family approval,Yes,350000.0,1,8.2,Fast (15-60m),0.032,1,4.88,1
+LEAD-2027473,Muhammad Sheikh,+92-346-9483017,WhatsApp,85.0 Lac,8500000.0,Faisalabad,Flat,Buy,1,6.7,12.02,No,88,Waiting for family approval,No,8500000.0,0,6.7,Delayed (>6h),0.011,1,1.22,0
+LEAD-2025959,Zainab Shah,+92-313-2174276,WhatsApp,15000000,15000000.0,Islamabad,House,Buy,6,8.3,2.18,No,7,No response / Call dropped,No,15000000.0,0,49.8,Standard (1-6h),0.75,5,0.64,0
+LEAD-2028036,Omer Bhatti,+92-330-1635230,Website,0.3 Lac,30000.0,Rawalpindi,House,Rent,2,0.7,0.26,No,85,Legal document questions,No,30000.0,0,1.4,Fast (15-60m),0.023,3,0.63,0
+LEAD-2025528,Ahmed Siddiqui,+92-336-6253503,WhatsApp,85.0 lac,8500000.0,Lahore,Flat,Buy,3,6.0,1.77,No,37,No response / Call dropped,No,8500000.0,0,18.0,Standard (1-6h),0.079,5,0.71,0
+LEAD-2027311,Ahmed Qureshi,+92-314-1573932,WhatsApp,400.0 lac,40000000.0,Rawalpindi,House,Buy,1,4.8,0.19,No,37,Waiting for family approval,No,40000000.0,0,4.8,Immediate (<15m),0.026,1,2.95,0
+LEAD-2026452,Usman Sheikh,+92-343-1107731,Call,0.5 Lacs,50000.0,Islamabad,House,Rent,5,13.3,9.9,Yes,35,Legal document questions,Yes,50000.0,1,66.5,Delayed (>6h),0.139,3,0.61,1
+LEAD-2028416,Sana Qureshi,+92-325-8785341,WhatsApp,400.0 Lacs,40000000.0,Rawalpindi,House,Buy,1,1.9,2.21,No,50,Legal document questions,No,40000000.0,0,1.9,Standard (1-6h),0.02,3,2.95,0
+LEAD-2027687,Tariq Khan,+92-347-5814604,Website,"75,000",75000.0,Lahore,Flat,Rent,1,0.8,2.02,No,7,None,No,75000.0,0,0.8,Standard (1-6h),0.125,0,1.8,0
+LEAD-2026324,Omer Raza,+92-311-9250498,Call,1.5 Cr,15000000.0,Rawalpindi,House,Invest,4,2.6,0.22,Yes,12,None,Yes,15000000.0,1,10.4,Immediate (<15m),0.308,0,1.1,1
+LEAD-2026082,Tariq Shah,+92-319-2686141,Call,4.0 crore,40000000.0,Rawalpindi,Plot,Invest,1,1.1,2.99,No,83,Location too far,Yes,40000000.0,1,1.1,Standard (1-6h),0.012,2,1.6,0
+LEAD-2027184,Omer Bhatti,+92-325-1325100,Call,85.0 Lacs,8500000.0,Islamabad,Plot,Buy,1,2.4,0.22,No,43,Low trust in scheme/NOC,No,8500000.0,0,2.4,Immediate (<15m),0.023,4,0.34,0
+LEAD-2025892,Zainab Bhatti,+92-337-4927119,WhatsApp,"35,000",35000.0,Rawalpindi,House,Rent,4,3.0,29.59,No,63,Location too far,No,35000.0,0,12.0,Delayed (>6h),0.062,2,0.74,0
+LEAD-2027134,Bilal Abbasi,+92-340-9866826,Facebook,8500000,8500000.0,Faisalabad,House,Buy,1,3.1,2.68,No,36,Location too far,No,8500000.0,0,3.1,Standard (1-6h),0.027,2,0.7,0
+LEAD-2026843,Saad Shah,+92-349-6649677,WhatsApp,1.5 Cr,15000000.0,Lahore,Commercial,Buy,2,2.8,0.44,No,86,Price too high,No,15000000.0,0,5.6,Fast (15-60m),0.023,4,0.6,0
+LEAD-2026544,Ali Mirza,+92-324-8666654,WhatsApp,250.0 Lacs,25000000.0,Islamabad,Plot,Buy,3,4.6,2.63,No,61,Price too high,No,25000000.0,0,13.8,Standard (1-6h),0.048,4,1.0,0
+LEAD-2025895,Hamza Chaudhry,+92-320-4672890,WhatsApp,12.0 Cr,120000000.0,Rawalpindi,House,Buy,1,1.1,2.16,No,48,None,No,120000000.0,0,1.1,Standard (1-6h),0.02,0,5.0,0
+LEAD-2025291,Bilal Raza,+92-316-1071862,Website,4.0 Crores,40000000.0,Rawalpindi,House,Buy,3,1.0,8.14,Yes,68,Waiting for family approval,Yes,40000000.0,1,3.0,Delayed (>6h),0.043,1,2.95,0
+LEAD-2028031,Fatima Abbasi,+92-333-2324606,Facebook,7.5 Crore,75000000.0,Islamabad,House,Invest,1,1.3,1.18,No,5,None,No,75000000.0,0,1.3,Standard (1-6h),0.167,0,3.18,0
+LEAD-2026980,Fatima Bhatti,+92-336-2022363,Facebook,85.0 Lakh,8500000.0,Faisalabad,House,Buy,4,9.7,0.27,No,73,Price too high,No,8500000.0,0,38.8,Fast (15-60m),0.054,4,0.7,0
+LEAD-2028432,Mariam Khan,+92-315-2368413,WhatsApp,2.5 Crores,25000000.0,Lahore,House,Buy,2,2.3,2.36,No,90,Price too high,No,25000000.0,0,4.6,Standard (1-6h),0.022,4,1.27,0
+LEAD-2025341,Ahmed Khan,+92-339-6814330,WhatsApp,"75,000",75000.0,Lahore,Plot,Rent,4,1.9,2.68,No,1,Waiting for family approval,No,75000.0,0,7.6,Standard (1-6h),2.0,1,0.86,0
+LEAD-2025623,Hamza Qureshi,+92-317-5256937,Website,1.2 lac,120000.0,Karachi,House,Rent,3,2.3,6.15,No,60,Price too high,No,120000.0,0,6.9,Delayed (>6h),0.049,4,1.67,0
+LEAD-2028329,Muhammad Qureshi,+92-327-2945789,WhatsApp,2.5 Cr,25000000.0,Faisalabad,House,Buy,2,4.6,0.27,No,42,Legal document questions,No,25000000.0,0,9.2,Fast (15-60m),0.047,3,2.05,0
+LEAD-2027366,Usman Raza,+92-344-5334645,WhatsApp,250.0 Lac,25000000.0,Faisalabad,Plot,Buy,1,4.6,5.98,No,13,None,No,25000000.0,0,4.6,Standard (1-6h),0.071,0,1.0,0
+LEAD-2028108,Mariam Qureshi,+92-324-1121964,Call,2.0 Lacs,200000.0,Karachi,Flat,Rent,1,8.0,0.94,No,56,None,Yes,200000.0,1,8.0,Fast (15-60m),0.018,0,5.0,0
+LEAD-2025298,Omer Raza,+92-322-1044823,WhatsApp,3.5 lac,350000.0,Karachi,Flat,Rent,5,5.8,2.99,Yes,35,None,Yes,350000.0,1,29.0,Standard (1-6h),0.139,0,5.0,1
+LEAD-2025979,Tariq Dar,+92-341-2413596,WhatsApp,2.0 Lac,200000.0,Rawalpindi,Flat,Rent,2,5.6,0.76,No,40,No response / Call dropped,No,200000.0,0,11.2,Fast (15-60m),0.049,5,5.0,0
+LEAD-2026593,Fatima Chaudhry,+92-313-2281276,WhatsApp,1.5 Cr,15000000.0,Karachi,Flat,Invest,1,2.5,23.5,No,90,None,No,15000000.0,0,2.5,Delayed (>6h),0.011,0,1.44,0
+LEAD-2026659,Imran Dar,+92-311-3476937,Call,85.0 Lacs,8500000.0,Faisalabad,Plot,Buy,3,2.7,1.62,No,23,Price too high,No,8500000.0,0,8.1,Standard (1-6h),0.125,4,0.34,0
+LEAD-2027058,Usman Butt,+92-335-8805077,Call,150.0 lac,15000000.0,Faisalabad,Flat,Invest,3,4.6,0.91,Yes,14,Low trust in scheme/NOC,Yes,15000000.0,1,13.8,Fast (15-60m),0.2,4,2.15,1
+LEAD-2028181,Ayesha Dar,+92-344-9357883,WhatsApp,85.0 Lakh,8500000.0,Karachi,House,Buy,3,3.4,0.33,No,85,None,No,8500000.0,0,10.2,Fast (15-60m),0.035,0,0.41,0
+LEAD-2025333,Mariam Chaudhry,+92-332-9359665,Facebook,0.8 Lac,80000.0,Islamabad,House,Rent,3,1.8,7.87,No,9,Price too high,No,80000.0,0,5.4,Delayed (>6h),0.3,4,0.97,0
+LEAD-2027544,Zainab Khan,+92-343-6420565,Facebook,3.5 Lakh,350000.0,Islamabad,Flat,Rent,2,1.0,0.47,No,60,Location too far,No,350000.0,0,2.0,Fast (15-60m),0.033,2,5.0,0
+LEAD-2026443,Fahad Butt,+92-339-8860878,WhatsApp,2.5 crore,25000000.0,Islamabad,House,Buy,3,4.8,0.42,No,7,None,Yes,25000000.0,1,14.4,Fast (15-60m),0.375,0,1.06,0
+LEAD-2028312,Bilal Qureshi,+92-326-5454078,Call,12.0 crore,120000000.0,Rawalpindi,Flat,Buy,1,1.8,33.88,No,28,Location too far,No,120000000.0,0,1.8,Delayed (>6h),0.034,2,5.0,0
+LEAD-2026211,Zubair Shah,+92-326-1757446,WhatsApp,1.5 crore,15000000.0,Islamabad,Flat,Buy,2,3.8,0.48,No,88,None,No,15000000.0,0,7.6,Fast (15-60m),0.022,0,1.22,0
+LEAD-2027752,Tariq Siddiqui,+92-319-3422556,Call,1.2 Lac,120000.0,Islamabad,House,Rent,3,1.4,1.37,No,38,Waiting for family approval,No,120000.0,0,4.2,Standard (1-6h),0.077,1,1.45,0
+LEAD-2025343,Muhammad Abbasi,+92-311-7885613,WhatsApp,85.0 lac,8500000.0,Islamabad,House,Invest,2,5.5,5.15,Yes,86,Low trust in scheme/NOC,No,8500000.0,0,11.0,Standard (1-6h),0.023,4,0.36,1
+LEAD-2026393,Muhammad Khan,+92-336-3311785,WhatsApp,2.5 Crores,25000000.0,Rawalpindi,House,Buy,3,4.8,8.83,No,44,Location too far,Yes,25000000.0,1,14.4,Delayed (>6h),0.067,2,1.84,0
+LEAD-2026045,Imran Sheikh,+92-344-2443814,Facebook,25000000,25000000.0,Faisalabad,Flat,Buy,1,0.8,1.38,No,71,None,No,25000000.0,0,0.8,Standard (1-6h),0.014,0,3.59,0
+LEAD-2027857,Zainab Chaudhry,+92-329-9559462,WhatsApp,12.0 Crore,120000000.0,Rawalpindi,House,Invest,2,8.4,1.77,No,45,Low trust in scheme/NOC,No,120000000.0,0,16.8,Standard (1-6h),0.043,4,5.0,0
+LEAD-2028169,Imran Dar,+92-312-5352260,Website,150.0 lac,15000000.0,Lahore,House,Invest,1,5.6,9.99,No,25,None,No,15000000.0,0,5.6,Delayed (>6h),0.038,0,0.76,0
+LEAD-2026648,Sana Qureshi,+92-325-9774403,WhatsApp,2.5 Crore,25000000.0,Karachi,House,Buy,1,2.1,2.74,No,31,Location too far,No,25000000.0,0,2.1,Standard (1-6h),0.031,2,1.22,0
+LEAD-2026449,Ayesha Malik,+92-347-6504186,WhatsApp,0.3 lac,30000.0,Karachi,House,Rent,1,5.5,0.62,Yes,3,Price too high,No,30000.0,0,5.5,Fast (15-60m),0.25,4,0.42,0
+LEAD-2026560,Muhammad Mirza,+92-328-8009150,WhatsApp,150.0 lac,15000000.0,Faisalabad,Flat,Invest,10,4.5,0.29,No,54,Waiting for family approval,Yes,15000000.0,1,45.0,Fast (15-60m),0.182,1,2.15,0
+LEAD-2027626,Zainab Qureshi,+92-315-8095084,Website,75000,75000.0,Islamabad,House,Rent,5,1.1,11.32,No,39,Low trust in scheme/NOC,No,75000.0,0,5.5,Delayed (>6h),0.125,4,0.91,0
+LEAD-2027762,Hina Javed,+92-339-2649028,Facebook,1.5 Crores,15000000.0,Lahore,Plot,Buy,3,1.5,9.72,No,12,Price too high,No,15000000.0,0,4.5,Delayed (>6h),0.231,4,0.6,0
+LEAD-2026174,Zubair Mirza,+92-322-8546213,Call,1.2 lac,120000.0,Rawalpindi,House,Rent,3,5.9,1.14,No,61,No response / Call dropped,No,120000.0,0,17.7,Standard (1-6h),0.048,5,2.52,0
+LEAD-2026212,Muhammad Bhatti,+92-347-2356770,WhatsApp,4.0 Cr,40000000.0,Karachi,Flat,Buy,2,5.4,5.48,No,41,None,No,40000000.0,0,10.8,Standard (1-6h),0.048,0,3.84,0
+LEAD-2025992,Muhammad Khan,+92-318-9718435,WhatsApp,"50,000",50000.0,Faisalabad,House,Rent,1,1.0,0.47,No,4,Price too high,No,50000.0,0,1.0,Fast (15-60m),0.2,4,1.17,0
+LEAD-2028405,Hamza Mirza,+92-319-4115864,Call,15000000,15000000.0,Karachi,House,Buy,2,3.5,2.69,No,73,None,No,15000000.0,0,7.0,Standard (1-6h),0.027,0,0.73,0
+LEAD-2026296,Sana Bhatti,+92-349-1396435,Website,2.5 crore,25000000.0,Faisalabad,House,Buy,4,1.7,0.26,No,33,Price too high,No,25000000.0,0,6.8,Fast (15-60m),0.118,4,2.05,0
+LEAD-2027700,Usman Chaudhry,+92-326-4840780,Facebook,2.5 Crore,25000000.0,Rawalpindi,Flat,Buy,5,0.7,2.5,No,28,None,Yes,25000000.0,1,3.5,Standard (1-6h),0.172,0,2.97,0
+LEAD-2026390,Hina Malik,+92-337-7223042,WhatsApp,0.8 Lacs,80000.0,Islamabad,House,Rent,1,4.2,0.1,No,9,No response / Call dropped,No,80000.0,0,4.2,Immediate (<15m),0.1,5,0.97,0
+LEAD-2026709,Muhammad Raza,+92-330-1300053,Call,1.5 Cr,15000000.0,Lahore,House,Invest,2,1.5,1.92,No,33,No response / Call dropped,No,15000000.0,0,3.0,Standard (1-6h),0.059,5,0.76,0
+LEAD-2026906,Fahad Shah,+92-337-9277732,WhatsApp,0.5 Lac,50000.0,Lahore,House,Rent,5,5.8,0.71,Yes,15,Price too high,No,50000.0,0,29.0,Fast (15-60m),0.312,4,0.72,1
+LEAD-2026846,Zainab Chaudhry,+92-311-1127158,Website,50000,50000.0,Lahore,House,Rent,4,5.5,0.96,Yes,75,Legal document questions,Yes,50000.0,1,22.0,Fast (15-60m),0.053,3,0.72,1
+LEAD-2025378,Zainab Siddiqui,+92-311-4072925,Website,400.0 Lacs,40000000.0,Karachi,House,Buy,5,1.1,1.99,No,39,No response / Call dropped,Yes,40000000.0,1,5.5,Standard (1-6h),0.125,5,1.95,0
+LEAD-2026026,Fahad Qureshi,+92-330-9225530,WhatsApp,2.0 Lac,200000.0,Lahore,Flat,Rent,3,0.8,2.23,No,67,Price too high,No,200000.0,0,2.4,Standard (1-6h),0.044,4,4.8,0
+LEAD-2027534,Fatima Siddiqui,+92-349-3096814,Call,"40,000,000",40000000.0,Islamabad,House,Buy,4,12.0,0.4,No,73,None,Yes,40000000.0,1,48.0,Fast (15-60m),0.054,0,1.7,0
+LEAD-2025112,Sana Dar,+92-319-8837685,Call,75000000,75000000.0,Karachi,House,Buy,2,4.8,0.41,No,2,Low trust in scheme/NOC,No,75000000.0,0,9.6,Fast (15-60m),0.667,4,3.66,0
+LEAD-2027237,Bilal Mirza,+92-320-9238692,WhatsApp,12.0 crore,120000000.0,Lahore,House,Buy,1,5.0,0.46,No,34,Waiting for family approval,No,120000000.0,0,5.0,Fast (15-60m),0.029,1,5.0,0
+LEAD-2025671,Bilal Butt,+92-341-9890310,Website,85.0 Lakh,8500000.0,Rawalpindi,House,Buy,4,0.7,0.49,No,7,Waiting for family approval,No,8500000.0,0,2.8,Fast (15-60m),0.5,1,0.63,0
+LEAD-2027238,Muhammad Sheikh,+92-345-2971913,WhatsApp,3.5 Lakh,350000.0,Islamabad,Commercial,Rent,6,13.7,16.06,No,48,None,Yes,350000.0,1,82.2,Delayed (>6h),0.122,0,4.0,0
+LEAD-2025907,Tariq Qureshi,+92-336-9980102,Website,0.5 Lacs,50000.0,Karachi,Plot,Rent,6,0.7,0.14,No,36,Waiting for family approval,Yes,50000.0,1,4.2,Immediate (<15m),0.162,1,0.57,0
+LEAD-2027683,Hamza Siddiqui,+92-334-3696217,Facebook,2.0 Lac,200000.0,Karachi,Flat,Rent,3,3.0,0.4,No,53,Legal document questions,No,200000.0,0,9.0,Fast (15-60m),0.056,3,5.0,0
+LEAD-2028503,Sana Butt,+92-326-3515459,WhatsApp,150.0 Lakh,15000000.0,Lahore,Flat,Buy,2,1.0,0.28,No,43,Legal document questions,No,15000000.0,0,2.0,Fast (15-60m),0.045,3,1.26,0
+LEAD-2028258,Zainab Mirza,+92-341-6554893,Facebook,2.5 crore,25000000.0,Rawalpindi,Flat,Buy,1,0.7,2.74,No,63,None,No,25000000.0,0,0.7,Standard (1-6h),0.016,0,2.97,0
+LEAD-2026320,Ali Butt,+92-327-2013126,Website,4.0 Cr,40000000.0,Lahore,Commercial,Buy,1,1.8,38.49,No,53,None,No,40000000.0,0,1.8,Delayed (>6h),0.019,0,1.6,0
+LEAD-2025213,Usman Javed,+92-334-4246656,Website,3.5 Lakh,350000.0,Karachi,House,Rent,1,2.1,4.32,No,70,None,No,350000.0,0,2.1,Standard (1-6h),0.014,0,4.88,0
+LEAD-2028423,Mariam Sheikh,+92-312-2446466,Website,1.5 Crore,15000000.0,Karachi,Flat,Buy,1,2.9,3.5,No,66,Location too far,No,15000000.0,0,2.9,Standard (1-6h),0.015,2,1.44,0
+LEAD-2027749,Ayesha Siddiqui,+92-347-4475284,Website,85.0 Lacs,8500000.0,Karachi,Flat,Buy,4,2.1,0.53,No,58,Low trust in scheme/NOC,No,8500000.0,0,8.4,Fast (15-60m),0.068,4,0.81,0
+LEAD-2027695,Ali Chaudhry,+92-316-7260771,Facebook,3.5 lac,350000.0,Islamabad,Plot,Rent,1,2.3,47.35,Yes,21,Low trust in scheme/NOC,No,350000.0,0,2.3,Delayed (>6h),0.045,4,4.0,0
+LEAD-2027036,Fatima Qureshi,+92-315-2347901,Website,85.0 Lacs,8500000.0,Lahore,Flat,Buy,4,4.8,36.15,No,32,Low trust in scheme/NOC,No,8500000.0,0,19.2,Delayed (>6h),0.121,4,0.71,0
+LEAD-2027290,Ali Mirza,+92-320-2806884,WhatsApp,85.0 Lac,8500000.0,Faisalabad,House,Buy,6,2.2,0.43,Yes,3,None,Yes,8500000.0,1,13.2,Fast (15-60m),1.5,0,0.7,1
+LEAD-2026617,Ayesha Abbasi,+92-336-8777756,WhatsApp,2.5 crore,25000000.0,Lahore,Flat,Buy,1,4.9,1.01,Yes,88,Price too high,Yes,25000000.0,1,4.9,Standard (1-6h),0.011,4,2.1,0
+LEAD-2026836,Omer Siddiqui,+92-339-6694687,Facebook,250.0 Lakh,25000000.0,Rawalpindi,Flat,Invest,4,2.0,2.92,No,44,None,No,25000000.0,0,8.0,Standard (1-6h),0.089,0,2.97,0
+LEAD-2027877,Imran Butt,+92-345-7902714,WhatsApp,120000,120000.0,Karachi,Flat,Rent,8,1.2,1.97,No,35,Price too high,No,120000.0,0,9.6,Standard (1-6h),0.222,4,3.29,0
+LEAD-2027774,Sana Chaudhry,+92-341-9628964,Website,85.0 Lacs,8500000.0,Faisalabad,House,Buy,1,3.8,0.71,No,30,None,Yes,8500000.0,1,3.8,Fast (15-60m),0.032,0,0.7,0
+LEAD-2026575,Hamza Sheikh,+92-327-7726893,Call,75000000,75000000.0,Faisalabad,Flat,Invest,1,1.2,10.08,No,54,Location too far,No,75000000.0,0,1.2,Delayed (>6h),0.018,2,5.0,0
+LEAD-2027521,Usman Siddiqui,+92-339-3260741,WhatsApp,40000000,40000000.0,Karachi,Plot,Invest,3,7.9,0.82,No,17,None,Yes,40000000.0,1,23.7,Fast (15-60m),0.167,0,1.6,0
+LEAD-2028281,Ayesha Abbasi,+92-349-5783833,Facebook,75000,75000.0,Faisalabad,Flat,Rent,1,2.0,7.47,Yes,68,Location too far,No,75000.0,0,2.0,Delayed (>6h),0.014,2,3.07,0
+LEAD-2026004,Tariq Dar,+92-323-9631038,Call,85.0 Lac,8500000.0,Lahore,Flat,Buy,2,2.7,1.53,Yes,69,No response / Call dropped,No,8500000.0,0,5.4,Standard (1-6h),0.029,5,0.71,0
+LEAD-2027205,Fahad Bhatti,+92-345-8837747,Website,2.5 Cr,25000000.0,Faisalabad,House,Invest,1,4.0,0.2,Yes,61,None,Yes,25000000.0,1,4.0,Immediate (<15m),0.016,0,2.05,0
+LEAD-2027145,Bilal Malik,+92-340-8987057,Call,15000000,15000000.0,Faisalabad,House,Invest,2,1.1,2.18,No,87,Price too high,No,15000000.0,0,2.2,Standard (1-6h),0.023,4,1.23,0
+LEAD-2025765,Ayesha Qureshi,+92-329-1160993,Call,1.5 Crores,15000000.0,Lahore,Flat,Invest,1,1.6,1.43,No,62,Location too far,No,15000000.0,0,1.6,Standard (1-6h),0.016,2,1.26,0
+LEAD-2027553,Fahad Khan,+92-317-6445331,WhatsApp,4.0 Crores,40000000.0,Rawalpindi,House,Buy,1,4.1,2.64,No,61,Legal document questions,No,40000000.0,0,4.1,Standard (1-6h),0.016,3,2.95,0
+LEAD-2028483,Sana Chaudhry,+92-323-9341427,WhatsApp,150.0 lac,15000000.0,Karachi,Plot,Buy,1,1.3,2.63,No,87,None,No,15000000.0,0,1.3,Standard (1-6h),0.011,0,0.6,0
+LEAD-2027280,Fatima Khan,+92-329-4558724,WhatsApp,150.0 Lacs,15000000.0,Faisalabad,House,Buy,5,14.1,2.18,No,41,Location too far,Yes,15000000.0,1,70.5,Standard (1-6h),0.119,2,1.23,0
+LEAD-2027943,Zainab Malik,+92-341-8004978,Website,1.2 Lacs,120000.0,Rawalpindi,House,Rent,1,1.6,1.39,No,33,None,No,120000.0,0,1.6,Standard (1-6h),0.029,0,2.52,0
+LEAD-2025754,Bilal Malik,+92-313-4330806,Call,2.5 Crore,25000000.0,Lahore,Plot,Buy,10,1.9,2.16,No,31,Waiting for family approval,Yes,25000000.0,1,19.0,Standard (1-6h),0.312,1,1.0,0
+LEAD-2025664,Usman Qureshi,+92-329-8723449,Call,3.5 Lakh,350000.0,Islamabad,House,Rent,4,4.8,7.03,No,66,Waiting for family approval,No,350000.0,0,19.2,Delayed (>6h),0.06,1,4.24,0
+LEAD-2026380,Hina Bhatti,+92-342-8428008,WhatsApp,250.0 Lakh,25000000.0,Rawalpindi,House,Buy,1,5.2,10.95,No,18,Legal document questions,No,25000000.0,0,5.2,Delayed (>6h),0.053,3,1.84,0
+LEAD-2025326,Muhammad Mirza,+92-333-3128141,WhatsApp,0.5 Lacs,50000.0,Lahore,Commercial,Rent,3,4.6,17.13,No,52,Price too high,No,50000.0,0,13.8,Delayed (>6h),0.057,4,0.57,0
+LEAD-2028581,Zainab Malik,+92-327-4060411,Website,2.0 Lac,200000.0,Karachi,House,Rent,5,3.4,2.58,Yes,26,None,Yes,200000.0,1,17.0,Standard (1-6h),0.185,0,2.79,1
+LEAD-2028171,Zainab Qureshi,+92-334-5980614,WhatsApp,"25,000,000",25000000.0,Karachi,Flat,Buy,1,5.0,0.21,No,44,None,Yes,25000000.0,1,5.0,Immediate (<15m),0.022,0,2.4,0
+LEAD-2028225,Ali Dar,+92-322-6751190,Website,1.5 crore,15000000.0,Faisalabad,Plot,Buy,1,5.9,1.46,No,9,None,No,15000000.0,0,5.9,Standard (1-6h),0.1,0,0.6,0
+LEAD-2025296,Sana Chaudhry,+92-340-5157188,Website,2.5 Cr,25000000.0,Islamabad,House,Buy,4,6.0,0.35,No,29,Waiting for family approval,No,25000000.0,0,24.0,Fast (15-60m),0.133,1,1.06,0
+LEAD-2025525,Saad Siddiqui,+92-319-4821483,WhatsApp,4.0 crore,40000000.0,Rawalpindi,Plot,Buy,3,2.5,21.04,No,82,None,No,40000000.0,0,7.5,Delayed (>6h),0.036,0,1.6,0
+LEAD-2028204,Zubair Javed,+92-317-9095547,WhatsApp,0.5 lac,50000.0,Rawalpindi,House,Rent,2,9.5,0.2,Yes,32,Location too far,No,50000.0,0,19.0,Immediate (<15m),0.061,2,1.05,1
+LEAD-2025081,Zubair Qureshi,+92-335-5099148,WhatsApp,"15,000,000",15000000.0,Lahore,Plot,Buy,1,4.8,0.11,No,42,Waiting for family approval,Yes,15000000.0,1,4.8,Immediate (<15m),0.023,1,0.6,0
+LEAD-2027386,Bilal Siddiqui,+92-346-4491626,Website,"75,000",75000.0,Islamabad,Flat,Rent,4,5.2,17.82,No,4,None,No,75000.0,0,20.8,Delayed (>6h),0.8,0,1.74,0
+LEAD-2028072,Usman Javed,+92-346-2318028,WhatsApp,1.5 crore,15000000.0,Lahore,House,Invest,2,2.5,0.43,No,43,Price too high,No,15000000.0,0,5.0,Fast (15-60m),0.045,4,0.76,0
+LEAD-2027393,Sana Raza,+92-316-5640629,Website,2.5 Crores,25000000.0,Lahore,Commercial,Buy,3,14.8,0.49,No,52,Price too high,Yes,25000000.0,1,44.4,Fast (15-60m),0.057,4,1.0,0
+LEAD-2025653,Tariq Sheikh,+92-331-5996505,Website,4.0 crore,40000000.0,Faisalabad,Plot,Invest,8,3.3,0.76,No,9,Price too high,No,40000000.0,0,26.4,Fast (15-60m),0.8,4,1.6,0
+LEAD-2027400,Tariq Chaudhry,+92-343-2922392,WhatsApp,400.0 Lakh,40000000.0,Lahore,House,Buy,6,3.5,1.5,No,61,None,Yes,40000000.0,1,21.0,Standard (1-6h),0.097,0,2.03,0
+LEAD-2026965,Sana Chaudhry,+92-313-9105154,WhatsApp,150.0 Lakh,15000000.0,Karachi,House,Buy,2,1.8,5.6,No,14,No response / Call dropped,No,15000000.0,0,3.6,Standard (1-6h),0.133,5,0.73,0
+LEAD-2026170,Ali Javed,+92-311-6460256,Call,7.5 crore,75000000.0,Faisalabad,House,Invest,1,4.1,1.16,No,88,No response / Call dropped,No,75000000.0,0,4.1,Standard (1-6h),0.011,5,5.0,0
+LEAD-2027358,Tariq Khan,+92-344-2930157,Facebook,1.5 Crores,15000000.0,Lahore,Plot,Buy,1,12.2,0.78,No,63,Price too high,No,15000000.0,0,12.2,Fast (15-60m),0.016,4,0.6,0
+LEAD-2025635,Ahmed Chaudhry,+92-312-3832982,Call,0.5 Lacs,50000.0,Rawalpindi,House,Rent,6,3.2,0.38,No,65,Price too high,No,50000.0,0,19.2,Fast (15-60m),0.091,4,1.05,0
+LEAD-2028165,Bilal Abbasi,+92-320-6649470,Website,150.0 Lakh,15000000.0,Rawalpindi,Flat,Buy,1,1.4,1.1,No,39,No response / Call dropped,No,15000000.0,0,1.4,Standard (1-6h),0.025,5,1.78,0
+LEAD-2026295,Zainab Shah,+92-316-7373300,WhatsApp,4.0 Cr,40000000.0,Islamabad,Plot,Buy,2,1.1,0.19,No,51,Legal document questions,No,40000000.0,0,2.2,Immediate (<15m),0.038,3,1.6,0
+LEAD-2026907,Ayesha Mirza,+92-317-4776728,Website,"15,000,000",15000000.0,Islamabad,House,Buy,6,0.9,3.55,Yes,81,Location too far,Yes,15000000.0,1,5.4,Standard (1-6h),0.073,2,0.64,0
+LEAD-2027638,Ayesha Dar,+92-315-4299610,Website,1.5 Crores,15000000.0,Lahore,House,Buy,2,1.1,2.96,No,74,No response / Call dropped,No,15000000.0,0,2.2,Standard (1-6h),0.027,5,0.76,0
+LEAD-2027884,Sana Chaudhry,+92-346-7737061,Call,2.5 Crore,25000000.0,Faisalabad,House,Buy,3,3.6,0.4,No,32,Price too high,No,25000000.0,0,10.8,Fast (15-60m),0.091,4,2.05,0
+LEAD-2028541,Mariam Dar,+92-328-7144304,WhatsApp,2.5 Crore,25000000.0,Rawalpindi,Flat,Buy,5,13.4,20.27,No,26,Waiting for family approval,Yes,25000000.0,1,67.0,Delayed (>6h),0.185,1,2.97,0
+LEAD-2027263,Ahmed Malik,+92-316-8289694,Call,250.0 Lacs,25000000.0,Lahore,Plot,Buy,5,1.2,27.64,No,85,Location too far,No,25000000.0,0,6.0,Delayed (>6h),0.058,2,1.0,0
+LEAD-2025438,Omer Siddiqui,+92-342-1616842,WhatsApp,250.0 lac,25000000.0,Rawalpindi,Flat,Invest,4,5.6,7.74,Yes,72,Waiting for family approval,Yes,25000000.0,1,22.4,Delayed (>6h),0.055,1,2.97,1
+LEAD-2027692,Ahmed Mirza,+92-328-2334000,Call,0.5 lac,50000.0,Karachi,Plot,Rent,1,0.6,5.75,No,52,Price too high,No,50000.0,0,0.6,Standard (1-6h),0.019,4,0.57,0
+LEAD-2026465,Bilal Javed,+92-349-5042088,Call,0.5 Lac,50000.0,Islamabad,House,Rent,1,2.1,1.13,Yes,62,Price too high,No,50000.0,0,2.1,Standard (1-6h),0.016,4,0.61,0
+LEAD-2027894,Usman Javed,+92-345-2084630,WhatsApp,2.5 Cr,25000000.0,Islamabad,House,Buy,1,3.6,0.24,No,3,None,Yes,25000000.0,1,3.6,Immediate (<15m),0.25,0,1.06,0
+LEAD-2027613,Tariq Raza,+92-317-3326927,WhatsApp,85.0 lac,8500000.0,Faisalabad,House,Buy,2,4.2,7.09,Yes,24,None,Yes,8500000.0,1,8.4,Delayed (>6h),0.08,0,0.7,1
+LEAD-2027066,Bilal Siddiqui,+92-320-7482322,Call,250.0 Lac,25000000.0,Rawalpindi,Flat,Buy,3,1.3,0.21,No,43,Legal document questions,No,25000000.0,0,3.9,Immediate (<15m),0.068,3,2.97,0
+LEAD-2025593,Ayesha Mirza,+92-311-6086791,Call,250.0 Lacs,25000000.0,Islamabad,Plot,Buy,4,0.7,1.68,No,43,Waiting for family approval,No,25000000.0,0,2.8,Standard (1-6h),0.091,1,1.0,0
+LEAD-2025578,Omer Shah,+92-348-3673682,WhatsApp,50000,50000.0,Islamabad,House,Rent,6,5.1,0.39,Yes,21,None,Yes,50000.0,1,30.6,Fast (15-60m),0.273,0,0.61,1
+LEAD-2027003,Bilal Chaudhry,+92-322-1878767,Call,400.0 lac,40000000.0,Rawalpindi,House,Buy,2,3.3,1.68,No,9,Legal document questions,Yes,40000000.0,1,6.6,Standard (1-6h),0.2,3,2.95,0
+LEAD-2027402,Hamza Siddiqui,+92-344-7897390,Website,1.5 Crores,15000000.0,Karachi,Flat,Buy,2,2.3,1.25,Yes,5,Legal document questions,No,15000000.0,0,4.6,Standard (1-6h),0.333,3,1.44,0
+LEAD-2025366,Omer Siddiqui,+92-324-3582278,Call,1.5 Crore,15000000.0,Lahore,Flat,Buy,1,1.4,0.31,Yes,9,None,Yes,15000000.0,1,1.4,Fast (15-60m),0.1,0,1.26,0
+LEAD-2028379,Zubair Malik,+92-331-5281134,Call,0.5 lac,50000.0,Rawalpindi,House,Rent,2,6.0,1.63,No,85,Price too high,No,50000.0,0,12.0,Standard (1-6h),0.023,4,1.05,0
+LEAD-2028499,Tariq Sheikh,+92-311-4553026,Call,200000,200000.0,Faisalabad,Commercial,Rent,1,14.4,0.48,No,68,Low trust in scheme/NOC,No,200000.0,0,14.4,Fast (15-60m),0.014,4,2.29,0
+LEAD-2027061,Hina Sheikh,+92-321-6421912,Facebook,150.0 Lac,15000000.0,Faisalabad,House,Buy,6,0.6,1.74,No,7,None,No,15000000.0,0,3.6,Standard (1-6h),0.75,0,1.23,0
+LEAD-2027041,Muhammad Shah,+92-344-7064962,Call,85.0 Lakh,8500000.0,Rawalpindi,House,Invest,4,0.7,0.18,No,16,Waiting for family approval,Yes,8500000.0,1,2.8,Immediate (<15m),0.235,1,0.63,0
+LEAD-2025079,Mariam Abbasi,+92-334-7810350,WhatsApp,0.8 Lacs,80000.0,Islamabad,House,Rent,3,5.7,0.24,No,59,Waiting for family approval,No,80000.0,0,17.1,Immediate (<15m),0.05,1,0.97,0
+LEAD-2027002,Zubair Bhatti,+92-328-3142619,WhatsApp,1.5 crore,15000000.0,Rawalpindi,Flat,Buy,2,9.5,0.15,No,29,Low trust in scheme/NOC,No,15000000.0,0,19.0,Immediate (<15m),0.067,4,1.78,0
+LEAD-2025745,Zainab Raza,+92-321-3435620,Facebook,400.0 Lakh,40000000.0,Islamabad,Flat,Buy,1,12.0,0.1,No,4,Price too high,No,40000000.0,0,12.0,Immediate (<15m),0.2,4,3.25,0
+LEAD-2027744,Zainab Chaudhry,+92-334-3596817,WhatsApp,400.0 Lacs,40000000.0,Faisalabad,Flat,Buy,3,1.6,1.77,No,32,No response / Call dropped,No,40000000.0,0,4.8,Standard (1-6h),0.091,5,5.0,0
+LEAD-2026156,Hamza Khan,+92-334-4940414,WhatsApp,250.0 lac,25000000.0,Rawalpindi,Commercial,Buy,1,0.8,0.63,No,81,None,No,25000000.0,0,0.8,Fast (15-60m),0.012,0,1.0,0
+LEAD-2025781,Ayesha Raza,+92-333-7220712,Call,150.0 Lakh,15000000.0,Islamabad,Commercial,Buy,2,7.2,0.18,No,2,Price too high,Yes,15000000.0,1,14.4,Immediate (<15m),0.667,4,0.6,0
+LEAD-2025318,Zubair Mirza,+92-332-9590915,WhatsApp,85.0 Lacs,8500000.0,Rawalpindi,Plot,Invest,1,8.5,1.86,Yes,21,Waiting for family approval,Yes,8500000.0,1,8.5,Standard (1-6h),0.045,1,0.34,1
+LEAD-2027293,Omer Mirza,+92-337-6893366,Call,1.5 Cr,15000000.0,Islamabad,Plot,Buy,1,5.8,2.29,No,90,Low trust in scheme/NOC,No,15000000.0,0,5.8,Standard (1-6h),0.011,4,0.6,0
+LEAD-2026490,Mariam Malik,+92-342-7915825,WhatsApp,1.2 Lacs,120000.0,Lahore,House,Rent,2,5.5,2.37,Yes,7,None,Yes,120000.0,1,11.0,Standard (1-6h),0.25,0,1.74,1
+LEAD-2027043,Zainab Butt,+92-324-6004275,Website,2.0 Lac,200000.0,Karachi,Plot,Rent,2,4.3,25.54,Yes,24,Waiting for family approval,No,200000.0,0,8.6,Delayed (>6h),0.08,1,2.29,1
+LEAD-2025224,Muhammad Shah,+92-338-7901465,Website,"50,000",50000.0,Islamabad,Commercial,Rent,1,12.0,5.24,Yes,32,Waiting for family approval,No,50000.0,0,12.0,Standard (1-6h),0.03,1,0.57,1
+LEAD-2026624,Muhammad Butt,+92-347-6453987,Website,150.0 Lakh,15000000.0,Lahore,Flat,Invest,2,4.2,2.22,No,27,No response / Call dropped,No,15000000.0,0,8.4,Standard (1-6h),0.071,5,1.26,0
+LEAD-2026877,Hamza Bhatti,+92-329-6221353,WhatsApp,7.5 Crore,75000000.0,Karachi,House,Buy,2,1.4,2.94,No,9,None,No,75000000.0,0,2.8,Standard (1-6h),0.2,0,3.66,0
+LEAD-2025308,Ali Shah,+92-315-5998202,WhatsApp,150.0 Lakh,15000000.0,Lahore,House,Buy,2,2.1,0.39,No,30,Price too high,No,15000000.0,0,4.2,Fast (15-60m),0.065,4,0.76,0
+LEAD-2026085,Sana Chaudhry,+92-347-2518421,Call,2.5 Cr,25000000.0,Karachi,Flat,Buy,3,0.5,0.22,No,86,Price too high,No,25000000.0,0,1.5,Immediate (<15m),0.034,4,2.4,0
+LEAD-2026762,Fatima Malik,+92-312-5510341,Call,2.5 crore,25000000.0,Islamabad,House,Buy,5,3.2,1.81,No,57,Low trust in scheme/NOC,Yes,25000000.0,1,16.0,Standard (1-6h),0.086,4,1.06,0
+LEAD-2027390,Ali Mirza,+92-345-1396089,Call,2.5 Crore,25000000.0,Islamabad,House,Buy,4,11.0,2.33,No,20,None,No,25000000.0,0,44.0,Standard (1-6h),0.19,0,1.06,0
+LEAD-2027686,Fatima Sheikh,+92-343-5270945,WhatsApp,2.5 crore,25000000.0,Rawalpindi,Flat,Buy,1,0.8,2.95,No,37,None,No,25000000.0,0,0.8,Standard (1-6h),0.026,0,2.97,0
+LEAD-2025176,Hina Mirza,+92-337-2462723,Call,3.5 Lacs,350000.0,Islamabad,Plot,Rent,1,5.8,6.28,No,46,Waiting for family approval,No,350000.0,0,5.8,Delayed (>6h),0.021,1,4.0,0
+LEAD-2027128,Saad Sheikh,+92-324-2310332,WhatsApp,0.5 Lacs,50000.0,Islamabad,House,Rent,2,1.1,2.25,No,57,Location too far,Yes,50000.0,1,2.2,Standard (1-6h),0.034,2,0.61,0
+LEAD-2027122,Sana Bhatti,+92-312-3706843,Call,85.0 lac,8500000.0,Islamabad,House,Invest,2,2.5,1.64,No,39,None,No,8500000.0,0,5.0,Standard (1-6h),0.05,0,0.36,0
+LEAD-2026698,Ali Siddiqui,+92-340-2639761,Facebook,3.5 Lacs,350000.0,Lahore,House,Rent,1,3.9,2.84,No,83,Legal document questions,No,350000.0,0,3.9,Standard (1-6h),0.012,3,5.0,0
+LEAD-2026958,Ayesha Malik,+92-324-6315030,Facebook,15000000,15000000.0,Faisalabad,House,Buy,10,1.3,1.7,No,83,None,Yes,15000000.0,1,13.0,Standard (1-6h),0.119,0,1.23,0
+LEAD-2028074,Hamza Mirza,+92-337-7022571,WhatsApp,250.0 Lac,25000000.0,Faisalabad,House,Buy,1,1.7,11.72,Yes,4,Waiting for family approval,No,25000000.0,0,1.7,Delayed (>6h),0.2,1,2.05,0
+LEAD-2025865,Sana Khan,+92-334-5571136,Facebook,1.2 Lakh,120000.0,Lahore,Commercial,Rent,3,2.2,0.21,No,8,Legal document questions,Yes,120000.0,1,6.6,Immediate (<15m),0.333,3,1.37,0
+LEAD-2028516,Saad Butt,+92-333-7745556,Call,1.5 Crores,15000000.0,Karachi,House,Buy,1,5.0,1.68,No,87,None,No,15000000.0,0,5.0,Standard (1-6h),0.011,0,0.73,0
+LEAD-2027507,Hina Abbasi,+92-349-5486095,Website,1.5 Crore,15000000.0,Faisalabad,House,Buy,2,4.3,0.65,No,69,None,Yes,15000000.0,1,8.6,Fast (15-60m),0.029,0,1.23,0
+LEAD-2028023,Sana Abbasi,+92-336-8633534,WhatsApp,400.0 Lacs,40000000.0,Faisalabad,House,Buy,1,3.0,9.94,No,75,No response / Call dropped,Yes,40000000.0,1,3.0,Delayed (>6h),0.013,5,3.28,0
+LEAD-2027023,Muhammad Chaudhry,+92-314-1940474,Call,1.2 lac,120000.0,Karachi,Flat,Rent,2,3.0,2.03,No,62,None,No,120000.0,0,6.0,Standard (1-6h),0.032,0,3.29,0
+LEAD-2025636,Fahad Qureshi,+92-323-2994917,Call,2.5 Crore,25000000.0,Faisalabad,Plot,Buy,10,14.8,2.46,No,46,Price too high,Yes,25000000.0,1,148.0,Standard (1-6h),0.213,4,1.0,0
+LEAD-2027541,Ahmed Khan,+92-335-5301604,Facebook,85.0 Lac,8500000.0,Faisalabad,Flat,Buy,2,0.9,0.37,No,36,Low trust in scheme/NOC,No,8500000.0,0,1.8,Fast (15-60m),0.054,4,1.22,0
+LEAD-2027255,Ali Abbasi,+92-313-5320907,Website,2.5 Crore,25000000.0,Rawalpindi,Flat,Buy,1,2.1,0.31,No,83,Legal document questions,Yes,25000000.0,1,2.1,Fast (15-60m),0.012,3,2.97,0
+LEAD-2027684,Ayesha Malik,+92-317-8114156,WhatsApp,3.5 Lac,350000.0,Islamabad,Plot,Rent,6,8.6,6.04,No,43,None,Yes,350000.0,1,51.6,Delayed (>6h),0.136,0,4.0,0
+LEAD-2026161,Fatima Raza,+92-323-8025946,WhatsApp,2.5 Crores,25000000.0,Karachi,House,Buy,3,13.9,1.59,No,57,Location too far,Yes,25000000.0,1,41.7,Standard (1-6h),0.052,2,1.22,0
+LEAD-2026558,Fatima Malik,+92-333-5417092,Website,1.5 crore,15000000.0,Faisalabad,House,Invest,1,4.1,38.99,No,29,None,No,15000000.0,0,4.1,Delayed (>6h),0.033,0,1.23,0
+LEAD-2027013,Mariam Abbasi,+92-331-4257792,Call,2.5 Crore,25000000.0,Faisalabad,House,Buy,5,5.2,0.43,No,1,Price too high,No,25000000.0,0,26.0,Fast (15-60m),2.5,4,2.05,0
+LEAD-2026050,Fatima Shah,+92-312-8906552,WhatsApp,250.0 Lac,25000000.0,Lahore,Plot,Buy,3,4.3,0.18,No,55,Low trust in scheme/NOC,No,25000000.0,0,12.9,Immediate (<15m),0.054,4,1.0,0
+LEAD-2025668,Mariam Butt,+92-315-2604702,WhatsApp,85.0 lac,8500000.0,Faisalabad,House,Invest,1,1.5,9.05,No,58,Price too high,No,8500000.0,0,1.5,Delayed (>6h),0.017,4,0.7,0
+LEAD-2025118,Ali Javed,+92-334-4087981,Facebook,"15,000,000",15000000.0,Lahore,House,Invest,2,2.4,10.08,Yes,18,Location too far,No,15000000.0,0,4.8,Delayed (>6h),0.105,2,0.76,0
+LEAD-2025575,Muhammad Butt,+92-335-8797692,WhatsApp,7.5 crore,75000000.0,Lahore,House,Buy,3,4.5,10.22,No,89,Price too high,No,75000000.0,0,13.5,Delayed (>6h),0.033,4,3.8,0
+LEAD-2027225,Bilal Bhatti,+92-338-6227772,Facebook,150.0 Lakh,15000000.0,Faisalabad,House,Buy,6,5.8,0.82,No,8,Location too far,No,15000000.0,0,34.8,Fast (15-60m),0.667,2,1.23,0
+LEAD-2027191,Muhammad Siddiqui,+92-339-4894212,Website,0.8 lac,80000.0,Faisalabad,House,Rent,3,1.3,0.18,No,56,Location too far,Yes,80000.0,1,3.9,Immediate (<15m),0.053,2,1.87,0
+LEAD-2027598,Ali Javed,+92-333-8484930,Call,"15,000,000",15000000.0,Faisalabad,House,Invest,2,10.5,0.47,No,60,No response / Call dropped,No,15000000.0,0,21.0,Fast (15-60m),0.033,5,1.23,0
+LEAD-2025878,Fatima Bhatti,+92-333-6921450,Call,1.5 Crore,15000000.0,Rawalpindi,Plot,Invest,1,2.0,8.21,No,42,None,No,15000000.0,0,2.0,Delayed (>6h),0.023,0,0.6,0
+LEAD-2025964,Fatima Abbasi,+92-314-6038361,WhatsApp,"75,000",75000.0,Lahore,House,Rent,8,5.8,0.34,No,5,Low trust in scheme/NOC,No,75000.0,0,46.4,Fast (15-60m),1.333,4,1.09,0
+LEAD-2027483,Ali Siddiqui,+92-315-4758332,Call,150.0 lac,15000000.0,Faisalabad,House,Buy,1,1.7,0.51,No,63,Location too far,No,15000000.0,0,1.7,Fast (15-60m),0.016,2,1.23,0
+LEAD-2027367,Tariq Khan,+92-335-5478602,WhatsApp,4.0 Crore,40000000.0,Lahore,Plot,Invest,6,5.7,0.78,No,1,No response / Call dropped,No,40000000.0,0,34.2,Fast (15-60m),3.0,5,1.6,0
+LEAD-2027801,Hina Khan,+92-330-1623919,Call,35000,35000.0,Lahore,Plot,Rent,2,0.5,0.29,No,41,Low trust in scheme/NOC,No,35000.0,0,1.0,Fast (15-60m),0.048,4,0.4,0
+LEAD-2025064,Bilal Malik,+92-338-9649910,Call,250.0 lac,25000000.0,Islamabad,House,Buy,1,3.1,0.21,No,64,Waiting for family approval,No,25000000.0,0,3.1,Immediate (<15m),0.015,1,1.06,0
+LEAD-2027637,Fahad Shah,+92-330-4112127,WhatsApp,250.0 Lacs,25000000.0,Rawalpindi,House,Buy,1,10.8,42.98,No,50,None,Yes,25000000.0,1,10.8,Delayed (>6h),0.02,0,1.84,0
+LEAD-2027056,Imran Chaudhry,+92-321-4717798,Facebook,150.0 Lacs,15000000.0,Lahore,House,Buy,8,1.8,0.62,Yes,26,Waiting for family approval,No,15000000.0,0,14.4,Fast (15-60m),0.296,1,0.76,1
+LEAD-2027746,Zainab Dar,+92-346-7327829,Facebook,1.5 Crores,15000000.0,Lahore,House,Invest,2,2.3,2.92,No,18,None,No,15000000.0,0,4.6,Standard (1-6h),0.105,0,0.76,0
+LEAD-2027442,Mariam Abbasi,+92-310-4534216,Call,1.5 Crores,15000000.0,Islamabad,Plot,Buy,1,10.8,1.68,No,40,Low trust in scheme/NOC,No,15000000.0,0,10.8,Standard (1-6h),0.024,4,0.6,0
+LEAD-2025466,Tariq Shah,+92-314-4063937,Call,85.0 Lacs,8500000.0,Rawalpindi,House,Buy,1,2.6,2.99,No,74,Waiting for family approval,No,8500000.0,0,2.6,Standard (1-6h),0.013,1,0.63,0
+LEAD-2026910,Sana Raza,+92-333-3977615,Website,2.5 crore,25000000.0,Rawalpindi,Plot,Buy,1,0.9,43.39,No,52,Waiting for family approval,No,25000000.0,0,0.9,Delayed (>6h),0.019,1,1.0,0
+LEAD-2027838,Ahmed Khan,+92-345-2182814,WhatsApp,"25,000,000",25000000.0,Rawalpindi,Commercial,Buy,2,3.1,10.76,No,11,No response / Call dropped,No,25000000.0,0,6.2,Delayed (>6h),0.167,5,1.0,0
+LEAD-2027871,Ahmed Sheikh,+92-340-5078703,Call,40000000,40000000.0,Islamabad,House,Buy,2,11.8,0.28,No,60,None,Yes,40000000.0,1,23.6,Fast (15-60m),0.033,0,1.7,0
+LEAD-2026038,Fahad Butt,+92-347-5637933,WhatsApp,150.0 Lakh,15000000.0,Lahore,House,Buy,4,3.6,8.29,No,21,Price too high,No,15000000.0,0,14.4,Delayed (>6h),0.182,4,0.76,0
+LEAD-2026813,Fatima Mirza,+92-341-4439441,WhatsApp,"120,000",120000.0,Rawalpindi,Flat,Rent,1,5.3,0.45,No,3,None,No,120000.0,0,5.3,Fast (15-60m),0.25,0,4.07,0
+LEAD-2025304,Mariam Shah,+92-338-7951764,WhatsApp,2.5 Crore,25000000.0,Karachi,House,Buy,2,5.4,2.78,No,31,None,No,25000000.0,0,10.8,Standard (1-6h),0.062,0,1.22,0
+LEAD-2028205,Hina Mirza,+92-345-7896663,Website,3.5 Lakh,350000.0,Islamabad,Plot,Rent,3,5.6,1.62,No,64,Location too far,No,350000.0,0,16.8,Standard (1-6h),0.046,2,4.0,0
+LEAD-2027707,Hina Mirza,+92-317-7849125,Call,0.5 lac,50000.0,Islamabad,House,Rent,3,10.0,2.0,No,55,Price too high,No,50000.0,0,30.0,Standard (1-6h),0.054,4,0.61,0
+LEAD-2027889,Hamza Qureshi,+92-315-4783003,WhatsApp,0.3 Lacs,30000.0,Karachi,Plot,Rent,2,12.2,0.23,No,26,None,Yes,30000.0,1,24.4,Immediate (<15m),0.074,0,0.34,0
+LEAD-2027551,Ali Abbasi,+92-328-1082083,WhatsApp,1.5 crore,15000000.0,Islamabad,House,Buy,5,2.2,1.16,No,16,Legal document questions,No,15000000.0,0,11.0,Standard (1-6h),0.294,3,0.64,0
+LEAD-2028141,Muhammad Mirza,+92-337-1269157,Website,1.5 Crores,15000000.0,Islamabad,House,Buy,2,2.1,2.58,Yes,68,None,No,15000000.0,0,4.2,Standard (1-6h),0.029,0,0.64,0
+LEAD-2027740,Hamza Dar,+92-346-5186106,Facebook,1.5 Crores,15000000.0,Karachi,Flat,Buy,1,1.7,0.49,Yes,26,Waiting for family approval,Yes,15000000.0,1,1.7,Fast (15-60m),0.037,1,1.44,0
+LEAD-2026365,Ayesha Qureshi,+92-344-9454220,Call,85.0 Lakh,8500000.0,Faisalabad,House,Invest,1,2.3,2.58,Yes,34,Legal document questions,Yes,8500000.0,1,2.3,Standard (1-6h),0.029,3,0.7,0
+LEAD-2026012,Ali Butt,+92-334-5769175,WhatsApp,2.5 Cr,25000000.0,Lahore,Flat,Buy,2,3.8,2.21,No,17,Low trust in scheme/NOC,Yes,25000000.0,1,7.6,Standard (1-6h),0.111,4,2.1,0
+LEAD-2026247,Fahad Sheikh,+92-332-1567605,Website,85.0 lac,8500000.0,Faisalabad,House,Buy,1,3.0,15.64,No,79,Price too high,No,8500000.0,0,3.0,Delayed (>6h),0.012,4,0.7,0

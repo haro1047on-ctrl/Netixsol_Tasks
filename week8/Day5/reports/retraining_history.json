@@ -1,0 +1,127 @@
+[
+  {
+    "timestamp": "2026-09-29T09:48:59.625598+00:00",
+    "decision": "CHALLENGER_PROMOTED",
+    "promoted": true,
+    "duration_seconds": 2.23,
+    "champion_metrics": {
+      "r2": 0.988,
+      "mae_pkr": 1701659,
+      "rmse_pkr": 3958707,
+      "mape_pct": 4.98
+    },
+    "challenger_metrics": {
+      "r2": 0.9848,
+      "mae_pkr": 1781959,
+      "rmse_pkr": 4455265,
+      "mape_pct": 5.37
+    },
+    "rollback_snapshot": "D:\\netixsol_work\\week8\\Day5\\models\\archive\\champion_backup_20260929_144859.joblib",
+    "retraining_schedules": {
+      "scheduled_cron": "0 2 1 * *",
+      "scheduled_description": "Monthly full-batch retraining on all accumulated listings from the past 30 days.",
+      "event_driven_trigger": "MAPE_THRESHOLD_EXCEEDED (MAPE > 15.0%) OR FEATURE_DRIFT_RATIO > 0.30",
+      "event_driven_description": "Automated trigger executed by DataDriftMonitor whenever macroeconomic shift violates SLA."
+    }
+  },
+  {
+    "timestamp": "2026-09-29T09:52:33.286078+00:00",
+    "decision": "CHALLENGER_PROMOTED",
+    "promoted": true,
+    "duration_seconds": 1.64,
+    "champion_metrics": {
+      "r2": 0.9848,
+      "mae_pkr": 1781959,
+      "rmse_pkr": 4455265,
+      "mape_pct": 5.37
+    },
+    "challenger_metrics": {
+      "r2": 0.986,
+      "mae_pkr": 1715679,
+      "rmse_pkr": 4282498,
+      "mape_pct": 5.19
+    },
+    "rollback_snapshot": "D:\\netixsol_work\\week8\\Day5\\models\\archive\\champion_backup_20260929_145233.joblib",
+    "retraining_schedules": {
+      "scheduled_cron": "0 2 1 * *",
+      "scheduled_description": "Monthly full-batch retraining on all accumulated listings from the past 30 days.",
+      "event_driven_trigger": "MAPE_THRESHOLD_EXCEEDED (MAPE > 15.0%) OR FEATURE_DRIFT_RATIO > 0.30",
+      "event_driven_description": "Automated trigger executed by DataDriftMonitor whenever macroeconomic shift violates SLA."
+    }
+  },
+  {
+    "timestamp": "2026-09-29T09:54:40.674084+00:00",
+    "decision": "CHALLENGER_PROMOTED",
+    "promoted": true,
+    "duration_seconds": 1.89,
+    "champion_metrics": {
+      "r2": 0.9848,
+      "mae_pkr": 1781959,
+      "rmse_pkr": 4455265,
+      "mape_pct": 5.37
+    },
+    "challenger_metrics": {
+      "r2": 0.9859,
+      "mae_pkr": 1759660,
+      "rmse_pkr": 4301389,
+      "mape_pct": 5.15
+    },
+    "rollback_snapshot": "D:\\netixsol_work\\week8\\Day5\\models\\archive\\champion_backup_20260929_145440.joblib",
+    "retraining_schedules": {
+      "scheduled_cron": "0 2 1 * *",
+      "scheduled_description": "Monthly full-batch retraining on all accumulated listings from the past 30 days.",
+      "event_driven_trigger": "MAPE_THRESHOLD_EXCEEDED (MAPE > 15.0%) OR FEATURE_DRIFT_RATIO > 0.30",
+      "event_driven_description": "Automated trigger executed by DataDriftMonitor whenever macroeconomic shift violates SLA."
+    }
+  },
+  {
+    "timestamp": "2026-09-29T10:51:39.171898+00:00",
+    "decision": "CHALLENGER_PROMOTED",
+    "promoted": true,
+    "duration_seconds": 2.64,
+    "champion_metrics": {
+      "r2": 0.9848,
+      "mae_pkr": 1781959,
+      "rmse_pkr": 4455265,
+      "mape_pct": 5.37
+    },
+    "challenger_metrics": {
+      "r2": 0.9859,
+      "mae_pkr": 1759660,
+      "rmse_pkr": 4301389,
+      "mape_pct": 5.15
+    },
+    "rollback_snapshot": "D:\\netixsol_work\\week8\\Day5\\models\\archive\\champion_backup_20260929_155139.joblib",
+    "retraining_schedules": {
+      "scheduled_cron": "0 2 1 * *",
+      "scheduled_description": "Monthly full-batch retraining on all accumulated listings from the past 30 days.",
+      "event_driven_trigger": "MAPE_THRESHOLD_EXCEEDED (MAPE > 15.0%) OR FEATURE_DRIFT_RATIO > 0.30",
+      "event_driven_description": "Automated trigger executed by DataDriftMonitor whenever macroeconomic shift violates SLA."
+    }
+  },
+  {
+    "timestamp": "2026-09-29T10:55:16.742362+00:00",
+    "decision": "CHALLENGER_PROMOTED",
+    "promoted": true,
+    "duration_seconds": 2.1,
+    "champion_metrics": {
+      "r2": 0.9848,
+      "mae_pkr": 1781959,
+      "rmse_pkr": 4455265,
+      "mape_pct": 5.37
+    },
+    "challenger_metrics": {
+      "r2": 0.9859,
+      "mae_pkr": 1759660,
+      "rmse_pkr": 4301389,
+      "mape_pct": 5.15
+    },
+    "rollback_snapshot": "D:\\netixsol_work\\week8\\Day5\\models\\archive\\champion_backup_20260929_155516.joblib",
+    "retraining_schedules": {
+      "scheduled_cron": "0 2 1 * *",
+      "scheduled_description": "Monthly full-batch retraining on all accumulated listings from the past 30 days.",
+      "event_driven_trigger": "MAPE_THRESHOLD_EXCEEDED (MAPE > 15.0%) OR FEATURE_DRIFT_RATIO > 0.30",
+      "event_driven_description": "Automated trigger executed by DataDriftMonitor whenever macroeconomic shift violates SLA."
+    }
+  }
+]

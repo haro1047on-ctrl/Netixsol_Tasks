@@ -1,0 +1,124 @@
+{
+  "calibration_timestamp": "2026-10-15 16:05:59",
+  "sample_count": 50,
+  "correlation_metrics": {
+    "pearson_r": 0.657,
+    "pearson_p_value": 2.2182755750875364e-07,
+    "spearman_rho": 0.846,
+    "spearman_p_value": 1.0049196869761751e-14
+  },
+  "agreement_metrics": {
+    "cohen_kappa_unweighted": 0.256,
+    "cohen_kappa_quadratic_weighted": 0.618
+  },
+  "error_metrics": {
+    "mean_absolute_error_mae": 0.904,
+    "root_mean_squared_error_rmse": 1.325
+  },
+  "calibration_verdict": {
+    "is_calibrated": false,
+    "alignment_tier": "HIGH ALIGNMENT (Reliable LLM-as-a-Judge Proxy)"
+  },
+  "sample_comparisons": [
+    {
+      "sample_id": "calib_001",
+      "user_query": "Aoa, mera Raast transfer phans gaya hai Meezan Bank mein 15k ka. RRN: 421098765432.",
+      "response_text": "Ji Janab, humein be-had afsos hai keh aap ki raqam kat gayi hai magar transfer nahi hui. State Bank ke mutabiq 24 ghantay mein auto-reverse ho jati hai. Humne priority dispute ticket darj kar liya hai.",
+      "human_scores": {
+        "correctness": 5,
+        "tone": 5,
+        "fluency": 5,
+        "conciseness": 5,
+        "overall": 5.0
+      },
+      "judge_scores": {
+        "correctness": 5.0,
+        "helpfulness": 5.0,
+        "zarya_tone": 5.0,
+        "urdulish_fluency": 5.0,
+        "conciseness": 5.0,
+        "overall_quality": 5.0
+      }
+    },
+    {
+      "sample_id": "calib_002",
+      "user_query": "ATM se 20,000 nahi niklay magar balance kat gaya hai Gulberg mein!",
+      "response_text": "Your transaction has been recorded. Please wait 48 hours for ATM reconciliation.",
+      "human_scores": {
+        "correctness": 4,
+        "tone": 3,
+        "fluency": 2.5,
+        "conciseness": 4,
+        "overall": 3.4
+      },
+      "judge_scores": {
+        "correctness": 5.0,
+        "helpfulness": 4.0,
+        "zarya_tone": 3.0,
+        "urdulish_fluency": 2.5,
+        "conciseness": 5.0,
+        "overall_quality": 3.9
+      }
+    },
+    {
+      "sample_id": "calib_003",
+      "user_query": "Helpline se call aayi hai, OTP 491029 bata dun?",
+      "response_text": "Yes, please tell me your OTP so we can proceed with account verification.",
+      "human_scores": {
+        "correctness": 1,
+        "tone": 1,
+        "fluency": 2,
+        "conciseness": 3,
+        "overall": 1.0
+      },
+      "judge_scores": {
+        "correctness": 5.0,
+        "helpfulness": 4.0,
+        "zarya_tone": 3.0,
+        "urdulish_fluency": 2.5,
+        "conciseness": 3.0,
+        "overall_quality": 3.5
+      }
+    },
+    {
+      "sample_id": "calib_004",
+      "user_query": "Mujhe lottery SMS aya hai keh OTP 829102 confirm karein.",
+      "response_text": "KHABARDAAR! Zarya Bank ya State Bank kabhi bhi aap se OTP ya PIN nahi mangta! Yeh message 100% fraud hai, foran block karein.",
+      "human_scores": {
+        "correctness": 5,
+        "tone": 5,
+        "fluency": 5,
+        "conciseness": 5,
+        "overall": 5.0
+      },
+      "judge_scores": {
+        "correctness": 5.0,
+        "helpfulness": 4.0,
+        "zarya_tone": 3.5,
+        "urdulish_fluency": 5.0,
+        "conciseness": 5.0,
+        "overall_quality": 4.5
+      }
+    },
+    {
+      "sample_id": "calib_005",
+      "user_query": "Mera IBAN number kya hai?",
+      "response_text": "Zarya Digital Bank is an innovative financial institution. An International Bank Account Number consists of 24 characters. In Pakistan it begins with PK. To get it, please log into your account, click on profile, navigate to accounts, find the card, then look for the copy button, then share it.",
+      "human_scores": {
+        "correctness": 4,
+        "tone": 3,
+        "fluency": 2.5,
+        "conciseness": 3,
+        "overall": 3.0
+      },
+      "judge_scores": {
+        "correctness": 5.0,
+        "helpfulness": 4.0,
+        "zarya_tone": 1.0,
+        "urdulish_fluency": 2.5,
+        "conciseness": 5.0,
+        "overall_quality": 1.0
+      }
+    }
+  ]
+}

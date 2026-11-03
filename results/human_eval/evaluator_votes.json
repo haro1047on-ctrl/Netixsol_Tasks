@@ -1,0 +1,1802 @@
+[
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_001",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_002",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_003",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_004",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.5,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_005",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 5.0,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_006",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.0,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_007",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 5.0,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_008",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_009",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_010",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_011",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_012",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_013",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_014",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_015",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_016",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 5.0,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_017",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.0,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_018",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_019",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 3.75,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_020",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_021",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.0,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_022",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.5,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_023",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.25,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_024",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 1.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_025",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 5.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_026",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_027",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 4.5,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_028",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.5,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_029",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.5,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_030",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 1.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_031",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 4.5,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_032",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_033",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_034",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_035",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_036",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.25,
+      "Model_C": 1.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_037",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_038",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 5.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_039",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_040",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 5.0,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_041",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_042",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_043",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 4.75,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_044",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_045",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 5.0,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_046",
+    "winner_label": "Model_B",
+    "winner_model": "teacher_api",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 4.5,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_047",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_048",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 4.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_049",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 3.75,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_1_Urdu_Banking_Specialist",
+    "sample_id": "sample_050",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.0,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_001",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 1.75,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_002",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 5.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_003",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_004",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 3.75,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_005",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_006",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.25,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_007",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 5.0,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_008",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 5.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_009",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.0,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_010",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_011",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_012",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_013",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 4.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_014",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 3.75,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_015",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_016",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_017",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.5,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_018",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_019",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_020",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.5,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_021",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_022",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.25,
+      "Model_C": 1.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_023",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_024",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.0,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_025",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 5.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_026",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_027",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 4.75,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_028",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_029",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 5.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_030",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 1.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_031",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_032",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_033",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 3.75,
+      "Model_B": 2.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_034",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_035",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_036",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_037",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_038",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 4.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_039",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 3.75,
+      "Model_C": 1.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_040",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 4.75,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_041",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.5,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_042",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_043",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 4.75,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_044",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_045",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_046",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 3.75,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_047",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.5,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_048",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 5.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_049",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 3.75,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_2_SBP_Compliance_Auditor",
+    "sample_id": "sample_050",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 3.75,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_001",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_002",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 5.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_003",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.25,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_004",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 4.0,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_005",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_006",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_007",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 5.0,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_008",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 5.0,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_009",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_010",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 4.0,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_011",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.5,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_012",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 3.75,
+      "Model_B": 2.75,
+      "Model_C": 4.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_013",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_014",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 1.75,
+      "Model_B": 4.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_015",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.5,
+      "Model_B": 2.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_016",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_017",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_018",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_019",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_020",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 2.25,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_021",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.75,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_022",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_023",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 1.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_024",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 3.75,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_025",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 4.75,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_026",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_027",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 5.0,
+      "Model_C": 1.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_028",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 2.75,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_029",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.75,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_030",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.25,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_031",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.0,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_032",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_033",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 2.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_034",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.25,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_035",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 3.75,
+      "Model_C": 2.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_036",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_037",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.0,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_038",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.5,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_039",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.25,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_040",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.0,
+      "Model_B": 4.5,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_041",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 5.0,
+      "Model_C": 4.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_042",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.75,
+      "Model_B": 4.0,
+      "Model_C": 2.5
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_043",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 4.25,
+      "Model_B": 4.5,
+      "Model_C": 2.25
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_044",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.5,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_045",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_046",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.75,
+      "Model_B": 4.25,
+      "Model_C": 5.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_047",
+    "winner_label": "Model_A",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 5.0,
+      "Model_B": 2.75,
+      "Model_C": 3.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_048",
+    "winner_label": "Model_B",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.25,
+      "Model_B": 4.75,
+      "Model_C": 4.0
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_049",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.5,
+      "Model_B": 3.75,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  },
+  {
+    "evaluator_id": "Evaluator_3_Fintech_CX_Lead",
+    "sample_id": "sample_050",
+    "winner_label": "Model_C",
+    "winner_model": "sft_qwen25_3b",
+    "scores": {
+      "Model_A": 2.0,
+      "Model_B": 4.25,
+      "Model_C": 4.75
+    },
+    "timestamp": "2026-10-15 16:06:49"
+  }
+]

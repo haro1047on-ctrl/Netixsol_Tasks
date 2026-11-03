@@ -1,0 +1,77 @@
+{
+  "PT_0001": {
+    "patient_id": "PT_0001",
+    "patient_name": "Ali Khan",
+    "preferred_language": "UrduLish",
+    "preferred_doctor_id": "DOC_001",
+    "preferred_doctor_name": "Dr. Tariq Mahmood",
+    "preferred_branch": "City Care Clinics — DHA Branch",
+    "known_allergies": [
+      "Sulfa Drugs"
+    ],
+    "chronic_conditions": [
+      "Mild Seasonal Asthma"
+    ],
+    "recent_visits": [
+      {
+        "visit_date": "2026-08-14",
+        "doctor_name": "Dr. Tariq Mahmood",
+        "specialty": "General Medicine",
+        "branch_name": "City Care Clinics — DHA Branch",
+        "chief_complaint": "Chest congestion and dry cough",
+        "outcome_summary": "Prescribed inhaler and oral bronchodilator; symptoms resolved."
+      }
+    ],
+    "special_notes": "Prefers evening slots after 6:00 PM.",
+    "last_updated": "2026-10-08T10:00:15.150180+00:00"
+  },
+  "PT_0002": {
+    "patient_id": "PT_0002",
+    "patient_name": "Ahmed Raza",
+    "preferred_language": "UrduLish",
+    "preferred_doctor_id": "DOC_008",
+    "preferred_doctor_name": "Dr. Bilal Aslam",
+    "preferred_branch": "City Care Clinics — DHA Branch",
+    "known_allergies": [],
+    "chronic_conditions": [
+      "Pediatric recurrent otitis"
+    ],
+    "recent_visits": [
+      {
+        "visit_date": "2026-09-02",
+        "doctor_name": "Dr. Bilal Aslam",
+        "specialty": "Paediatrics",
+        "branch_name": "City Care Clinics — DHA Branch",
+        "chief_complaint": "Bachay ko kaan mein dard aur bukhar",
+        "outcome_summary": "Treated for acute otitis media; follow-up showed clear eardrum."
+      }
+    ],
+    "special_notes": "Parent brings child (age 5); prefers Dr. Bilal for gentle care.",
+    "last_updated": "2026-10-08T10:00:15.150222+00:00"
+  },
+  "PT_0005": {
+    "patient_id": "PT_0005",
+    "patient_name": "Shoaib Bhatti",
+    "preferred_language": "UrduLish",
+    "preferred_doctor_id": "DOC_001",
+    "preferred_doctor_name": "Dr. Tariq Mahmood",
+    "preferred_branch": "City Care Clinics — Gulberg Branch",
+    "known_allergies": [],
+    "chronic_conditions": [
+      "Ischemic Heart Disease",
+      "Hypertension"
+    ],
+    "recent_visits": [
+      {
+        "visit_date": "2026-07-20",
+        "doctor_name": "Dr. Tariq Mahmood",
+        "specialty": "General Medicine",
+        "branch_name": "City Care Clinics — Gulberg Branch",
+        "chief_complaint": "Routine cardiovascular checkup and BP review",
+        "outcome_summary": "BP stable at 130/84; lipid profile ordered."
+      }
+    ],
+    "special_notes": "Requires ramp access / ground floor consultation.",
+    "last_updated": "2026-10-08T10:00:15.150239+00:00"
+  }
+}

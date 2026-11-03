@@ -232,4 +232,54 @@ lerna-debug.log*
 dist/
 dist-ssr/
 *.local
-.vite/
+.vite/
+
+# Environment and secrets
+.env
+*.env
+*.env.*
+!.env.example
+!.env.example.*
+
+# Local SQLite databases and artifacts
+*.db
+*.sqlite
+*.sqlite3
+clinic_fhir.db
+chroma_db/
+**/chroma_db/
+
+# ML training logs and tracking
+catboost_info/
+**/catboost_info/
+mlruns/
+**/mlruns/
+
+# Scratch and temporary directories/files
+scratch/
+**/scratch/
+*.tmp
+*.temp
+*_splits.zip
+
+# Generated runtime media, emails, calendar, traces
+storage/
+**/storage/
+traces/
+**/traces/
+*.mp3
+*.wav
+*.ics
+eml_*.html
+eml_*.json
+
+# Logs
+logs/
+**/logs/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
