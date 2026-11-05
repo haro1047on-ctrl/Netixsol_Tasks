@@ -33,7 +33,7 @@ pandas>=2.2.0
 numpy>=1.26.0
 
 # --- 4. LangGraph, LangChain & Model Context Protocol (MCP) ---
-mcp>=1.0.0
+mcp>=1.0.0,<2.0.0
 langchain>=0.2.0
 langchain-core>=0.2.0
 langchain-community>=0.2.0

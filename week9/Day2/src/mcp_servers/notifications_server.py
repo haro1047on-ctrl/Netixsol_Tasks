@@ -12,7 +12,29 @@ import sys
 import uuid
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.fastmcp import FastMCP
+except (ImportError, ModuleNotFoundError):
+    try:
+        from mcp.server.mcpserver import MCPServer as FastMCP
+    except Exception:
+        class FastMCP:
+            """Fallback FastMCP decorator wrapper."""
+            def __init__(self, name: str = "", instructions: str = "", **kwargs):
+                self.name = name
+                self.instructions = instructions
+            def tool(self, *args, **kwargs):
+                def decorator(func):
+                    return func
+                return decorator
+            def resource(self, *args, **kwargs):
+                def decorator(func):
+                    return func
+                return decorator
+            def prompt(self, *args, **kwargs):
+                def decorator(func):
+                    return func
+                return decorator
 
 SRC_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if SRC_DIR not in sys.path:
