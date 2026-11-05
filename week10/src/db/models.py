@@ -128,8 +128,14 @@ from contextlib import contextmanager
 
 
 def init_db():
-    """Creates all database tables."""
-    Base.metadata.create_all(bind=engine)
+    """Creates all database tables safely."""
+    try:
+        Base.metadata.create_all(bind=engine, checkfirst=True)
+    except Exception as e:
+        if "already exists" in str(e).lower():
+            logger.info("Database tables already exist; continuing.")
+        else:
+            raise
     dialect = "SQLite" if DATABASE_URL.startswith("sqlite") else "PostgreSQL"
     logger.info(f"Initialized database tables successfully ({dialect} mode).")
 

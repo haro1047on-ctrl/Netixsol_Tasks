@@ -51,8 +51,13 @@ from src.serving.ollama_server import UnifiedInferenceClient
 API_BASE_URL = "http://localhost:8000"
 POLICIES_DIR = REPO_ROOT / "data" / "policies"
 
-# Initialize DB on load
-init_db()
+# Initialize DB safely once per Streamlit server process
+@st.cache_resource
+def setup_database():
+    init_db()
+    return True
+
+setup_database()
 
 
 # ==============================================================================
